@@ -1,0 +1,328 @@
+=============================
+Org Mode导出 Rst 文档后端测试
+=============================
+
+    :Author: Revolt
+    :Date: <2021-07-21 Wed 22:30>
+
+.. contents::
+
+
+
+Ox-Rst Usage
+------------
+
+本文档为 Org 文档导出reStructedText文档的后端测试.
+
+Repo
+~~~~
+
+具体参见: `here <https://github.com/msnoigrs/ox-rst>`_.
+
+导出命令
+~~~~~~~~
+
+- ``C-c C-e r r`` 直接导出为 rst 文件.
+
+标题,作者,Emial,和日期
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: org
+
+    #+TITLE: This is the title of the document
+    #+AUTHOR: Author
+    #+EMAIL: mailaddress@example.com
+    #+DATE: 2019/08/13 00:00
+    #+OPTIONS: author:t date:t email:t
+
+Heading 测试
+~~~~~~~~~~~~
+
+这里是 1-4
+
+Heading
+^^^^^^^
+
+这里是 1-4-1
+
+Toc
+~~~
+
+.. code:: org
+
+    #+OPTIONS: toc:t
+
+Lists
+~~~~~
+
+1. The attack of the Rohirrim
+
+2. Eowyn's fight with the witch king
+
+   - this was already my favorite scene in the book
+
+   - I really like Miranda Otto.
+
+3. Peter Jackson being shot by Legolas
+
+   - on DVD only
+
+   He makes a really funny face when it happens.
+
+But in the end, no individual scenes matter but the film as a whole.
+Important actors in this film are:
+
+Elijah Wood
+    He plays Frodo
+
+Sean Austin
+    He plays Sam, Frodo's friend.  I still remember him
+    very well from his role as Mikey Walsh in The Goonies.
+
+特殊字符
+~~~~~~~~
+
+特殊字符 \* 星号 \\ 回退键
+\.. reStructuredText注释行
+
+段落
+~~~~
+
+**note** Org line breaks ``\\`` will be ignored.
+
+诗句块 :error:
+^^^^^^
+
+| Great clouds overhead
+| Tiny black birds rise and fall
+| Snow covers Emacs
+| -- AlexSchroeder
+
+注释块
+^^^^^^
+
+::
+
+    Everything should be made as simple as possible, but not any simpler
+
+    -- Albert Einstein
+
+    Everything should be made as simple as possible, but not any simpler
+
+    -- Albert Einstein
+
+        Everything should be made as simple as possible, but not any simpler
+
+        -- Albert Einstein
+
+特殊块
+^^^^^^
+
+.. caution::
+
+    This is the second line of the first paragraph.
+
+.. note:: This is a note admonition.
+
+    This is the second line of the first paragraph.
+
+居中块
+^^^^^^
+
+center block
+
+字面示例
+~~~~~~~~
+
+示例块
+^^^^^^
+
+::
+    :name: label
+
+    example
+
+源码块
+^^^^^^
+
+.. code:: common-lisp
+
+    (require 'ox-rst)
+
+强调和等宽
+~~~~~~~~~~
+
+**bold** *italic* underlined ``verbatim`` ``code`` strike-through
+
+上标和下标
+~~~~~~~~~~
+
+H\ :sub:`2`\O
+E = mc\ :sup:`2`\
+
+LaTeX片段
+~~~~~~~~~
+
+If :math:`a^2=b` and :math:`b=2`, then the solution must be either 
+
+.. math::
+
+    a=+\sqrt{2}
+
+ or 
+
+.. math::
+
+    a=-\sqrt{2}
+
+.
+
+水平线
+~~~~~~
+
+
+------------
+
+注释块
+~~~~~~
+
+图片和表格
+~~~~~~~~~~
+
+图片
+^^^^
+
+.. image:: ./image.jpg
+    :alt: alternate text
+    :align: right
+
+表格
+^^^^
+
+.. table:: 表1
+    :name: table_1
+
+    +------+------+------+
+    | TOP1 | TOP2 | TOP3 |
+    +======+======+======+
+    | 1    | 2    | 3    |
+    +------+------+------+
+    | AAAA | BBBB | CCCC |
+    +------+------+------+
+    | END1 | END2 | END3 |
+    +------+------+------+
+
+.. table:: 表2
+    :name: table_2
+
+    +------+------+------+
+    | TOP1 | TOP2 | TOP3 |
+    +------+------+------+
+    | 1    | 2    | 3    |
+    +------+------+------+
+    | AAAA | BBBB | CCCC |
+    +------+------+------+
+    | END1 | END2 | END3 |
+    +------+------+------+
+
+.. table:: 表3
+    :name: table_3
+
+    +------+------+------+
+    | TOP1 | TOP2 | TOP3 |
+    +======+======+======+
+    | 1    | 2    | 3    |
+    +------+------+------+
+    | AAAA | BBBB | CCCC |
+    +------+------+------+
+    | END1 | END2 | END3 |
+    +------+------+------+
+
+.. table:: 表4
+    :name: table_4
+
+    +------+------+------+
+    | TOP1 | TOP2 | TOP3 |
+    +======+======+======+
+    | 1    | 2    | 3    |
+    +------+------+------+
+    | AAAA | BBBB | CCCC |
+    +------+------+------+
+    | END1 | END2 | END3 |
+    +------+------+------+
+
+链接
+~~~~
+
+外部链接
+^^^^^^^^
+
+- `Org Mode <http://orgmode.org>`_
+
+- `http://orgmode.org <http://orgmode.org>`_
+
+.. _dbd46c2c-e823-4313-9ed8-50120c07611c:
+
+内部链接
+^^^^^^^^
+
+内部链接 1
+::::::::::
+
+这是  _`example`  交叉引用目标.
+
+内部交叉引用1, 例如: `example`_
+
+内部链接 2
+::::::::::
+
+内部交叉引用2, 例如: `内部链接`_.
+
+内部链接 3
+::::::::::
+
+内部链接的ID引用, `dbd46c2c-e823-4313-9ed8-50120c07611c`_
+
+内部引用Table
+:::::::::::::
+
+.. table::
+    :name: sampletable
+
+    +---+---+---+
+    | a | b | c |
+    +---+---+---+
+    | 1 | 2 | 3 |
+    +---+---+---+
+
+Internal cross references, label `sampletable`_
+
+图片引用
+::::::::
+
+.. _samplefigure:
+
+.. image:: ../_static/assets/photos/girls.jpg
+
+内部交叉链接,标签 `samplefigure`_
+
+脚注
+~~~~
+
+组织模式 [1]_  用于记录笔记、维护待办事项列表、规划项目和使用快速有效的纯文本系统创作文档。
+
+reStructuredText [2]_  是纯文本，它使用简单直观的结构来指示文档的结构。
+
+导出Rst片段
+~~~~~~~~~~~
+
+See also :meth:`mypackage.mymodule.MyClass.mymethod()`.
+
+.. class:: alert
+
+.. class:: alert
+
+
+.. [1] 组织模式 `http://orgmode.org <http://orgmode.org>`_
+
+.. [2] reStructuredText `http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`_

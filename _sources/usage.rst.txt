@@ -1,0 +1,545 @@
+.. -*- mode: rst -*-
+
+=============================
+ reStructedText 文档风格指南
+=============================
+
+如果你不去主动了解或者打听某件事,那么这件事从头到尾都和你无关.
+
+.. contents:: 目录
+
+
+模板文件测试使用
+----------------
+- 字体
+- 颜色
+- 代码块
+- 引用
+- 运行环境
+
+.. code-block:: console
+
+   (.venv) $ pip install lumache
+
+安装
+------------
+.. _installation:
+
+hello,world
+
+有用的插件
+----------
+
+- https://stackoverflow.com/questions/5522326/automatically-build-sphinx-documentation-when-a-source-file-changes
+
+.. This is a comment. Note how any initial comments are moved by
+   transforms to after the document title, subtitle, and docinfo.
+
+.. demo.rst from: https://sphinx-rtd-theme.readthedocs.io/en/stable/demo/demo.html
+
+.. |EXAMPLE| image:: ./_static/assets/photos/girls.jpg
+   :width: 1em
+
+reStructuredText 入门
+~~~~~~~~~~~~~~~~~~~~~~~
+
+- C-c C-a C-a     插入标题
+- C-c C-s C-a     自动添加横杠
+- C-c C-=         自动补全标题
+- C-u C-=         取消补全
+- C-M e           跳到下一章节标题上
+- C-M h           标记选中当前章节内容
+- M-}             段落
+- M-{             段落
+- C-c C-t C-i     插入TOC
+- C-c C-t C-t     显示TOC
+- C-c C-t C-u     更新TOC
+
+内联标记
+---------------
+
+段落包含文本,可以包含内联标记, *重视*, **强调**, ``内联字词``, 独立的超链接(http://www.python.org), 外部超链接（Python_）,内部交叉引用(example_),带有嵌入式URI的外部超链接（`Python网站 <http://www.python. org>`__）,脚注参考 (手动编号 [1]_, 匿名自动编号 [#]_, 标记自动编号 [#label]_, 或符号 [*]_),引用参考（[12]_）,替代引用(|example|),以及 _`内联超链接` (注意在此设置了标记),参见下面的 `Targets`_ 可回到这里,在 *re*\ ``Structured``\ *Text* 中,字符级的内联标记也是可能的(尽管极其丑陋!)。问题由问题文本表示(由处理错误产生；这个问题是故意的).
+
+还有 ``sphinx.ext.autodoc``,我在演示中使用，我可以链接到 :py:data:`sphinx_book_theme.__version__`. 它将把你链接到我的代码文档。
+
+解释性文本的默认角色是 `标题引用`. 下面是一些显式的解释性文本角色：一个PEP参考(:PEP:`287`);一个RFC参考(:RFC:`2822`); 一个 :sub:`subscript`;一个 :sup:`superscript`; 以及 :强调:`标准` :strong:`inline` :literal:`markup` 的显式角色。
+
+GUI标签一种有用的方式来指示 :guilabel:`某些动作` 将由用户执行。GUI标签不应超过 `行高`, 以避免 :guilabel:`干扰` 相邻行的文本。
+
+键绑定表示读取是按下键盘或鼠标上的按钮，例如 :kbd:`MMB` 和 :kbd:`Shift-MMB` 。 指示用户操作的另一个有用标记是使用 ``menuselection``,这可用于在软件中显示短菜单和长菜单。 例如，在这里可以看到 ``menuselection``, 断开太长，无法放在这条线上。 :menuselection:`My --> Software --> Some menu --> Some sub menu 1 --> sub menu 2`.
+
+.. 请勿重新包裹以下段落！
+
+Let's test wrapping and whitespace significance in inline literals:
+``This is an example of --inline-literal --text, --including some--
+strangely--hyphenated-words.  Adjust-the-width-of-your-browser-window
+to see how the text is wrapped.  -- ---- --------  Now note    the
+spacing    between the    words of    this sentence    (words
+should    be grouped    in pairs).``
+
+让我们测试内联文字中的换行和空格重要性：
+``这是 --内联-文本 --字体的一个例子，--包括一些--
+奇怪的是--带连字符的词。调整浏览器窗口的宽度
+以查看文本是如何换行的。-- ---- -------- 现在注意
+这句话的单词之间的  间距（单词
+应该 成对  分组).``
+
+如果提供了 ``--pep-references`` 选项，这里应该有指向 PEP 258 的实时链接。
+
+数学公式
+--------
+
+数学等式测试:
+:math:`X_{0:5} = (X_0, X_1, X_2, X_3, X_4)`.
+
+额外的测试:
+
+.. math::
+    :label: This is a label
+
+    \nabla^2 f =
+    \frac{1}{r^2} \frac{\partial}{\partial r}
+    \left( r^2 \frac{\partial f}{\partial r} \right) +
+    \frac{1}{r^2 \sin \theta} \frac{\partial f}{\partial \theta}
+    \left( \sin \theta \, \frac{\partial f}{\partial \theta} \right) +
+    \frac{1}{r^2 \sin^2\theta} \frac{\partial^2 f}{\partial \phi^2}
+
+你可以通过使用 ``:eq:`` 添加指向上述方程的链接 :eq:`This is a label`.
+
+元数据
+---------
+
+.. meta::
+   :keywords: reStructuredText, demonstration, demo, parser
+   :description lang=zh_CN: reStructuredText标记语言的演示，包含所有基本结构和许多高级结构的示例。
+
+文字块
+------
+
+文字块在上一段的末尾用双冒号("::").表示(在那里 ``-->``)。它们可以缩进为::
+
+    if literal_block:
+	text = 'is left as-is'
+	spaces_and_linebreaks = 'are preserved'
+	markup_processing = None
+
+或者它们可以不缩进引用::
+
+>> 好主意!
+>
+> 你在教我做事?
+
+行块
+~~~~~~~~~~~
+
+| 这是一个行块。
+| 它以一个空行结束。每一个新行都以一个竖线（“|”）开始。
+| 换行符和初始缩进被保留。连续行是长行的包裹部分；
+| 它们以一个空格开始，代替竖线。
+| 续行的左边缘不需要与其上方文本的左边缘对齐。
+
+| 这里是第二个行块.
+|
+| 内部允许空行，但它们必须以"|"开头。
+
+
+    | 1 2 3 4 5 6 7 8 9 10
+    |
+    | Half a bee, philosophically,
+    |     must, *ipso facto*, half not be.
+    | But half the bee has got to be,
+    |     *vis a vis* its entity.  D'you see?
+    |
+    | But can a bee be said to be
+    |     or not to be an entire bee,
+    |         when half the bee is not a bee,
+    |             due to some ancient injury?
+    |
+    | Singing...
+
+块引用
+~~~~~~~~~~~~
+
+块引用由缩进的正文元素组成:
+
+    浓厚的死亡气息。不必要的突击。发生了。我已经跨过那条线了。为了那些
+    已经迷失的人。以暴止暴。更大的良善。啊,我应该早点给我的剑买保险的。
+    已经流浪了如此之久。怎样继续前行？我的斗志还没有失去。一样的战斗在
+    等待着我！选择你自己的路。双手沾满了罪孽。前车之鉴，后车之师。剑知
+    其主。断剑重铸之日，骑士归来之时！和你们这样的敌人打，就算剑是断的，
+    整个局面我也能HOLD住。你能一秒种变格格吗。
+
+    -- 放逐之刃 - 锐雯 (Riven)
+
+定义和字段列表
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+定义列表:
+
+what
+  定义列表将术语与定义相关联。
+
+how
+  该术语是一个单行短语，定义是一个或多个段落或正文元素，相对于该术语缩进。术语和定义之间不允许有空行。
+
+字段列表:
+
+:Authors:
+    Tony J. (Tibs) Ibbs,
+    David Goodger
+
+    (and sundry other good-natured folks)
+
+:Version: 1.0 of 2001/08/08
+:Dedication: To my father.
+
+文档测试块
+~~~~~~~~~~~~~~
+
+>>> print 'Python-specific usage examples; begun with ">>>"'
+Python-specific usage examples; begun with ">>>"
+>>> print '(cut and pasted from interactive Python sessions)'
+(cut and pasted from interactive Python sessions)
+
+代码块
+~~~~~~~~~~~
+
+.. parsed-literal::
+    # parsed-literal test
+    curl -O http://someurl/release-|version|.tar-gz
+
+.. code-block:: json
+    :caption: JSON代码块测试案例.
+
+    {
+    "windows": [
+	{
+	"panes": [
+	    {
+	    "shell_command": [
+		"echo 'did you know'",
+		"echo 'you can inline'"
+	    ]
+	    },
+	    {
+	    "shell_command": "echo 'single commands'"
+	    },
+	    "echo 'for panes'"
+	],
+	"window_name": "long form"
+	}
+    ],
+    "session_name": "shorthands"
+    }
+
+带有行号的强调行
+^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+   :linenos:
+   :emphasize-lines: 3,5
+
+   def some_function():
+       interesting = False
+       print('This line is highlighted.')
+       print('This one is not...')
+       print('...but this one is.')
+
+
+引文
+----------
+
+Here is a citation :cite:`project_jupyter-proc-scipy-2018`, and here is another :cite:`holdgraf_rapid_2016`.
+
+Here is the same citation :cite:`project_jupyter-proc-scipy-2018`.
+
+And here is the bibliography:
+
+.. bibliography::
+
+侧边栏
+----------
+
+.. sidebar:: 什么/玩意
+
+  .. image:: ./_static/assets/photos/girls.jpg
+
+  *上联* 一片痴心二不拉几撸三行四段代码出五处警告六处错误心里七上八下虽九死不得安生十分蛋疼
+
+  *下联* 十载青春九岁苦读学八门七类语言跪六方大神五方极客每日四时三更纵二命难以长寿一朝归西
+
+The first hexagram is made up of six unbroken lines. These unbroken lines stand for the primal power, which is light-giving, active, strong, and of the spirit. The hexagram is consistently strong in character, and since it is without weakness, its essence is power or energy. Its image is heaven. Its energy is represented as unrestricted by any fixed conditions in space and is therefore conceived of as motion. Time is regarded as the basis of this motion. Thus the hexagram includes also the power of time and the power of persisting in time, that is, duration.
+
+The power represented by the hexagram is to be interpreted in a dual sense in terms of its action on the universe and of its action on the world of men. In relation to the universe, the hexagram expresses the strong, creative action of the Deity. In relation to the human world, it denotes the creative action of the holy man or sage, of the ruler or leader of men, who through his power awakens and develops their higher nature.
+
+.. sidebar:: 比较正常的侧边栏
+
+   第一个卦由六条不间断的线组成。这些不间断的线条代表原始力量，它是光
+   明的、活跃的、强大的和精神的。
+
+.. margin:: 这是一个外边距
+
+   第一个卦由六条不间断的线组成。这些不间断的线条代表原始力量，它是光
+   明的、活跃的、强大的和精神的。
+
+
+引用列表
+----------
+
+Footnotes
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. [1] 脚注包含正文元素，始终至少缩进 3 个空格。
+
+   这是脚注的第二段。
+
+.. [#label] 脚注可以手动编号（如 [1]_ 中）或自动使用“#”前缀标签。此
+            脚注有一个标签，因此可以从多个位置引用，既可以作为脚注引用
+            ([#label]_)，也可以作为超链接引用 (label_)。
+
+.. [#] 此脚注仅使用“#”标签自动和匿名编号。
+
+.. [*] 脚注也可以使用用“*”标签指定的符号。 这是对下一个脚注的引用：[*]_。
+
+.. [*] 此脚注显示序列中的下一个符号。
+
+引文
+~~~~~~~~~
+
+.. [12] 这个引用有一些 ``代码块``, 也许还有一些 **粗体** 和 *斜体*. 哎呀，让我们也放一个指向元引文 [13]_ 的链接。
+
+.. [13] 此引文将有两个反向链接.
+
+这是对上述内容的引用，[12]_.
+
+这是另一种类型的引文: `引文`
+
+词汇表
+~~~~~~~~
+
+这是一个词汇表，其中包含诸如 :term:`写作` 之类的定义术语：
+
+.. glossary::
+
+  Documentation
+     Provides users with the knowledge they need to use something.
+
+  A slightly longer documentation
+     Provides users with the knowledge they need to use something.
+
+  阅读
+     The process of taking information into ones mind through the use of eyes.
+
+  写作
+     The process of putting thoughts into a medium for other people to :term:`read <阅读>`.
+
+Targets
+~~~~~~~
+
+.. _example:
+
+本段由明确的"示例"目标指向。可以在上面的 `内联标记`_ 下找到参考. `内联超链接`_ 也是可能的。
+
+节标题是隐式目标，按名称引用。 请参见 Targets_，它是 Body Elements 的一个小节。
+
+显式外部目标被插入到诸如 "Python_" 之类的引用中。
+
+.. _Python: http://www.python.org/
+
+目标可能是间接的和匿名的。因此，`这个短语`__ 也可以指 Targets_ 部分。
+
+__ Targets_
+
+
+指令
+----------
+
+内容
+~~~~~~~~
+
+.. contents:: :local:
+
+这些只是许多 reStructuredText 指令的一个示例。 其他请看: http://docutils.sourceforge.net/docs/ref/rst/directives.html.
+
+居中文本
+~~~~~~~~~~~~~
+
+你可以使用 ``.. centered::`` 关键字创建带有居中文本的语句。
+
+.. centered:: 这是居中文本!
+
+图片 & 编号
+~~~~~~~~~~~~~~~~
+
+图片
+^^^^^^
+
+图像指令（也可点击 -- 超链接参考）：
+
+.. image:: ./_static/assets/photos/girls.jpg
+   :target: directives_
+
+可以使用选项 ``:align: right`` 或 ``:align: left`` 对齐图像指令。默认情况下，图像向左对齐。
+
+.. code-block:: rst
+
+   .. image:: ./_static/assets/photos/girls.jpg 
+      :align: center
+
+.. image:: ./_static/assets/photos/girls.jpg
+   :align: center
+
+.. raw:: html
+
+   <br/><br/><br/><br/><br/><br/>
+
+.. code-block:: rst
+
+   .. image:: ./_static/assets/photos/girls.jpg
+      :align: right
+
+.. image:: ./_static/assets/photos/girls.jpg 
+   :align: right
+
+.. raw:: html
+
+   <br/><br/><br/><br/><br/><br/>
+
+图形
+^^^^^^^
+
+.. figure:: ./_static/assets/photos/girls.jpg
+   :alt: reStructuredText, the markup syntax
+
+   图形是带有标题或图例的图片
+   
+   +------------+-----------------------------------------------+
+   | re         | Revised, revisited, based on 're' module.     |
+   +------------+-----------------------------------------------+
+   | Structured | Structure-enhanced text, structuredtext.      |
+   +------------+-----------------------------------------------+
+   | Text       | Well it is, isn't it?                         |
+   +------------+-----------------------------------------------+
+
+   这一段也是英雄的一部分
+
+左对齐的图形指令
+
+.. figure:: ./_static/assets/photos/girls.jpg
+   :align: left
+
+   此标题应与左侧对齐。
+
+提醒
+~~~~~~~~~~~
+
+.. Attention:: 大指令.
+
+.. Caution:: 不要拿任何木制镍币.
+
+.. DANGER:: 工作中的疯狂科学家!
+
+.. Error:: 不能运算.
+
+.. Hint:: 它比面包盒还大.
+
+.. Important::
+   - 洗脸刷牙.
+   - 打扫房子.
+
+     - 包括衣柜.
+     - 也有浴室.
+
+       - 把垃圾从浴室里拿出来.
+       - 清洁水槽.
+   - 给你妈妈打电话.
+   - 备份数据.
+
+.. Note:: 这是一个笔记.
+   笔记中的方程式:
+   :math:`G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})`.
+
+.. Tip:: 15% 如果服务好.
+
+    +---------+
+    | Example |
+    +=========+
+    | Thing1  |
+    +---------+
+    | Thing2  |
+    +---------+
+    | Thing3  |
+    +---------+
+
+.. WARNING:: 强烈的散文可能会引起极度的脑力消耗。
+	     强烈建议读者酌情决定。
+
+.. admonition:: And, by the way...
+
+ 你也可以编造你自己的提醒。
+
+Topics, Sidebars, and Rubrics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. sidebar:: Sidebar Title
+   :subtitle: Optional Subtitle
+
+   This is a sidebar.  It is for text outside the flow of the main
+   text.
+
+   .. rubric:: This is a rubric inside a sidebar
+
+   Sidebars often appears beside the main text with a border and
+   background color.
+
+.. topic:: Topic Title
+
+   This is a topic.
+
+.. rubric:: This is a rubric
+
+目标脚注
+~~~~~~~~~~~~~~~~
+
+.. target-notes::
+
+替换文本
+~~~~~~~~~~~~~~~~
+
+我推荐你尝试 |Python|_.
+
+.. |Python| replace:: Python, *最好* 的语言
+
+复合段落
+~~~~~~~~~~~~~~~~~~
+
+.. compound::
+
+   此段落包含一个文本块::
+
+       连接中... OK
+       正在传输数据... OK
+       断开连接中... OK
+
+   因此由一个简单的段落、一个文字块和另一个简单的段落组成。 尽管如此，它在语义上是 *一个* 段落。
+
+   该结构称为 *复合段落*, 可以使用"复合"指令生成。
+
+下载链接
+--------------
+
+:download:`This long long long long long long long long long long long long long long long download link should be blue, normal weight text with a leading icon, and should wrap white-spaces <./_static/assets/photos/girls.jpg>`
+
+
+TODO List
+--------
+
+.. todo::
+
+   麦克乐
+   烤全鸭
+   大拉串
+
+.. todolist::
+
+

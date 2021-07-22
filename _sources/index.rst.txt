@@ -1,0 +1,35 @@
+.. Mr.Revolt documentation master file, created by
+   sphinx-quickstart on Sun Jul 18 06:52:41 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Sphinx Books Archives
+=====================================
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 测试模板:
+
+   usage
+	     
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Sphinx集成:
+
+   sphinx-doc/index
+
+.. note::
+   这个项目正在积极开发中。检查文档 :doc:`usage` 里的章节进一步了解, 该项目如何 :ref:`安装 <installation>`
+
+
+说明
+================
+此 **Sphinxg** 博客系统开发使用的目的,是为了学习新知识而特意准备的玩意。如果你也想学习搭建,可在 `官方网站 <https://www.sphinx-doc.org/en/master/tutorial/index.html>`_ *参照搭建*.
+
+索引参照表
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Ma+Shan+Zheng&family=Noto+Sans+SC&family=Noto+Serif+SC:wght@300;400&family=Roboto&family=Tourney&display=swap');
+
+body {
+    font-family: "Noto Sans SC", "adobe-song-std", "Roboto", "alibaba-puhuiti", "Helvetica Neue", Arial, 'Ma Shan Zheng', cursive, 'Noto Serif SC', 'Tourney', serif, sans-serif, cursive;
+}
+
+h1 {
+    color: #003B71 !important;
+}
+
+.heading-style, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Tourney', "adobe-fan-heiti-std", "alibaba-puhuiti", serif, sans-serif, cursive;
+}
+
+code, kbd, pre, samp {
+    font-family: "Fira Code", 'adobe-heiti-std',monospace;
+}
