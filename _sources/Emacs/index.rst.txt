@@ -1,0 +1,9 @@
+Emacs 文档
+=====================================
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Batch Script:
+
+   Batch-mode/init-batch-mode
+
