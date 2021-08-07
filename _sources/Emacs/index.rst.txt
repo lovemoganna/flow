@@ -5,5 +5,10 @@ Emacs 文档
    :maxdepth: 1
    :caption: Batch Script:
 
-   Batch-mode/init-batch-mode
+   Batch-mode/init-batch-mode.rst
+   Batch-mode/init-batch-mode-two.rst
+   Batch-mode/init-batch-mode-three.rst
+
+   Emacs/system-coding.rst
+   Makefile-mode/init-makefile-mode.rst
 

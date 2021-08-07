@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emacs Coding System &#8212; Revolt&#39;s NoteBook</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/assets/css/website.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/assets/js/website.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Makefile mode" href="../Makefile-mode/init-makefile-mode.html" />
+    <link rel="prev" title="Batch Script" href="../Batch-mode/init-batch-mode-three.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Revolt's NoteBook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Sphinx Books Archives
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  测试模板:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../usage.html">
+   reStructedText 文档风格指南
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sphinx集成:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../sphinx-doc/index.html">
+   Sphinx模板、插件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/useage.html">
+     Sphinx小节测试
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/ox-rst.html">
+     Org Mode导出 Rst 文档后端测试
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/ox-rst-en.html">
+     reStructuredText后端导出原始文档
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Emacs major mode:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Emacs 文档
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode-two.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode-three.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Emacs Coding System
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Makefile-mode/init-makefile-mode.html">
+     Makefile mode
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Windows下的所有应用:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Windows/index.html">
+   Windows 技巧
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/bug.n/init-bugn.html">
+     1 Bug.n
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/captura/init-captura.html">
+     1 Captura-cli
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/autohotkey/init-autohot-key.html">
+     1 Autohotkey
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Emacs/Emacs/system-coding.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/lovemoganna/revolt-theme"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/lovemoganna/revolt-theme/issues/new?title=Issue%20on%20page%20%2FEmacs/Emacs/system-coding.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/lovemoganna/revolt-theme/edit/master/Emacs/Emacs/system-coding.rst"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> 目录
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#emacs">
+   Emacs编码系统
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     命令清单
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="emacs-coding-system">
+<h1><a class="toc-backref" href="#id3">Emacs Coding System</a><a class="headerlink" href="#emacs-coding-system" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Revolt</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>&lt;2021-07-24 Sat 17:30&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#emacs-coding-system" id="id3">Emacs Coding System</a></p>
+<ul>
+<li><p><a class="reference internal" href="#emacs" id="id4">Emacs编码系统</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id5">命令清单</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="emacs">
+<h2><a class="toc-backref" href="#id4">Emacs编码系统</a><a class="headerlink" href="#emacs" title="永久链接至标题">¶</a></h2>
+<p>在Emacs下学会查看编码系统很重要，这有利于编码问题的查找和解决。</p>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id5">命令清单</a><a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<ol class="arabic">
+<li><p>查看编码系统中具体某个coding的说明</p>
+<p><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">describe-coding-system</span> <span class="pre">(C-h</span> <span class="pre">C</span> <span class="pre">coding</span> <span class="pre">RET)</span></code></p>
+</li>
+<li><p>查看当前正在使用的编码系统</p>
+<p><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">describe-coding-system</span> <span class="pre">(C-h</span> <span class="pre">C</span> <span class="pre">RET)</span></code></p>
+</li>
+<li><p>显示Emacs支持的所有编码系统</p>
+<p><code class="docutils literal notranslate"><span class="pre">list-coding-system</span></code></p>
+</li>
+<li><p>更改编码系统的优先级</p>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">prefer-coding-system</span> <span class="ss">&#39;utf-8</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>设置文件存储的编码</p>
+<p><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">set-buffer-file-coding-system</span></code> 设置当前buffer保存文件和重新
+访问文件的编码.</p>
+<p>一旦写入,就会将值存储在 <code class="docutils literal notranslate"><span class="pre">buffer-file-coding-system</span></code> 当中.</p>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">print</span> <span class="nv">buffer-file-coding-system</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>设置文件显示的编码</p>
+<p><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">revert-buffer-with-coding-system</span></code>,使用选择的编码重新打开文件</p>
+</li>
+<li><p>设置下一个指令的编码</p>
+<p><code class="docutils literal notranslate"><span class="pre">universal-coding-system-argument</span></code> (C-x RET c coding RET)</p>
+<p>如果在打开文件 <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-f</span></code> 之前,调用此指令,会用选定的编码打开文件，
+也会用此编码保存文件;</p>
+<p>如果在保存文件 <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-w</span></code> 之前,调用此指令,会用选定的编码保存文件.</p>
+<p>如果选用这种方式保存文件,与 <code class="docutils literal notranslate"><span class="pre">set-buffer-file-coding-system</span></code> 功能
+类似,只是如果遇到编码系统不能处理的字符,没有任何警告.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../Batch-mode/init-batch-mode-three.html" title="previous page">Batch Script</a>
+    <a class='right-next' id="next-link" href="../Makefile-mode/init-makefile-mode.html" title="next page">Makefile mode</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Revolt<br/>
+        
+            &copy; Copyright 2021, Revolt.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

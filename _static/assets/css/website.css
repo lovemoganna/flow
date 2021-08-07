@@ -2,7 +2,9 @@
 
 body {
     font-family: "Noto Sans SC", "adobe-song-std", "Roboto", "alibaba-puhuiti", "Helvetica Neue", Arial, 'Ma Shan Zheng', cursive, 'Noto Serif SC', 'Tourney', serif, sans-serif, cursive;
+    font-size: smaller;
 }
+
 
 h1 {
     color: #003B71 !important;
@@ -15,3 +17,10 @@ h1 {
 code, kbd, pre, samp {
     font-family: "Fira Code", 'adobe-heiti-std',monospace;
 }
+
+/* custom.css */
+td.linenos pre, td.code pre {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+ 

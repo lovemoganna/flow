@@ -1,0 +1,28 @@
+=============
+Makefile mode
+=============
+
+    :Author: Revolt
+    :Date: <2021-07-25 Sun 22:38>
+
+.. contents::
+
+
+
+Emacs & Make 集成编译快捷键
+---------------------------
+
+`https://caiorss.github.io/Emacs-Elisp-Programming/Utilities.html#sec-1-3 <https://caiorss.github.io/Emacs-Elisp-Programming/Utilities.html#sec-1-3>`_
+
+绑定快捷键
+~~~~~~~~~~
+
+.. code:: elisp
+
+    (global-set-key (kbd "<f8>" ) #'compile) 
+
+    (global-set-key (kbd "<C-f8>" ) 
+    		(lambda () (interactive) 
+    		  (save-buffer) 
+    		  (recompile)                 
+    		  ))

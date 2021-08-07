@@ -1,0 +1,74 @@
+
+.. contents::
+
+
+
+1 Autohotkey
+------------
+
+1.1 覆盖Windows原本的按键
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: ahk
+
+    #e::run "shell:desktop"
+
+1.2 快捷键
+~~~~~~~~~~
+
+.. code:: ahk
+
+    ^j::
+    send, 输出 Hello World
+    return
+
+按下 ``C-j`` 键测试结果如下:
+
+输出 Hello World
+
+1.2.1 利用热键制作启动脚本
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: ahk
+
+    esc::
+       MsgBox 触发了ESC键!
+    Return
+
+1.3 热字串
+~~~~~~~~~~
+
+.. code:: ahk
+
+    ::ftw::Free the whales
+
+先输入 ``ftw``,然后按下 ``TAB`` 会自动拓展预设的文字.
+
+1.3.1 利用热字串制作脚本
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: ahk
+
+    ::btw::
+    MsgBox, 你键入了字符btw.
+    return
+
+1.4 更多测试
+~~~~~~~~~~~~
+
+.. code:: ahk
+
+    ^j::
+    MsgBox Wow!
+    MsgBox this is
+    Run, Notepad.exe
+    Winactivate, Untitled - Notepad  ; 无标题 - 记事本
+    WinWaitActive, Untitled - Notepad  ; 无标题 - 记事本
+    Send, 7 lines{!}{enter}
+    SendInput, inside the ctrl{+}j hotkey
+    Return
+
+1.5 字符表示的含义
+~~~~~~~~~~~~~~~~~~
+
+- ``&`` 用于连接两个按键(含鼠标按键) 合并成一个自定义热键.

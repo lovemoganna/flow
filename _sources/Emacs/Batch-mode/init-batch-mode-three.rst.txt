@@ -1,0 +1,283 @@
+============
+Batch Script
+============
+
+    :Author: Revolt
+    :Date: <2021-07-24 Sat 17:30>
+
+.. contents::
+
+
+
+Dos 脚本第三部分
+----------------
+
+定位运算
+~~~~~~~~
+
+.. code:: bat
+
+    :: 自动跳转到标记位置
+    :: 运算
+    goto start
+
+    :start
+    set /p MATH=输入你想输入的数字: 
+    set /a RESULT=%MATH%
+    echo.
+    if %RESULT%==5 (
+    echo 你输入了数字%RESULT%,将会打开notepad
+    start notepad.exe
+    goto pause
+    )
+
+    :pause
+    pause
+
+    rem goto end
+    rem echo 如果输入数字是5,就会打开notepad.exe
+    rem :end
+
+基本运算
+~~~~~~~~
+
+.. code:: bat
+
+    <<s_header()>>
+    rem 自动跳转到标记位置
+    goto end
+    echo "hello"
+
+    :end
+    echo "world"
+
+    rem 运算
+
+    :start
+    set /p MATH=Equation?
+    set /a RESULT=%MATH%
+
+    echo %RESULT%
+
+    if %RESULT%==5 start notepad.exe
+
+    pause
+    cls
+    goto start
+
+创建文本文件并从中提取
+~~~~~~~~~~~~~~~~~~~~~~
+
+步骤:
+
+- 一.创建密码
+
+  1) 输入密码
+
+  2) 写入文件
+
+- 二.检查密码
+
+  1) 输入密码
+
+  2) 从文件中读取密码
+
+  3) 校验密码
+
+     1)
+
+.. code:: bat
+
+    @echo off
+    :: echo hi >> test.txt
+    :start
+    cls
+    echo -create (create password)
+    echo -check  (check password)
+    echo.
+
+    :: 设置路由
+    set /p PROGRAM= What do you want to do?:
+    goto %PROGRAM%
+
+    :create
+    cls
+    set /p PASSWORD= what do you want your password to be?:
+    echo %PASSWORD% > test.txt
+    echo Your password was set successfully!
+    pause
+    goto start
+
+    :check
+    cls
+    set /p PASSWORD= what is your password?:
+
+    for /f "Delims=" %%a in (test.txt) do (
+    set TEXT=%%a
+    )
+
+    rem true
+    if %PASSWORD%==%TEXT% goto correct
+    rem false
+    echo Incorrect user ID or password!
+    pause
+    goto start
+
+    :correct
+    echo Password verify successfully!
+    pause
+    goto start
+
+如何在 Windows 批处理文件中提取部分字符串
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: shell
+
+    @echo off
+    set string=Abc_123
+    echo %string%
+    echo %string:~4,3%
+
+如果您只想要下划线之后的所有内容(并且不一定知道字符串的长度或下划线的
+位置,但可以依靠只有一个下划线),请尝试:
+
+.. code:: sh
+
+    @echo off
+
+    set string=Abc_123
+
+    :: delims 指代分隔符
+    for /f "tokens=1,2 delims=_" %%a in ("%STRING%") do (
+        set BEFORE_UNDERSCORE=%%a
+        set AFTER_UNDERSCORE=%%b
+    )
+    						    echo %AFTER_UNDERSCORE%,%BEFORE_UNDERSCORE%
+
+如何复制,移动,重命名文件
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: bat
+
+    @echo off
+    set target=C:\ProgramData\Microsoft\Network\Downloader\edb.log
+    :: %CD% - 指代脚本当前路径 %USERNAME% - 指代当前登录用户
+    set saveLocation=%CD%\copyfile\
+
+    :: 重命名文件
+    :: move /Y %somefile% %someotherfile%
+
+    :: 开始复制文件   /Y 禁止提示覆盖文件
+    xcopy /Y %target% %saveLocation%
+
+    :: 启动应用
+    :: start notepad.exe
+
+    :: 删除复制的应用
+    :: del notepad.exe
+
+下载文件
+~~~~~~~~
+
+目标文件如下:
+
+`https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md <https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md>`_
+
+更多示例: `https://www.cnblogs.com/-mo-/p/12109717.html <https://www.cnblogs.com/-mo-/p/12109717.html>`_
+
+.. code:: bat
+
+    @echo off
+
+    set target_url=https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md
+
+    bitsadmin /transfer job1 %target_url% ./a.md
+
+错误
+^^^^
+
+- `http://www.vcchar.com/ <http://www.vcchar.com/>`_
+
+- `http://www.vcchar.com/thread-5411-1-1.html <http://www.vcchar.com/thread-5411-1-1.html>`_
+
+.. code:: bat
+
+    @echo off
+
+    :: 创建任务
+    bitsadmin /create myDownloadFile
+
+    set targetURL=https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md
+
+    set saveLocation=D:\a.md
+
+    :: 添加文件到任务
+    bitsadmin /setpriority myDownloadFile foreground
+
+    bitsadmin /addfile myDownloadFile %targetURL% %saveLocation%
+
+    pause
+
+    :: 激活任务
+    bitsadmin /resume myDownloadFile
+
+    :: 显示任务的摘要信息
+    bitsadmin /info myDownloadFile /verbose
+
+    :: 完成下载任务
+    bitsadmin /complete myDownloadFile
+
+    :: 取消任务
+    :: bitsadmin /Cancel jobname
+
+    :: 查看当前的任务
+    :: bitsadmin /list
+
+    :: 不显示进度
+    :: bitsadmin /rawreturn
+
+    :: 单条链接
+    :: bitsadmin /transfer myDownloadJob /download /priority normal https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md C:\Users\admin\Desktop\html\sphinx-blog\docs\source\Emacs\Batch-mode\a.md
+
+
+.. code:: bat
+
+    @echo off
+
+    set targetURL=https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md
+    set saveLocation=D:\a.md
+    bitsadmin /setpriority FOREGROUND
+    bitsadmin /transfer myDownloadJob /download /priority high %targetURL% %saveLocation%
+    :: bitsadmin /setpriority job12 foreground %targetURL% %saveLocation%
+
+- 列出所有任务
+
+  ``bitsadmin /list /verbose``.
+
+将bat文件转换为exe
+~~~~~~~~~~~~~~~~~~
+
+- `https://f2ko.de/programme/bat-to-exe-converter/?pid=b2e <https://f2ko.de/programme/bat-to-exe-converter/?pid=b2e>`_
+
+在文件之间传递变量
+~~~~~~~~~~~~~~~~~~
+
+.. code:: sh
+
+    @echo off
+    set /p mood=How are you?
+    call receive.bat %mood% "say I'm fine"
+
+
+.. code:: sh
+
+    @echo off
+    echo %1
+    pause
+    echo %2
+
+.. code:: bat
+
+    @echo off
+    start %1
+    pause

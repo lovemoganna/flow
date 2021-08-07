@@ -11,7 +11,6 @@ Sphinx Books Archives
    :caption: 测试模板:
 
    usage
-	     
 
 .. toctree::
    :maxdepth: 2
@@ -21,11 +20,16 @@ Sphinx Books Archives
 
 .. toctree::
    :maxdepth: 2
-   :caption: 批处理:
+   :caption: Emacs major mode:
 
    Emacs/index
 	     
+.. toctree::
+   :maxdepth: 2
+   :caption: Windows下的所有应用:
 
+   Windows/index
+	
 .. note::
    这个项目正在积极开发中。检查文档 :doc:`usage` 里的章节进一步了解, 该项目如何 :ref:`安装 <installation>`
 

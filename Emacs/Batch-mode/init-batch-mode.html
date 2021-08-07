@@ -38,6 +38,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Batch Script" href="init-batch-mode-two.html" />
     <link rel="prev" title="Emacs 文档" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -123,7 +124,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  批处理:
+  Emacs major mode:
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -140,6 +141,60 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="init-batch-mode-two.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="init-batch-mode-three.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Emacs/system-coding.html">
+     Emacs Coding System
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Makefile-mode/init-makefile-mode.html">
+     Makefile mode
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Windows下的所有应用:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Windows/index.html">
+   Windows 技巧
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/bug.n/init-bugn.html">
+     1 Bug.n
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/captura/init-captura.html">
+     1 Captura-cli
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/autohotkey/init-autohot-key.html">
+     1 Autohotkey
     </a>
    </li>
   </ul>
@@ -239,46 +294,122 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     基本运算
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     创建文本文件并从中提取
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#windows">
-     如何在 Windows 批处理文件中提取部分字符串
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     如何复制,移动,重命名文件
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     下载文件
+    <a class="reference internal nav-link" href="#goto">
+     goto
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id6">
-       错误
+      <a class="reference internal nav-link" href="#eof">
+       eof
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       错误级别
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       例1 - 基本示例
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if-else">
+       例2 - IF ELSE的效果
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       例3 - 使用变量作为标签
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#todo-4">
+       TODO 例4 - 使用变量作为注释
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#batexe">
-     将bat文件转换为exe
+    <a class="reference internal nav-link" href="#choice">
+     Choice - 接受用户对批处理文件的输入
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     在文件之间传递变量
+    <a class="reference internal nav-link" href="#id5">
+     错误级别 -  程序在完成/终止时设置的退出代码
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       例1 - 测试命令是否存在
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       例2 - 用于检测程序是否正确执行
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     If Else 逻辑判断
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#todo-1">
+       TODO 例1 - 检测文件是否存在
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       例2 - 检测变量是否存在
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#todo-3">
+       TODO 例3 - 变量运算
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       例4
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#locales">
+     Locales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exit-cmd-exe">
+     Exit - 关闭当前批处理脚本，退出当前子程序或关闭CMD.exe会话,可选择设置错误级别
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       例1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       例2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       例3
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       例4
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -294,7 +425,7 @@
               <div>
                 
   <div class="section" id="batch-script">
-<h1><a class="toc-backref" href="#id8">Batch Script</a><a class="headerlink" href="#batch-script" title="永久链接至标题">¶</a></h1>
+<h1><a class="toc-backref" href="#id15">Batch Script</a><a class="headerlink" href="#batch-script" title="永久链接至标题">¶</a></h1>
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">Author</dt>
@@ -308,21 +439,44 @@
 <div class="contents topic" id="id1">
 <p class="topic-title">目录</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#batch-script" id="id8">Batch Script</a></p>
+<li><p><a class="reference internal" href="#batch-script" id="id15">Batch Script</a></p>
 <ul>
-<li><p><a class="reference internal" href="#dos" id="id9">Dos 脚本</a></p>
+<li><p><a class="reference internal" href="#dos" id="id16">Dos 脚本</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id10">基本运算</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id11">创建文本文件并从中提取</a></p></li>
-<li><p><a class="reference internal" href="#windows" id="id12">如何在 Windows 批处理文件中提取部分字符串</a></p></li>
-<li><p><a class="reference internal" href="#id4" id="id13">如何复制,移动,重命名文件</a></p></li>
-<li><p><a class="reference internal" href="#id5" id="id14">下载文件</a></p>
+<li><p><a class="reference internal" href="#goto" id="id17">goto</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id6" id="id15">错误</a></p></li>
+<li><p><a class="reference internal" href="#eof" id="id18">eof</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id19">错误级别</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id20">例1 - 基本示例</a></p></li>
+<li><p><a class="reference internal" href="#if-else" id="id21">例2 - IF ELSE的效果</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id22">例3 - 使用变量作为标签</a></p></li>
+<li><p><a class="reference internal" href="#todo-4" id="id23">TODO 例4 - 使用变量作为注释</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#batexe" id="id16">将bat文件转换为exe</a></p></li>
-<li><p><a class="reference internal" href="#id7" id="id17">在文件之间传递变量</a></p></li>
+<li><p><a class="reference internal" href="#choice" id="id24">Choice - 接受用户对批处理文件的输入</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id25">错误级别 -  程序在完成/终止时设置的退出代码</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id6" id="id26">例1 - 测试命令是否存在</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id27">例2 - 用于检测程序是否正确执行</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id8" id="id28">If Else 逻辑判断</a></p>
+<ul>
+<li><p><a class="reference internal" href="#todo-1" id="id29">TODO 例1 - 检测文件是否存在</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id30">例2 - 检测变量是否存在</a></p></li>
+<li><p><a class="reference internal" href="#todo-3" id="id31">TODO 例3 - 变量运算</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id32">例4</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#locales" id="id33">Locales</a></p></li>
+<li><p><a class="reference internal" href="#exit-cmd-exe" id="id34">Exit - 关闭当前批处理脚本，退出当前子程序或关闭CMD.exe会话,可选择设置错误级别</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id11" id="id35">例1</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id36">例2</a></p></li>
+<li><p><a class="reference internal" href="#id13" id="id37">例3</a></p></li>
+<li><p><a class="reference internal" href="#id14" id="id38">例4</a></p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -330,239 +484,312 @@
 </ul>
 </div>
 <div class="section" id="dos">
-<h2><a class="toc-backref" href="#id9">Dos 脚本</a><a class="headerlink" href="#dos" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Dos 脚本</a><a class="headerlink" href="#dos" title="永久链接至标题">¶</a></h2>
 <p>BatMode是编辑 <code class="docutils literal notranslate"><span class="pre">\*.bat</span></code> 和 <code class="docutils literal notranslate"><span class="pre">\*.cmd</span></code> 文件的默认模式。</p>
-<p>BatMode 提供语法高亮、基本模板、帮助页面访问、菜单/大纲导航以及从
-Emacs中运行脚本的能力。</p>
-<div class="section" id="id2">
-<h3><a class="toc-backref" href="#id10">基本运算</a><a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
-<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">echo</span> off
-chcp 65001
-
-<span class="c1">rem 自动跳转到标记位置</span>
-<span class="k">goto</span> <span class="nl">end</span>
-<span class="k">echo</span> <span class="s2">&quot;hello&quot;</span>
-
-<span class="p">:</span><span class="nl">end</span>
-<span class="k">echo</span> <span class="s2">&quot;world&quot;</span>
-
-<span class="c1">rem 运算</span>
-
-<span class="p">:</span><span class="nl">start</span>
-<span class="k">set</span> <span class="k">/p</span> <span class="nv">MATH</span><span class="p">=</span>Equation?
-<span class="k">set</span> <span class="k">/a</span> <span class="nv">RESULT</span><span class="o">=%</span><span class="nv">MATH</span><span class="o">%</span>
-
-<span class="k">echo</span> <span class="nv">%RESULT%</span>
-
-<span class="k">if</span> <span class="nv">%RESULT%</span><span class="o">==</span>5 <span class="k">start</span> notepad.exe
-
-<span class="k">pause</span>
-<span class="k">cls</span>
-<span class="k">goto</span> <span class="nl">start</span>
+<p>BatMode 提供语法高亮、基本模板、帮助页面访问、菜单/大纲导航以及从Emacs中运行脚本的能力。</p>
+<div class="highlight-sh notranslate" id="s1-header"><div class="highlight"><pre><span></span>@echo off
+chcp <span class="m">65001</span>
 </pre></div>
 </div>
+<div class="section" id="goto">
+<h3><a class="toc-backref" href="#id17">goto</a><a class="headerlink" href="#goto" title="永久链接至标题">¶</a></h3>
+<p>告诉批处理程序跳转到标记行.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:eof</span></code> 指预定义的标签将退出当前的子程序或脚本.</p></li>
+<li><p>每个 <code class="docutils literal notranslate"><span class="pre">goto...</span></code> 命令必须以换行符结束</p></li>
+<li><p>虽然没有记录，但 <code class="docutils literal notranslate"><span class="pre">goto</span> <span class="pre">:MySubroutine</span></code> 通常与 <code class="docutils literal notranslate"><span class="pre">goto</span> <span class="pre">MySubroutine</span></code> 或
+<code class="docutils literal notranslate"><span class="pre">goto:MySubroutine</span></code> (冒号代替空格)具有相同的效果</p></li>
+</ul>
+<div class="section" id="eof">
+<h4><a class="toc-backref" href="#id18">eof</a><a class="headerlink" href="#eof" title="永久链接至标题">¶</a></h4>
+<p>该 <code class="docutils literal notranslate"><span class="pre">eof</span></code> 标签是一种特殊情况-使用 <code class="docutils literal notranslate"><span class="pre">goto：eof</span></code> 总是会传递到执行当前批处
+理文件的末尾或当前子程序结束.这可以写成 <code class="docutils literal notranslate"><span class="pre">goto:eof</span></code> 或 <code class="docutils literal notranslate"><span class="pre">goto</span> <span class="pre">:eof</span></code> 空格
+是可选的.</p>
+<p><code class="docutils literal notranslate"><span class="pre">goto</span> <span class="pre">eof</span></code> 和 <code class="docutils literal notranslate"><span class="pre">goto</span> <span class="pre">:eof</span></code> 不一样.</p>
+<p>如果您创建一个名为 <code class="docutils literal notranslate"><span class="pre">eof</span></code> 的标签，则命令 <code class="docutils literal notranslate"><span class="pre">goto:eof</span></code> 仍将退出文件/例程并
+且不会跳转到该标签。</p>
+<p>命令goto eof（不带冒号）将跳转到名为eof的标签，但为了避免混淆，最好使
+用不同的名称goto nextsub</p>
+<p>退出子程序时，另一个命令是EXIT /b EXIT /b 可以选择设置特定的错误级别，
+0表示成功，1或更高表示错误。</p>
+<p>没有 ExitCode 的 EXIT /b 的作用与 goto:eof 相同,并且不会改变 %errorlevel%.</p>
+</div>
+<div class="section" id="id2">
+<h4><a class="toc-backref" href="#id19">错误级别</a><a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h4>
+<p>如果跳转成功取得%ERRORLEVEL% = unchanged，通常这将是0，但如果前一个命
+令设置的错误级别，将被保留（这是一个bug）。</p>
+<p>如果子程序标签不存在 %ERRORLEVEL% = 1</p>
 </div>
 <div class="section" id="id3">
-<h3><a class="toc-backref" href="#id11">创建文本文件并从中提取</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
-<p>步骤:</p>
-<ul class="simple">
-<li><p>一.创建密码</p>
-<ol class="arabic simple">
-<li><p>输入密码</p></li>
-<li><p>写入文件</p></li>
-</ol>
-</li>
-<li><p>二.检查密码</p>
-<ol class="arabic simple">
-<li><p>输入密码</p></li>
-<li><p>从文件中读取密码</p></li>
-<li><p>校验密码</p></li>
-<li></li>
-</ol>
-</li>
-</ul>
-<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">echo</span> off
-<span class="p">:</span><span class="c1">: echo hi &gt;&gt; test.txt</span>
-<span class="p">:</span><span class="nl">start</span>
-<span class="k">cls</span>
-<span class="k">echo</span> -create (create password)
-<span class="k">echo</span> -check  (check password)
-<span class="k">echo</span>.
+<h4><a class="toc-backref" href="#id20">例1 - 基本示例</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">GOTO</span> <span class="nl">sub_message</span>
+   <span class="k">Echo</span> 这里不会展示
+<span class="k">goto</span><span class="p">:</span><span class="nl">eof</span>
 
-<span class="p">:</span><span class="c1">: 设置路由</span>
-<span class="k">set</span> <span class="k">/p</span> <span class="nv">PROGRAM</span><span class="p">=</span> What do you want to do?:
-<span class="k">goto</span> <span class="nl">%PROGRAM%</span>
-
-<span class="p">:</span><span class="nl">create</span>
-<span class="k">cls</span>
-<span class="k">set</span> <span class="k">/p</span> <span class="nv">PASSWORD</span><span class="p">=</span> what do you want your password to be?:
-<span class="k">echo</span> <span class="nv">%PASSWORD%</span> <span class="p">&gt;</span> test.txt
-<span class="k">echo</span> Your password was set successfully!
-<span class="k">pause</span>
-<span class="k">goto</span> <span class="nl">start</span>
-
-<span class="p">:</span><span class="nl">check</span>
-<span class="k">cls</span>
-<span class="k">set</span> <span class="k">/p</span> <span class="nv">PASSWORD</span><span class="p">=</span> what is your password?:
-
-<span class="k">for</span> <span class="k">/f</span> <span class="s2">&quot;Delims=&quot;</span> <span class="se">%%</span>a <span class="k">in</span> <span class="p">(</span>test.txt<span class="p">)</span> <span class="k">do</span> <span class="p">(</span>
-    <span class="k">set</span> <span class="nv">TEXT</span><span class="p">=</span><span class="se">%%</span>a
-<span class="p">)</span>
-
-<span class="c1">rem true</span>
-<span class="k">if</span> <span class="nv">%PASSWORD%</span><span class="o">==</span><span class="nv">%TEXT%</span> <span class="k">goto</span> <span class="nl">correct</span>
-<span class="c1">rem false</span>
-<span class="k">echo</span> Incorrect user ID or password!
-<span class="k">pause</span>
-<span class="k">goto</span> <span class="nl">start</span>
-
-<span class="p">:</span><span class="nl">correct</span>
-<span class="k">echo</span> Password verify successfully!
-<span class="k">pause</span>
-<span class="k">goto</span> <span class="nl">start</span>
+<span class="p">:</span><span class="nl">sub_message</span>
+   <span class="k">Echo</span> 这里是个子程序
 </pre></div>
 </div>
 </div>
-<div class="section" id="windows">
-<h3><a class="toc-backref" href="#id12">如何在 Windows 批处理文件中提取部分字符串</a><a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h3>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>@echo off
-<span class="nb">set</span> <span class="nv">string</span><span class="o">=</span>Abc_123
-<span class="nb">echo</span> %string%
-<span class="nb">echo</span> %string:~4,3%
-</pre></div>
-</div>
-<p>如果您只想要下划线之后的所有内容(并且不一定知道字符串的长度或下划线的
-位置,但可以依靠只有一个下划线),请尝试:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>@echo off
+<div class="section" id="if-else">
+<h4><a class="toc-backref" href="#id21">例2 - IF ELSE的效果</a><a class="headerlink" href="#if-else" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> <span class="k">/p</span> <span class="nv">NUM</span><span class="p">=</span>输入某个值:
 
-<span class="nb">set</span> <span class="nv">string</span><span class="o">=</span>Abc_123
+<span class="k">IF</span> <span class="nv">%NUM%</span><span class="o">==</span>12 <span class="k">GOTO</span> <span class="nl">specialcase</span>
+   <span class="k">Echo</span> 输入值不是12
+<span class="k">goto</span><span class="p">:</span><span class="nl">eof</span>
 
-rem delims 指代分隔符
-<span class="k">for</span> /f <span class="s2">&quot;tokens=1,2 delims=_&quot;</span> %%a <span class="k">in</span> <span class="o">(</span><span class="s2">&quot;%STRING%&quot;</span><span class="o">)</span> <span class="k">do</span> <span class="o">(</span>
-  <span class="nb">set</span> <span class="nv">BEFORE_UNDERSCORE</span><span class="o">=</span>%%a
-  <span class="nb">set</span> <span class="nv">AFTER_UNDERSCORE</span><span class="o">=</span>%%b
-<span class="o">)</span>
-
-<span class="nb">echo</span> %AFTER_UNDERSCORE%,%BEFORE_UNDERSCORE%
+<span class="p">:</span><span class="nl">specialcase</span>
+   <span class="k">Echo</span> 输入值是12
+<span class="k">goto</span><span class="p">:</span><span class="nl">eof</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id4">
-<h3><a class="toc-backref" href="#id13">如何复制,移动,重命名文件</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
-<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">echo</span> off
-<span class="k">set</span> <span class="nv">target</span><span class="p">=</span>C:\ProgramData\Microsoft\Network\Downloader\edb.log
-<span class="p">:</span><span class="c1">: %CD% - 指代脚本当前路径 %USERNAME% - 指代当前登录用户</span>
-<span class="k">set</span> <span class="nv">saveLocation</span><span class="p">=</span><span class="nv">%CD%</span>\copyfile\
+<h4><a class="toc-backref" href="#id22">例3 - 使用变量作为标签</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h4>
+<p>注意,如果子程序标签不存在,错误级别的值为 1</p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="c1">: 设置默认的按键 Y N</span>
+CHOICE /C:YN /CS /N /m <span class="s2">&quot;choose [Y]yes or [N]No &quot;</span>
+<span class="p">:</span><span class="c1">: echo %ERRORLEVEL%</span>
+<span class="k">goto</span> <span class="nl">sub_%ERRORLEVEL%</span>
 
-<span class="p">:</span><span class="c1">: 重命名文件</span>
-<span class="p">:</span><span class="c1">: move /Y %somefile% %someotherfile%</span>
+<span class="p">:</span><span class="nl">sub_1</span>
+<span class="k">Echo</span> 你选择了Yes
+<span class="k">ECHO</span> error level is <span class="nv">%ERRORLEVEL%</span> <span class="p">&gt;</span> logfile
+<span class="k">type</span> logfile
+<span class="k">goto</span><span class="p">:</span><span class="nl">eof</span>
 
-<span class="p">:</span><span class="c1">: 开始复制文件   /Y 禁止提示覆盖文件</span>
-xcopy /Y <span class="nv">%target%</span> <span class="nv">%saveLocation%</span>
+<span class="p">:</span><span class="nl">sub_2</span>
+<span class="k">Echo</span> 你选择了No
+<span class="k">ECHO</span> error level is <span class="nv">%ERRORLEVEL%</span> <span class="p">&gt;</span> logfile
+<span class="k">type</span> logfile
+<span class="k">goto</span><span class="p">:</span><span class="nl">eof</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="todo-4">
+<h4><a class="toc-backref" href="#id23">TODO 例4 - 使用变量作为注释</a><a class="headerlink" href="#todo-4" title="永久链接至标题">¶</a></h4>
+<p>在这个例子中，COPY 命令只会在参数 “Update” 被提供给批处理时运行</p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">setlocal</span>
 
-<span class="p">:</span><span class="c1">: 启动应用</span>
-<span class="p">:</span><span class="c1">: start notepad.exe</span>
+<span class="k">set</span> <span class="k">/p</span> <span class="nv">_skip</span><span class="p">=</span>input:
+<span class="k">if</span> <span class="k">/I</span> <span class="k">not</span> <span class="nv">%1</span><span class="o">==</span>update <span class="k">set</span> <span class="nv">_skip</span><span class="p">=</span>::
 
-<span class="p">:</span><span class="c1">: 删除复制的应用</span>
-<span class="p">:</span><span class="c1">: del notepad.exe</span>
+<span class="nv">%_skip%</span> copy x:\update.dat
+<span class="nv">%_skip%</span> echo Update success applied~
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="choice">
+<h3><a class="toc-backref" href="#id24">Choice - 接受用户对批处理文件的输入</a><a class="headerlink" href="#choice" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><dl class="option-list">
+<dt><kbd><span class="option">/N</span></kbd></dt>
+<dd><p>不要在提示字符串的末尾显示choiceKeys</p>
+</dd>
+</dl>
+</li>
+<li><p>/C[:] choiceKeys   用户可以按下的一个或多个键。默认为 YN.</p></li>
+<li><p>/M “text”          描述可用选项的消息字符串.</p></li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">/CS</span></kbd></dt>
+<dd><p>使选择键区分大小写.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="c1">: 显示所有按键</span>
+<span class="p">:</span><span class="c1">: CHOICE /C CH /N /M &quot;选择 [C] 光盘 or [H] 硬盘驱动器 进行下一步操作:&quot;</span>
+
+<span class="p">:</span><span class="c1">: 设置默认的按键</span>
+CHOICE /C:CH /N /M <span class="s2">&quot;选择 [C] 光盘 or [H] 硬盘驱动器 进行下一步操作:&quot;</span>
+<span class="k">echo</span> <span class="nv">%errorlevel%</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id5">
-<h3><a class="toc-backref" href="#id14">下载文件</a><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
-<p>目标文件如下:</p>
-<p><a class="reference external" href="https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md">https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md</a></p>
-<p>更多示例: <a class="reference external" href="https://www.cnblogs.com/-mo-/p/12109717.html">https://www.cnblogs.com/-mo-/p/12109717.html</a></p>
-<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">echo</span> off
-
-<span class="k">set</span> <span class="nv">target_url</span><span class="p">=</span>https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md
-
-bitsadmin /transfer job1 <span class="nv">%target_url%</span> ./a.md
-</pre></div>
-</div>
+<h3><a class="toc-backref" href="#id25">错误级别 -  程序在完成/终止时设置的退出代码</a><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>通常代码 0(false)表示成功完成</p>
 <div class="section" id="id6">
-<h4><a class="toc-backref" href="#id15">错误</a><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h4>
-<ul class="simple">
-<li><p><a class="reference external" href="http://www.vcchar.com/">http://www.vcchar.com/</a></p></li>
-<li><p><a class="reference external" href="http://www.vcchar.com/thread-5411-1-1.html">http://www.vcchar.com/thread-5411-1-1.html</a></p></li>
-</ul>
-<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">echo</span> off
-
-<span class="p">:</span><span class="c1">: 创建任务</span>
-bitsadmin /create myDownloadFile
-
-<span class="k">set</span> <span class="nv">targetURL</span><span class="p">=</span>https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md
-
-<span class="k">set</span> <span class="nv">saveLocation</span><span class="p">=</span>D:\a.md
-
-<span class="p">:</span><span class="c1">: 添加文件到任务</span>
-bitsadmin /setpriority myDownloadFile foreground
-
-bitsadmin /addfile myDownloadFile <span class="nv">%targetURL%</span> <span class="nv">%saveLocation%</span>
-
-<span class="k">pause</span>
-
-<span class="p">:</span><span class="c1">: 激活任务</span>
-bitsadmin /resume myDownloadFile
-
-<span class="p">:</span><span class="c1">: 显示任务的摘要信息</span>
-bitsadmin /info myDownloadFile /verbose
-
-<span class="p">:</span><span class="c1">: 完成下载任务</span>
-bitsadmin /complete myDownloadFile
-
-<span class="p">:</span><span class="c1">: 取消任务</span>
-<span class="p">:</span><span class="c1">: bitsadmin /Cancel jobname</span>
-
-<span class="p">:</span><span class="c1">: 查看当前的任务</span>
-<span class="p">:</span><span class="c1">: bitsadmin /list</span>
-
-<span class="p">:</span><span class="c1">: 不显示进度</span>
-<span class="p">:</span><span class="c1">: bitsadmin /rawreturn</span>
-
-<span class="p">:</span><span class="c1">: 单条链接</span>
-<span class="p">:</span><span class="c1">: bitsadmin /transfer myDownloadJob /download /priority normal https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md C:\Users\admin\Desktop\html\sphinx-blog\docs\source\Emacs\Batch-mode\a.md</span>
+<h4><a class="toc-backref" href="#id26">例1 - 测试命令是否存在</a><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h4>
+<p>如果你尝试执行一个不存在的命令，%ERRORLEVEL%将被设置为9009</p>
+<p>下面是一些测试</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>xxx -help
+:: errorlevel 为 <span class="m">9009</span>
+:: <span class="k">if</span> %errorlevel% EQU <span class="m">0</span> <span class="o">(</span><span class="nb">echo</span> No Error Found! The errorlevel value is %errorlevel%<span class="o">)</span>
+:: <span class="k">if</span> %errorlevel% NEQ <span class="m">0</span> <span class="o">(</span><span class="nb">echo</span> An Error Was Found! The errorlevel value is %errorlevel%<span class="o">)</span>
+<span class="k">if</span> %errorlevel% EQU <span class="m">0</span> <span class="o">(</span><span class="nb">echo</span> No Error Found! The errorlevel value is %errorlevel%<span class="o">)</span> <span class="k">else</span> <span class="o">(</span><span class="nb">echo</span> An error was found! The errorlevel value is %errorlevel%<span class="o">)</span>
+:: <span class="k">if</span> %errorlevel% EQU <span class="m">0</span> <span class="o">(</span><span class="nb">echo</span> No error found! The errorlevel value is %errorlevel%<span class="o">)</span> <span class="o">||</span> <span class="nb">echo</span> An error was found! The errorlevel value is %errorlevel%.
 </pre></div>
 </div>
-<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">echo</span> off
-
-<span class="k">set</span> <span class="nv">targetURL</span><span class="p">=</span>https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md
-<span class="k">set</span> <span class="nv">saveLocation</span><span class="p">=</span>D:\a.md
-bitsadmin /setpriority FOREGROUND
-bitsadmin /transfer myDownloadJob /download /priority high <span class="nv">%targetURL%</span> <span class="nv">%saveLocation%</span>
-<span class="p">:</span><span class="c1">: bitsadmin /setpriority job12 foreground %targetURL% %saveLocation%</span>
-</pre></div>
-</div>
-<ul>
-<li><p>列出所有任务</p>
-<p><code class="docutils literal notranslate"><span class="pre">bitsadmin</span> <span class="pre">/list</span> <span class="pre">/verbose</span></code>.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="section" id="batexe">
-<h3><a class="toc-backref" href="#id16">将bat文件转换为exe</a><a class="headerlink" href="#batexe" title="永久链接至标题">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://f2ko.de/programme/bat-to-exe-converter/?pid=b2e">https://f2ko.de/programme/bat-to-exe-converter/?pid=b2e</a></p></li>
-</ul>
 </div>
 <div class="section" id="id7">
-<h3><a class="toc-backref" href="#id17">在文件之间传递变量</a><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>@echo off
-<span class="nb">set</span> /p <span class="nv">mood</span><span class="o">=</span>How are you?
-call receive.bat %mood% <span class="s2">&quot;say I&#39;m fine&quot;</span>
+<h4><a class="toc-backref" href="#id27">例2 - 用于检测程序是否正确执行</a><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">IF</span> <span class="k">ERRORLEVEL</span> <span class="mi">1</span> <span class="p">(</span><span class="k">ECHO</span> error level is 1 or more<span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="k">echo</span> success execute done!<span class="p">)</span>
+<span class="k">ECHO</span> error level is <span class="nv">%ERRORLEVEL%</span> <span class="p">&gt;</span> logfile
+<span class="k">type</span> logfile
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>@echo off
-<span class="nb">echo</span> %1
-pause
-<span class="nb">echo</span> %2
+</div>
+</div>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id28">If Else 逻辑判断</a><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>主要分为:</p>
+<ol class="arabic simple">
+<li><p>文件语法</p></li>
+<li><p>字符串语法</p></li>
+<li><p>错误检查语法</p></li>
+<li><p>还有一些关键字</p></li>
+</ol>
+<div class="section" id="todo-1">
+<h4><a class="toc-backref" href="#id29">TODO 例1 - 检测文件是否存在</a><a class="headerlink" href="#todo-1" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">IF</span> <span class="k">EXIST</span> C:\logs\*.log <span class="p">(</span><span class="k">goto</span> <span class="p">:</span><span class="nl">success</span><span class="p">)</span> <span class="k">ELSE</span> <span class="p">(</span><span class="k">goto</span> <span class="p">:</span><span class="nl">error</span><span class="p">)</span>
+
+<span class="p">:</span><span class="nl">success</span>
+<span class="p">:</span><span class="c1">: 检查错误级别,输出文件存在</span>
+<span class="k">Echo</span> Log file exists
+<span class="k">goto</span> <span class="p">:</span><span class="nl">checkerrorlevel</span>
+<span class="k">goto</span> <span class="p">:</span><span class="nl">eof</span>
+
+<span class="p">:</span><span class="nl">error</span>
+<span class="p">:</span><span class="c1">: 改变错误级别,文件不存在</span>
+<span class="k">ECHO</span> error level is <span class="nv">%ERRORLEVEL%</span> <span class="p">&gt;</span> logfile
+<span class="k">type</span> logfile
+
+<span class="p">:</span><span class="nl">checkerrorlevel</span>
+<span class="k">if</span> <span class="nv">%errorlevel%</span> <span class="ow">EQU</span> 0 <span class="p">(</span><span class="k">echo</span> <span class="s2">&quot;execute success&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">echo</span> off
-<span class="k">start</span> <span class="nv">%1</span>
-<span class="k">pause</span>
+</div>
+<div class="section" id="id9">
+<h4><a class="toc-backref" href="#id30">例2 - 检测变量是否存在</a><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">IF</span> <span class="k">DEFINED</span> <span class="nv">_department</span> <span class="p">(</span><span class="k">ECHO</span> Got the _department variable<span class="p">)</span> <span class="k">ELSE</span> <span class="p">(</span><span class="k">echo</span> the _department variable not exist<span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="todo-3">
+<h4><a class="toc-backref" href="#id31">TODO 例3 - 变量运算</a><a class="headerlink" href="#todo-3" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> <span class="nv">_commission </span><span class="p">=</span> 1
+<span class="k">set</span> <span class="nv">hello</span><span class="p">=</span> 2
+<span class="k">IF</span> <span class="k">DEFINED</span> <span class="nv">_commission</span> <span class="k">SET</span> <span class="k">/A</span> <span class="s2">&quot;_salary=</span><span class="nv">%hello%</span><span class="s2"> + </span><span class="nv">%_commission%</span><span class="s2">&quot;</span>
+<span class="k">echo</span> <span class="nv">%_salary%</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h4><a class="toc-backref" href="#id32">例4</a><a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> <span class="k">/p</span> <span class="nv">num</span><span class="p">=</span>type a number:
+
+<span class="k">if</span> <span class="nv">%num%</span><span class="o">==</span>5 <span class="p">(</span>
+<span class="k">echo</span> five
+<span class="p">)</span>
+
+<span class="c1">rem  GTR --- 大于</span>
+<span class="k">if</span> <span class="nv">%num%</span> <span class="ow">GTR</span> 5 <span class="p">(</span>
+<span class="k">echo</span>.
+<span class="k">echo</span> 你输入了比5大的数字！
+<span class="p">)</span>
+
+<span class="k">if</span> <span class="nv">%num%</span>  <span class="ow">LSS</span> 5 <span class="p">(</span>
+<span class="k">echo</span>.
+<span class="k">echo</span> 你输入了比5小的数字！
+<span class="p">)</span>
+
+<span class="k">if</span> <span class="k">exist</span> test.txt <span class="p">(</span>
+<span class="k">cls</span>
+<span class="k">echo</span>.
+<span class="k">echo</span> test.txt file exist!
+<span class="p">)</span> <span class="k">else</span> <span class="k">echo</span> file not exist! will be create! goto create
+
+<span class="k">if</span> <span class="k">not</span> <span class="k">exist</span> test.txt <span class="p">(</span>
+<span class="k">echo</span>.
+<span class="k">echo</span> test.txt file not exist and will create it！o
+
+<span class="p">:</span><span class="c1">: 生成新文件,将错误重定向至nul.</span>
+<span class="p">:</span><span class="c1">: https://stackoverflow.com/questions/1702762/how-can-i-create-an-empty-file-at-the-command-line-in-windows</span>
+<span class="p">:</span><span class="nl">create</span>
+.<span class="p">&gt;</span>test.txt <span class="mi">2</span><span class="p">&gt;</span>nul
+<span class="k">goto</span> <span class="nl">end</span>
+<span class="p">)</span>
+
+<span class="p">:</span><span class="c1">: 加密文件和解密文件</span>
+<span class="p">:</span><span class="nl">end</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="locales">
+<h3><a class="toc-backref" href="#id33">Locales</a><a class="headerlink" href="#locales" title="永久链接至标题">¶</a></h3>
+<p>检测当前的语言环境</p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">For</span> <span class="k">/f</span> <span class="s2">&quot;tokens=3&quot;</span> <span class="se">%%</span>G <span class="k">in</span> <span class="p">(</span><span class="s1">&#39;Reg query &quot;HKCU\Control Panel\International&quot; /v LocaleName&#39;</span><span class="p">)</span> <span class="k">Do</span> <span class="k">Set</span> <span class="nv">_locale</span><span class="p">=</span><span class="se">%%</span>G
+<span class="k">Echo</span> <span class="nv">%_Locale%</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exit-cmd-exe">
+<h3><a class="toc-backref" href="#id34">Exit - 关闭当前批处理脚本，退出当前子程序或关闭CMD.exe会话,可选择设置错误级别</a><a class="headerlink" href="#exit-cmd-exe" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Alt-F4</span></code> 是万能的命令.干掉一切!</p>
+<ul class="simple">
+<li><p>exit [/b] [exitcode]</p>
+<ol class="arabic simple">
+<li><p>/b 在批处理脚本中使用时,此选项将仅退出脚本（或子程序）而不退出
+CMD.EXE;如果在命令行上执行,它将关闭 CMD.exe</p></li>
+<li><p>exitCode 将 %ERRORLEVEL% 设置为数字.如果退出 CMD.EXE,不会设置错误
+级别.</p></li>
+</ol>
+</li>
+<li><p>Errorlevel</p></li>
+</ul>
+<p>EXIT /b 可以选择设置特定的错误级别, exit /b 0 表示成功,exit /b 1（或
+更大）表示错误。 退出代码可以是长度最多为 10 位的整数（正数或负数）。</p>
+<p>没有 ExitCode 的 EXIT 与 goto:eof 的作用相同，并且不会改变 ERRORLEVEL</p>
+<p>不确定: 永远不要尝试直接写入 %ERRORLEVEL% 变量 (SET ERRORLEVEL n )，而
+是使用 EXIT /b n 作为将内部 ERRORLEVEL 伪变量设置为 n 的安全方法。</p>
+<p>-1073741510 的错误级别将被 CMD.exe 解释为 Ctrl-C 键序列以取消当前操作，
+而不是 EXIT 将执行的整个脚本。</p>
+<div class="section" id="id11">
+<h4><a class="toc-backref" href="#id35">例1</a><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> 测试 C-c 快捷键退出动作!
+::Ctrl-C
+cmd /c <span class="nb">exit</span> -1073741510
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h4><a class="toc-backref" href="#id36">例2</a><a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="k">not</span> <span class="k">exist</span> a.txt <span class="k">echo</span> 此文件不存在或者没有被创建! <span class="p">&amp;</span> <span class="k">exit</span> /b
+<span class="k">echo</span> 此文件已经被发现了!
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h4><a class="toc-backref" href="#id37">例3</a><a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">Call</span> <span class="p">:</span><span class="nl">setError</span>
+<span class="k">Echo</span> <span class="nv">%errorlevel%</span>
+<span class="k">Goto</span> <span class="p">:</span><span class="nl">eof</span>
+
+<span class="p">:</span><span class="nl">setError</span>
+<span class="k">Exit</span> /B 5
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h4><a class="toc-backref" href="#id38">例4</a><a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">Setlocal</span>
+<span class="k">For</span> <span class="se">%%</span>A <span class="k">in</span> <span class="p">(</span>alpha beta gamma<span class="p">)</span> <span class="k">DO</span> <span class="p">(</span>
+   <span class="k">Echo</span> 进入外循环 <span class="se">%%</span>A
+   <span class="k">Call</span> <span class="p">:</span><span class="nl">inner</span>
+<span class="p">)</span>
+<span class="k">Goto</span> <span class="p">:</span><span class="nl">eof</span>
+
+<span class="p">:</span><span class="nl">inner</span>
+<span class="k">For</span> <span class="se">%%</span>B <span class="k">in</span> <span class="p">(</span>U V W X Y Z<span class="p">)</span> <span class="k">DO</span> <span class="p">(</span>
+   <span class="k">if</span> <span class="se">%%</span>B<span class="o">==</span>X <span class="p">(</span><span class="k">exit</span> /b 2<span class="p">)</span>
+   <span class="k">Echo</span> 进入内循环 Outer=<span class="se">%%</span>A Inner=<span class="se">%%</span>B
+<span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -575,6 +802,7 @@ pause
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../index.html" title="previous page">Emacs 文档</a>
+    <a class='right-next' id="next-link" href="init-batch-mode-two.html" title="next page">Batch Script</a>
 
         </div>
         

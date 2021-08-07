@@ -1,0 +1,149 @@
+
+.. contents::
+
+1 Bug.n
+-------
+
+Windows下的窗口管理器。
+
+1.1 软件依赖下载
+~~~~~~~~~~~~~~~~
+
+- ``git clone https://github.com/fuhsjr00/bug.n.git``.
+
+1.1.1 在Powershell中安装
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+- 安装 scoop ``Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')``.
+
+- 改变执行 police,可能会对系统造成威胁. ``Set-ExecutionPolicy RemoteSigned -scope CurrentUser``.
+
+- 更新仓库 ``scoop bucket add extras``.
+
+- 安装 autohotkey ``scoop install autohotkey``.
+
+- [TODO] 构建autohotkey快捷键
+
+.. code:: text
+    :number-lines: 1
+
+    # 单击 build.ahk 开始构建 bug.n
+    D:\bug.n\bug.n\tools
+    - build.ahk
+
+- 运行 bugn.exe
+
+如果你没有构建: 单击 ``D:\bug.n\bug.n\src\Main.ahk`` 这个文件。
+
+1.2 直接下载构建好的压缩文件
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+或者下载: `https://github.com/fuhsjr00/bug.n/releases/tag/v9.0.2 <https://github.com/fuhsjr00/bug.n/releases/tag/v9.0.2>`_
+
+使用 ``start D:\bug.n\bugn.exe`` 即可运行.
+
+1.3 Bug.n配置文件
+~~~~~~~~~~~~~~~~~
+
+1.3.1 配置文件的位置
+^^^^^^^^^^^^^^^^^^^^
+
+`~/bug.n/data/_Layout.ini <~/bug.n/data/_Layout.ini>`_
+
+- cd %AppData%/bug.n/Config.ini
+
+1.4 默认快捷键
+~~~~~~~~~~~~~~
+
+配置文件中的符号的含义:
+
+- ``!`` 对应 Alt
+
+- ``^`` 对应 Ctrl
+
+- ``#`` 对应 Win
+
+- ``+`` 对应 Shift
+
+1.4.1 活动视窗
+^^^^^^^^^^^^^^
+
+- ``win-j / win-up`` 移动至上一窗口
+
+- ``win-k / win-down`` 移动至下一窗口
+
+- ``win-S up`` 顺序移动当前的窗口
+
+- ``win-S down`` 逆序移动当前的窗口
+
+1.5 快捷键
+~~~~~~~~~~
+
+初始入门:
+
+- `https://github.com/fuhsjr00/bug.n/blob/master/doc/Default_hotkeys.md <https://github.com/fuhsjr00/bug.n/blob/master/doc/Default_hotkeys.md>`_
+
+常用快捷键:
+
+- ``H-C q`` 退出bug.n.
+
+- ``H-t`` 查看窗口布局
+
+- ``H-m`` 恢复当前窗
+
+- ``H-TAB`` 此快捷键可替换上面两个命令
+
+- ``H-b`` 显示、隐藏当前窗口 bar
+
+- ``H-Down`` 查看激活的窗口
+
+- ``H-Up`` 查看激活的窗口
+
+- ``H-S Down`` 切换窗口的位置
+
+- ``H-S Up`` 切换窗口的位置
+
+- ``H-S Enter`` 切换窗口的位置
+
+- ``H-c`` 关闭窗口
+
+- ``H-S d`` 切换窗口 sidebar
+
+- ``H-S f`` 切换查看浮动窗口
+
+- ``H-S m`` 管理移动窗口
+
+- ``H-<nuhmebr>`` 切换至某个窗口
+
+- ``H-backspace`` 切换桌面（摸鱼神键）
+
+- ``H-S <number>`` 将当前窗口发射至某一编号窗口
+
+1.6 布局管理
+~~~~~~~~~~~~
+
+- ``H-TAB``
+
+- ``H-f``
+
+- ``H-m``
+
+- ``H-t``
+
+- ``H-left``
+
+下面是针对某一窗口的按键,但针对Emacs不管用。
+
+- ``H-t`` 平铺模式
+
+- ``H-f`` 浮动模式
+
+- ``H-m`` 全屏模式
+
+- ``H-TAB`` 切换窗口大小 !!!
+
+- ``H-enter`` 窗口最大化
+
+- ``H-S c`` 关闭当前窗口
+
+- ``H-k`` 切换窗口

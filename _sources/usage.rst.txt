@@ -209,7 +209,9 @@ Python-specific usage examples; begun with ">>>"
     curl -O http://someurl/release-|version|.tar-gz
 
 .. code-block:: json
-    :caption: JSON代码块测试案例.
+   :name: json-case
+   :linenos:
+   :caption: JSON代码块测试案例.
 
     {
     "windows": [
@@ -526,13 +528,13 @@ Topics, Sidebars, and Rubrics
    该结构称为 *复合段落*, 可以使用"复合"指令生成。
 
 下载链接
---------------
+--------
 
 :download:`This long long long long long long long long long long long long long long long download link should be blue, normal weight text with a leading icon, and should wrap white-spaces <./_static/assets/photos/girls.jpg>`
 
 
 TODO List
---------
+---------
 
 .. todo::
 
@@ -541,5 +543,3 @@ TODO List
    大拉串
 
 .. todolist::
-
-

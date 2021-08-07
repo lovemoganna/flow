@@ -1,0 +1,324 @@
+
+.. contents::
+
+1 Captura-cli
+-------------
+
+.. code:: sh
+    :name: captura-cli
+
+    @echo off
+    set captura-cli="%ProgramFiles(x86)%\Captura\captura-cli.exe"
+
+1.1 Captura-cli的两种模式:
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. 当录制长度被指定的时候,录制会一直运行直至到指定的长度。
+
+2. 当录制长度没被指定的时候，按下q就会退出录制。
+
+1.2 参数列表
+~~~~~~~~~~~~
+
+.. table::
+
+    +-------------------+--------------------------------------------------------------------+
+    |       参数        | 描述                                                               |
+    +===================+====================================================================+
+    |     --cursor      | 包括鼠标                                                           |
+    +-------------------+--------------------------------------------------------------------+
+    |      --keys       | 包括按键                                                           |
+    +-------------------+--------------------------------------------------------------------+
+    |     --clicks      | 包括鼠标点击                                                       |
+    +-------------------+--------------------------------------------------------------------+
+    |      --delay      | 开始录制前的延迟（以毫秒为单位）                                   |
+    +-------------------+--------------------------------------------------------------------+
+    |  -t or --length   | 录制时长（单位: 秒）                                               |
+    +-------------------+--------------------------------------------------------------------+
+    |     --source      | 录制的位置 (See `1.6 开始位置截图参数 - verb source`_)             |
+    +-------------------+--------------------------------------------------------------------+
+    |       --mic       | 要使用的麦克风索引.(-1 = 无（默认))（0 是第一个设备)。             |
+    +-------------------+--------------------------------------------------------------------+
+    |     --speaker     | 要使用的扬声器输出索引。 （-1 = 无（默认））（0 是第一个设备）。   |
+    +-------------------+--------------------------------------------------------------------+
+    |     --webcam      | 要使用的网络摄像头。 （-1 = 无（默认））（0 是第一个网络摄像头）。 |
+    +-------------------+--------------------------------------------------------------------+
+    | -f or --framerate | 帧率（默认为 10）                                                  |
+    +-------------------+--------------------------------------------------------------------+
+    |     --encoder     | 要使用的视频编码器。见 `1.4 开始录制参数 - verb start`_            |
+    +-------------------+--------------------------------------------------------------------+
+    |       --vq        | 视频质量(1 到 100)(默认为 70)                                      |
+    +-------------------+--------------------------------------------------------------------+
+    |       --aq        | 音频质量（1 到 100）（默认为 50）                                  |
+    +-------------------+--------------------------------------------------------------------+
+    |   -f or --file    | 输出文件路径                                                       |
+    +-------------------+--------------------------------------------------------------------+
+    |        -y         | 覆盖现有文件                                                       |
+    +-------------------+--------------------------------------------------------------------+
+    |     --replay      | 回放录制.以秒为单位指定持续时间作为参数。例如: --replay 20         |
+    +-------------------+--------------------------------------------------------------------+
+
+1.3 使用示例
+~~~~~~~~~~~~
+
+1.3.1 使用光标和按键以及来自第一个扬声器输出的音频录制10秒
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Target
+    - 光标
+
+    - 按键
+
+    - 第一个扬声器输出的音频
+
+    - 录制10秒.
+
+- Code 示例:
+
+.. code:: bat
+
+    set captura="%ProgramFiles(x86)%\Captura\captura-cli.exe"
+    start "" %captura% start --length 10 --cursor --keys --speaker=0
+
+1.3.2 使用其录制固定窗口
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+1.录制固定窗口
+2.绑定键盘开始 / 取消 / 暂定
+3.保存位置
+4.编码器
+5.制作封面
+
+.. code:: elisp
+
+    DIM objShell
+    set objShell=wscript.createObject("wscript.shell")
+    iReturn=objShell.Run("record-special-window.bat", 0, TRUE)
+
+.. code:: sh
+
+    (defalias 'sc 'shell-command)
+    (defun video-record()
+      "在当前文件夹中生成GIF图."
+      (interactive)
+      (sc "%AppData%/.emacs.d/.utils/dos/record-special-window.bat")
+      (message "video已经生成!")
+      )
+
+.. _438e11a2-3f26-4475-a350-71e9a1005bc1:
+
+1.4 开始录制参数 - verb start
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+默认情况下，使用 SharpAvi Motion JPEG 编码器。
+
+1.4.1 SharpAvi
+^^^^^^^^^^^^^^
+
+使用 ``sharpavi:<index>`` 作为参数. index是标识编码器的从零开始的索引.
+
+您可以使用 ``captura-cli list`` 检查编码器索引。
+
+.. code:: text
+
+    nil
+
+    :: 检查编码器索引
+    %captura-cli% list
+
+    :: 使用 SharpAvi Motion JPEG 编码器
+    :: %captura-cli% start --encoder sharpavi:0
+
+1.4.1.1 检查录制文件的质量
+::::::::::::::::::::::::::
+
+- 视频大小: 13.3M,质量高,体积大,下乘.
+
+1.4.2 MF(媒体基金会)
+^^^^^^^^^^^^^^^^^^^^
+
+更多阅读 `here <https://en.wikipedia.org/wiki/Media_Foundation>`_.
+
+Media Foundation (MF) 是一个基于 组件对象模型( COM ) 的 多媒体框架管道和基础设施平台。
+
+.. code:: sh
+
+    nil
+    captura-cli start --encoder mf
+
+1.4.3 ffempg
+^^^^^^^^^^^^
+
+使用 ``ffmpeg:<index>`` 作为参数。index是标识编码器的从零开始的索引.
+
+你可以使用 ``captura-cli list`` 检查编码器索引.
+
+.. code:: text
+
+    nil
+    %captura-cli% start --encoder ffmpeg:0 :: 4s的视频大小约180kb.还行
+
+1.4.4 Stream
+^^^^^^^^^^^^
+
+还支持投屏至 Twitch,使用 ``stream:<url>`` 作为参数。url 是流媒体服务的 rtmp url.
+
+.. code:: bat
+
+    captura-cli start --encoder stream:rtmp://live.twitch.tv/app/TWITCH_KEY
+
+1.4.5 Steps(分步)
+^^^^^^^^^^^^^^^^^
+
+使用 ``steps:video`` 和 ``steps:images`` 作为步骤录制模式的编码器。
+
+1.4.5.1 分步录制为 video(aiv格式)
+:::::::::::::::::::::::::::::::::
+
+.. code:: text
+
+    nil
+    %captura-cli% start --encoder steps:video
+
+1.4.5.2 分步录制为 video(aiv格式)
+:::::::::::::::::::::::::::::::::
+
+分步录制到包含图像的文件夹 (png)
+
+.. code:: text
+
+    nil
+    %captura-cli% start --encoder steps:images
+
+1.5 开始截屏参数 - verb shot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. table::
+
+    +-------------+----------------+
+    | 参数        | 描述           |
+    +=============+================+
+    | --cursor    | 截图中包含光标 |
+    +-------------+----------------+
+    | --source    | 截图包含的范围 |
+    +-------------+----------------+
+    | -f / --file | 输出路径       |
+    +-------------+----------------+
+
+
+.. code:: text
+
+    nil
+    %captura-cli% shot --cursor
+
+.. _c10d08b4-58d1-4daf-adb3-9d3df7285845:
+
+1.6 开始位置截图参数 - verb source
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.6.1 Desktop
+^^^^^^^^^^^^^
+
+使用 desktop 参数来捕获整个桌面(默认).适用于 ``captura-cli start`` 和
+``captura-cli shot``.这是默认选项,因此与不使用此选项一样.
+
+
+.. code:: bat
+
+    nil
+    %captura-cli% start --source desktop
+
+1.6.2 Region
+^^^^^^^^^^^^
+
+分别使用左侧、顶部、宽度和高度.作为逗号分隔值来表示要捕获的区域.适用于
+``captura-cli start`` 和 ``captura-cli shot``. 该区域的尺寸必须是均匀的。
+如果不是，则根据需要将它们减 1.
+
+
+以选择区域截图为例:
+
+.. code:: bat
+
+    nil
+    %captura-cli% shot --source 0,0,960,1080
+
+1.6.3 Screen
+^^^^^^^^^^^^
+
+使用 ``screen:<index>`` 作为参数. ``index`` 是标识屏幕的从零开始的索引. 适
+用于 ``captura-cli start`` 和 ``captura-cli shot``.
+
+你可以使用 ``captura-cli list`` 检查屏幕索引.结果为:
+
+.. code:: text
+
+    AVAILABLE SCREENS
+    ------------------------------
+    0 : \\.\DISPLAY6
+
+1.6.4 No Video
+^^^^^^^^^^^^^^
+
+如果不想录制视频使用 none. 仅适用于 captura-cli start.可用于仅音频录制,例
+如仅记录扬声器输出:
+
+.. code:: bat
+
+    nil
+    %captura-cli% start --source none --speaker 0
+
+1.6.5 Window
+^^^^^^^^^^^^
+
+使用 ``win:<hWnd>`` 作为参数. ``hWnd`` 是窗口的句柄. 与 ``captura-cli start``
+一起使用时,窗口句柄必须在 ``captura-cli`` 列表输出中.
+
+你可以使用 ``captura-cli list`` 检查可见的窗口句柄.
+
+.. code:: text
+
+    AVAILABLE WINDOWS
+    ------------------------------
+    1247654   : C:\Windows\System32\cmd.exe - "C:\Program Files (x86)\Captura\captura-cli.exe"  list
+    3803322   : Captura
+    3604572   : 原神
+
+.. code:: bat
+
+    nil
+    %captura-cli% start --source win:3604572
+
+1.6.6 Webcam
+^^^^^^^^^^^^
+
+使用网络摄像头作为参数仅捕获网络摄像头. 只能与 ``captura-cli start`` 一
+起使用. 使用 ``--webcam`` 参数设置网络摄像头。
+
+你可以使用 ``captura-cli list`` 检查可用的网络摄像头.例如:
+
+.. code:: text
+
+    AVAILABLE WEBCAMS
+    ------------------------------
+    0 : OBS Virtual Camera
+
+.. code:: bat
+
+    nil
+    %captura-cli% start --source webcam --webcam 0
+
+1.7 Cmd 问题
+~~~~~~~~~~~~
+
+1.7.1 1.无法引用 ProgramFile(x86)中的程序
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SloveRef: `https://superuser.com/questions/1155910/windows-cannot-find-c-program <https://superuser.com/questions/1155910/windows-cannot-find-c-program>`_
+
+.. code:: bat
+
+    @echo off
+    cls
+    start "" "%ProgramFiles(x86)%\Google\Chrome\Application\Chrome.exe" --incognito "https://accounts.google.com/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/mail/&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1#identifier"
+    exit

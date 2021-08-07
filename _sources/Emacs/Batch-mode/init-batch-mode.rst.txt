@@ -14,252 +14,342 @@ Dos 脚本
 
 BatMode是编辑 ``\*.bat`` 和 ``\*.cmd`` 文件的默认模式。
 
-BatMode 提供语法高亮、基本模板、帮助页面访问、菜单/大纲导航以及从
-Emacs中运行脚本的能力。
+BatMode 提供语法高亮、基本模板、帮助页面访问、菜单/大纲导航以及从Emacs中运行脚本的能力。
 
-基本运算
-~~~~~~~~
-
-.. code:: bat
+.. code:: sh
+    :name: s1-header
 
     @echo off
     chcp 65001
 
-    rem 自动跳转到标记位置
-    goto end
-    echo "hello"
+goto
+~~~~
 
-    :end
-    echo "world"
+告诉批处理程序跳转到标记行.
 
-    rem 运算
+- ``:eof`` 指预定义的标签将退出当前的子程序或脚本.
 
-    :start
-    set /p MATH=Equation?
-    set /a RESULT=%MATH%
+- 每个 ``goto...`` 命令必须以换行符结束
 
-    echo %RESULT%
+- 虽然没有记录，但 ``goto :MySubroutine`` 通常与 ``goto MySubroutine`` 或
+  ``goto:MySubroutine`` (冒号代替空格)具有相同的效果
 
-    if %RESULT%==5 start notepad.exe
+eof
+^^^
 
-    pause
-    cls
-    goto start
+该 ``eof`` 标签是一种特殊情况-使用 ``goto：eof`` 总是会传递到执行当前批处
+理文件的末尾或当前子程序结束.这可以写成 ``goto:eof`` 或 ``goto :eof`` 空格
+是可选的.
 
-创建文本文件并从中提取
-~~~~~~~~~~~~~~~~~~~~~~
+``goto eof`` 和 ``goto :eof`` 不一样.
 
-步骤:
+如果您创建一个名为 ``eof`` 的标签，则命令 ``goto:eof`` 仍将退出文件/例程并
+且不会跳转到该标签。
 
-- 一.创建密码
+命令goto eof（不带冒号）将跳转到名为eof的标签，但为了避免混淆，最好使
+用不同的名称goto nextsub
 
-  1) 输入密码
+退出子程序时，另一个命令是EXIT /b EXIT /b 可以选择设置特定的错误级别，
+0表示成功，1或更高表示错误。
 
-  2) 写入文件
+没有 ExitCode 的 EXIT /b 的作用与 goto:eof 相同,并且不会改变 %errorlevel%.
 
-- 二.检查密码
+错误级别
+^^^^^^^^
 
-  1) 输入密码
+如果跳转成功取得%ERRORLEVEL% = unchanged，通常这将是0，但如果前一个命
+令设置的错误级别，将被保留（这是一个bug）。
 
-  2) 从文件中读取密码
+如果子程序标签不存在 %ERRORLEVEL% = 1
 
-  3) 校验密码
-
-  4)
+例1 - 基本示例
+^^^^^^^^^^^^^^
 
 .. code:: bat
 
-    @echo off
-    :: echo hi >> test.txt
-    :start
-    cls
-    echo -create (create password)
-    echo -check  (check password)
+    GOTO sub_message
+       Echo 这里不会展示 
+    goto:eof
+
+    :sub_message
+       Echo 这里是个子程序
+
+例2 - IF ELSE的效果
+^^^^^^^^^^^^^^^^^^^
+
+.. code:: bat
+
+    set /p NUM=输入某个值:
+
+    IF %NUM%==12 GOTO specialcase 
+       Echo 输入值不是12 
+    goto:eof 
+
+    :specialcase
+       Echo 输入值是12
+    goto:eof
+
+例3 - 使用变量作为标签
+^^^^^^^^^^^^^^^^^^^^^^
+
+注意,如果子程序标签不存在,错误级别的值为 1
+
+.. code:: bat
+
+    :: 设置默认的按键 Y N
+    CHOICE /C:YN /CS /N /m "choose [Y]yes or [N]No "
+    :: echo %ERRORLEVEL%
+    goto sub_%ERRORLEVEL% 
+
+    :sub_1 
+    Echo 你选择了Yes
+    ECHO error level is %ERRORLEVEL% > logfile
+    type logfile
+    goto:eof 
+
+    :sub_2
+    Echo 你选择了No
+    ECHO error level is %ERRORLEVEL% > logfile
+    type logfile
+    goto:eof
+
+TODO 例4 - 使用变量作为注释
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+在这个例子中，COPY 命令只会在参数 "Update" 被提供给批处理时运行
+
+.. code:: bat
+
+    setlocal
+
+    set /p _skip=input:
+    if /I not %1==update set _skip=::
+
+    %_skip% copy x:\update.dat
+    %_skip% echo Update success applied~
+
+Choice - 接受用户对批处理文件的输入
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- /N                 不要在提示字符串的末尾显示choiceKeys
+
+- /C[:] choiceKeys   用户可以按下的一个或多个键。默认为 YN.
+
+- /M "text"          描述可用选项的消息字符串.
+
+- /CS                使选择键区分大小写.
+
+.. code:: bat
+
+    :: 显示所有按键
+    :: CHOICE /C CH /N /M "选择 [C] 光盘 or [H] 硬盘驱动器 进行下一步操作:"
+
+    :: 设置默认的按键 
+    CHOICE /C:CH /N /M "选择 [C] 光盘 or [H] 硬盘驱动器 进行下一步操作:"
+    echo %errorlevel%
+
+错误级别 -  程序在完成/终止时设置的退出代码
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+通常代码 0(false)表示成功完成
+
+例1 - 测试命令是否存在
+^^^^^^^^^^^^^^^^^^^^^^
+
+如果你尝试执行一个不存在的命令，%ERRORLEVEL%将被设置为9009
+
+下面是一些测试
+
+.. code:: shell
+
+    xxx -help 
+    :: errorlevel 为 9009
+    :: if %errorlevel% EQU 0 (echo No Error Found! The errorlevel value is %errorlevel%)
+    :: if %errorlevel% NEQ 0 (echo An Error Was Found! The errorlevel value is %errorlevel%)
+    if %errorlevel% EQU 0 (echo No Error Found! The errorlevel value is %errorlevel%) else (echo An error was found! The errorlevel value is %errorlevel%)
+    :: if %errorlevel% EQU 0 (echo No error found! The errorlevel value is %errorlevel%) || echo An error was found! The errorlevel value is %errorlevel%.
+
+例2 - 用于检测程序是否正确执行
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: bat
+
+    IF ERRORLEVEL 1 (ECHO error level is 1 or more) else (echo success execute done!)
+    ECHO error level is %ERRORLEVEL% > logfile
+    type logfile
+
+If Else 逻辑判断
+~~~~~~~~~~~~~~~~
+
+主要分为:
+
+1. 文件语法
+
+2. 字符串语法
+
+3. 错误检查语法
+
+4. 还有一些关键字
+
+TODO 例1 - 检测文件是否存在
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: bat
+
+    IF EXIST C:\logs\*.log (goto :success) ELSE (goto :error)
+
+    :success
+    :: 检查错误级别,输出文件存在
+    Echo Log file exists
+    goto :checkerrorlevel
+    goto :eof
+
+    :error
+    :: 改变错误级别,文件不存在
+    ECHO error level is %ERRORLEVEL% > logfile
+    type logfile
+
+    :checkerrorlevel
+    if %errorlevel% EQU 0 (echo "execute success")
+
+例2 - 检测变量是否存在
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: bat
+
+    IF DEFINED _department (ECHO Got the _department variable) ELSE (echo the _department variable not exist)
+
+TODO 例3 - 变量运算
+^^^^^^^^^^^^^^^^^^^
+
+.. code:: bat
+
+    set _commission = 1
+    set hello= 2
+    IF DEFINED _commission SET /A "_salary=%hello% + %_commission%" 
+    echo %_salary%
+
+例4
+^^^
+
+.. code:: bat
+
+    set /p num=type a number:
+
+    if %num%==5 (
+    echo five
+    )
+
+    rem  GTR --- 大于
+    if %num% GTR 5 (
     echo.
+    echo 你输入了比5大的数字！
+    )
 
-    :: 设置路由
-    set /p PROGRAM= What do you want to do?:
-    goto %PROGRAM%
+    if %num%  LSS 5 (
+    echo.
+    echo 你输入了比5小的数字！
+    )
 
+    if exist test.txt (
+    cls
+    echo.
+    echo test.txt file exist!
+    ) else echo file not exist! will be create! goto create
+
+    if not exist test.txt (
+    echo.
+    echo test.txt file not exist and will create it！o
+
+    :: 生成新文件,将错误重定向至nul.
+    :: https://stackoverflow.com/questions/1702762/how-can-i-create-an-empty-file-at-the-command-line-in-windows
     :create
-    cls
-    set /p PASSWORD= what do you want your password to be?:
-    echo %PASSWORD% > test.txt
-    echo Your password was set successfully!
-    pause
-    goto start
-
-    :check 
-    cls
-    set /p PASSWORD= what is your password?:
-
-    for /f "Delims=" %%a in (test.txt) do (
-        set TEXT=%%a
+    .>test.txt 2>nul
+    goto end
     )
 
-    rem true
-    if %PASSWORD%==%TEXT% goto correct     
-    rem false
-    echo Incorrect user ID or password!
-    pause
-    goto start
+    :: 加密文件和解密文件
+    :end
 
-    :correct
-    echo Password verify successfully!
-    pause
-    goto start
+Locales
+~~~~~~~
 
-如何在 Windows 批处理文件中提取部分字符串
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+检测当前的语言环境
 
-.. code:: sh
+.. code:: bat
 
-    @echo off
-    set string=Abc_123
-    echo %string%
-    echo %string:~4,3%
+    For /f "tokens=3" %%G in ('Reg query "HKCU\Control Panel\International" /v LocaleName') Do Set _locale=%%G
+    Echo %_Locale% 
 
-如果您只想要下划线之后的所有内容(并且不一定知道字符串的长度或下划线的
-位置,但可以依靠只有一个下划线),请尝试:
+Exit - 关闭当前批处理脚本，退出当前子程序或关闭CMD.exe会话,可选择设置错误级别
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: sh
+``Alt-F4`` 是万能的命令.干掉一切!
 
-    @echo off
+- exit [/b] [exitcode]
 
-    set string=Abc_123
+  1. /b 在批处理脚本中使用时,此选项将仅退出脚本（或子程序）而不退出
+     CMD.EXE;如果在命令行上执行,它将关闭 CMD.exe
 
-    rem delims 指代分隔符
-    for /f "tokens=1,2 delims=_" %%a in ("%STRING%") do (
-      set BEFORE_UNDERSCORE=%%a
-      set AFTER_UNDERSCORE=%%b
+  2. exitCode 将 %ERRORLEVEL% 设置为数字.如果退出 CMD.EXE,不会设置错误
+     级别.
+
+- Errorlevel
+
+EXIT /b 可以选择设置特定的错误级别, exit /b 0 表示成功,exit /b 1（或
+更大）表示错误。 退出代码可以是长度最多为 10 位的整数（正数或负数）。
+
+没有 ExitCode 的 EXIT 与 goto:eof 的作用相同，并且不会改变 ERRORLEVEL
+
+不确定: 永远不要尝试直接写入 %ERRORLEVEL% 变量 (SET ERRORLEVEL n )，而
+是使用 EXIT /b n 作为将内部 ERRORLEVEL 伪变量设置为 n 的安全方法。
+
+-1073741510 的错误级别将被 CMD.exe 解释为 Ctrl-C 键序列以取消当前操作，
+而不是 EXIT 将执行的整个脚本。
+
+例1
+^^^
+
+.. code:: shell
+
+    echo 测试 C-c 快捷键退出动作!
+    ::Ctrl-C
+    cmd /c exit -1073741510
+
+例2
+^^^
+
+.. code:: bat
+
+    if not exist a.txt echo 此文件不存在或者没有被创建! & exit /b
+    echo 此文件已经被发现了!
+
+例3
+^^^
+
+.. code:: bat
+
+    Call :setError
+    Echo %errorlevel%
+    Goto :eof
+
+    :setError
+    Exit /B 5
+
+例4
+^^^
+
+.. code:: bat
+
+    Setlocal 
+    For %%A in (alpha beta gamma) DO (
+       Echo 进入外循环 %%A
+       Call :inner 
     )
+    Goto :eof
 
-    echo %AFTER_UNDERSCORE%,%BEFORE_UNDERSCORE%
-
-如何复制,移动,重命名文件
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code:: bat
-
-    @echo off
-    set target=C:\ProgramData\Microsoft\Network\Downloader\edb.log
-    :: %CD% - 指代脚本当前路径 %USERNAME% - 指代当前登录用户
-    set saveLocation=%CD%\copyfile\
-
-    :: 重命名文件 
-    :: move /Y %somefile% %someotherfile% 
-
-    :: 开始复制文件   /Y 禁止提示覆盖文件
-    xcopy /Y %target% %saveLocation%
-
-    :: 启动应用
-    :: start notepad.exe
-
-    :: 删除复制的应用
-    :: del notepad.exe
-
-下载文件
-~~~~~~~~
-
-目标文件如下:
-
-`https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md <https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md>`_
-
-更多示例: `https://www.cnblogs.com/-mo-/p/12109717.html <https://www.cnblogs.com/-mo-/p/12109717.html>`_
-
-.. code:: bat
-
-    @echo off
-
-    set target_url=https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md
-
-    bitsadmin /transfer job1 %target_url% ./a.md
-
-错误
-^^^^
-
-- `http://www.vcchar.com/ <http://www.vcchar.com/>`_
-
-- `http://www.vcchar.com/thread-5411-1-1.html <http://www.vcchar.com/thread-5411-1-1.html>`_
-
-.. code:: bat
-
-    @echo off
-
-    :: 创建任务
-    bitsadmin /create myDownloadFile
-
-    set targetURL=https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md
-
-    set saveLocation=D:\a.md
-
-    :: 添加文件到任务
-    bitsadmin /setpriority myDownloadFile foreground
-
-    bitsadmin /addfile myDownloadFile %targetURL% %saveLocation%
-
-    pause
-
-    :: 激活任务
-    bitsadmin /resume myDownloadFile
-
-    :: 显示任务的摘要信息
-    bitsadmin /info myDownloadFile /verbose
-
-    :: 完成下载任务
-    bitsadmin /complete myDownloadFile
-
-    :: 取消任务
-    :: bitsadmin /Cancel jobname
-
-    :: 查看当前的任务
-    :: bitsadmin /list
-
-    :: 不显示进度
-    :: bitsadmin /rawreturn 
-
-    :: 单条链接
-    :: bitsadmin /transfer myDownloadJob /download /priority normal https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md C:\Users\admin\Desktop\html\sphinx-blog\docs\source\Emacs\Batch-mode\a.md
-
-
-.. code:: bat
-
-    @echo off
-
-    set targetURL=https://sphinx-book-theme.readthedocs.io/en/latest/_sources/index.md
-    set saveLocation=D:\a.md
-    bitsadmin /setpriority FOREGROUND
-    bitsadmin /transfer myDownloadJob /download /priority high %targetURL% %saveLocation% 
-    :: bitsadmin /setpriority job12 foreground %targetURL% %saveLocation% 
-
-- 列出所有任务
-
-  ``bitsadmin /list /verbose``.
-
-将bat文件转换为exe
-~~~~~~~~~~~~~~~~~~
-
-- `https://f2ko.de/programme/bat-to-exe-converter/?pid=b2e <https://f2ko.de/programme/bat-to-exe-converter/?pid=b2e>`_
-
-在文件之间传递变量
-~~~~~~~~~~~~~~~~~~
-
-.. code:: sh
-
-    @echo off
-    set /p mood=How are you?
-    call receive.bat %mood% "say I'm fine"
-
-
-.. code:: sh
-
-    @echo off
-    echo %1
-    pause
-    echo %2
-
-.. code:: bat
-
-    @echo off
-    start %1
-    pause
+    :inner
+    For %%B in (U V W X Y Z) DO (
+       if %%B==X (exit /b 2)
+       Echo 进入内循环 Outer=%%A Inner=%%B
+    )

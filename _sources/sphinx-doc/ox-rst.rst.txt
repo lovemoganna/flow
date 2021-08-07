@@ -27,7 +27,7 @@ Repo
 标题,作者,Emial,和日期
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: org
+.. code:: text
 
     #+TITLE: This is the title of the document
     #+AUTHOR: Author
@@ -48,7 +48,7 @@ Heading
 Toc
 ~~~
 
-.. code:: org
+.. code:: text
 
     #+OPTIONS: toc:t
 
@@ -90,7 +90,7 @@ Sean Austin
 
 **note** Org line breaks ``\\`` will be ignored.
 
-诗句块 :error:
+诗句块
 ^^^^^^
 
 | Great clouds overhead
@@ -180,11 +180,24 @@ If :math:`a^2=b` and :math:`b=2`, then the solution must be either
 水平线
 ~~~~~~
 
+.. code:: text
 
-------------
+    -----
 
 注释块
 ~~~~~~
+
+代码块
+~~~~~~
+
+.. code:: common-lisp
+    :number-lines: 1
+
+    (save-excursion                  (ref:sc)
+                                     (goto-char (point-min)))      (ref:jump)
+
+In line 1 we remember the current position.
+Line 2 jumps to point-min.
 
 图片和表格
 ~~~~~~~~~~
@@ -318,9 +331,19 @@ reStructuredText [2]_  是纯文本，它使用简单直观的结构来指示文
 
 See also :meth:`mypackage.mymodule.MyClass.mymethod()`.
 
-.. class:: alert
+使用这个:
 
-.. class:: alert
+.. code:: text
+
+    #+RST: .. class:: alert
+
+或者这个:
+
+.. code:: text
+
+    #+BEGIN_EXPORT rst
+    .. class:: alert
+    #+END_EXPORT
 
 
 .. [1] 组织模式 `http://orgmode.org <http://orgmode.org>`_

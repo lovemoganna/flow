@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1 Captura-cli &#8212; Revolt&#39;s NoteBook</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/assets/css/website.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/assets/js/website.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="1 Autohotkey" href="../autohotkey/init-autohot-key.html" />
+    <link rel="prev" title="1 Bug.n" href="../bug.n/init-bugn.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Revolt's NoteBook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Sphinx Books Archives
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  测试模板:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../usage.html">
+   reStructedText 文档风格指南
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sphinx集成:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../sphinx-doc/index.html">
+   Sphinx模板、插件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/useage.html">
+     Sphinx小节测试
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/ox-rst.html">
+     Org Mode导出 Rst 文档后端测试
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/ox-rst-en.html">
+     reStructuredText后端导出原始文档
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Emacs major mode:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Emacs/index.html">
+   Emacs 文档
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Emacs/Batch-mode/init-batch-mode.html">
+     Batch Script
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Windows下的所有应用:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Windows 技巧
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../bug.n/init-bugn.html">
+     1 Bug.n
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1 Captura-cli
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autohotkey/init-autohot-key.html">
+     1 Autohotkey
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Windows/captura/init-captura.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/lovemoganna/revolt-theme"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/lovemoganna/revolt-theme/issues/new?title=Issue%20on%20page%20%2FWindows/captura/init-captura.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/lovemoganna/revolt-theme/edit/master/Windows/captura/init-captura.rst"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> 目录
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   1.1 Captura-cli的两种模式:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   1.2 参数列表
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   1.3 使用示例
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     1.3.1 使用光标和按键以及来自第一个扬声器输出的音频录制10秒
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     1.3.2 使用其录制固定窗口
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verb-start">
+   1.4 开始录制参数 - verb start
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sharpavi">
+     1.4.1 SharpAvi
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       1.4.1.1 检查录制文件的质量
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mf">
+     1.4.2 MF(媒体基金会)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ffempg">
+     1.4.3 ffempg
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stream">
+     1.4.4 Stream
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps">
+     1.4.5 Steps(分步)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#video-aiv">
+       1.4.5.1 分步录制为 video(aiv格式)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       1.4.5.2 分步录制为 video(aiv格式)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verb-shot">
+   1.5 开始截屏参数 - verb shot
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verb-source">
+   1.6 开始位置截图参数 - verb source
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#desktop">
+     1.6.1 Desktop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#region">
+     1.6.2 Region
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#screen">
+     1.6.3 Screen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-video">
+     1.6.4 No Video
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#window">
+     1.6.5 Window
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#webcam">
+     1.6.6 Webcam
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cmd">
+   1.7 Cmd 问题
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programfile-x86">
+     1.7.1 1.无法引用 ProgramFile(x86)中的程序
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#captura-cli" id="id10">1 Captura-cli</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id11">1.1 Captura-cli的两种模式:</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id12">1.2 参数列表</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id13">1.3 使用示例</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id6" id="id14">1.3.1 使用光标和按键以及来自第一个扬声器输出的音频录制10秒</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id15">1.3.2 使用其录制固定窗口</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#verb-start" id="id16">1.4 开始录制参数 - verb start</a></p>
+<ul>
+<li><p><a class="reference internal" href="#sharpavi" id="id17">1.4.1 SharpAvi</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id8" id="id18">1.4.1.1 检查录制文件的质量</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#mf" id="id19">1.4.2 MF(媒体基金会)</a></p></li>
+<li><p><a class="reference internal" href="#ffempg" id="id20">1.4.3 ffempg</a></p></li>
+<li><p><a class="reference internal" href="#stream" id="id21">1.4.4 Stream</a></p></li>
+<li><p><a class="reference internal" href="#steps" id="id22">1.4.5 Steps(分步)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#video-aiv" id="id23">1.4.5.1 分步录制为 video(aiv格式)</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id24">1.4.5.2 分步录制为 video(aiv格式)</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#verb-shot" id="id25">1.5 开始截屏参数 - verb shot</a></p></li>
+<li><p><a class="reference internal" href="#verb-source" id="id26">1.6 开始位置截图参数 - verb source</a></p>
+<ul>
+<li><p><a class="reference internal" href="#desktop" id="id27">1.6.1 Desktop</a></p></li>
+<li><p><a class="reference internal" href="#region" id="id28">1.6.2 Region</a></p></li>
+<li><p><a class="reference internal" href="#screen" id="id29">1.6.3 Screen</a></p></li>
+<li><p><a class="reference internal" href="#no-video" id="id30">1.6.4 No Video</a></p></li>
+<li><p><a class="reference internal" href="#window" id="id31">1.6.5 Window</a></p></li>
+<li><p><a class="reference internal" href="#webcam" id="id32">1.6.6 Webcam</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#cmd" id="id33">1.7 Cmd 问题</a></p>
+<ul>
+<li><p><a class="reference internal" href="#programfile-x86" id="id34">1.7.1 1.无法引用 ProgramFile(x86)中的程序</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="captura-cli">
+<h1><a class="toc-backref" href="#id10">1 Captura-cli</a><a class="headerlink" href="#captura-cli" title="永久链接至标题">¶</a></h1>
+<div class="highlight-sh notranslate" id="id2"><div class="highlight"><pre><span></span>@echo off
+<span class="nb">set</span> captura-cli<span class="o">=</span><span class="s2">&quot;%ProgramFiles(x86)%\Captura\captura-cli.exe&quot;</span>
+</pre></div>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id11">1.1 Captura-cli的两种模式:</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li><p>当录制长度被指定的时候,录制会一直运行直至到指定的长度。</p></li>
+<li><p>当录制长度没被指定的时候，按下q就会退出录制。</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id12">1.2 参数列表</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<table class="table">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–cursor</p></td>
+<td><p>包括鼠标</p></td>
+</tr>
+<tr class="row-odd"><td><p>–keys</p></td>
+<td><p>包括按键</p></td>
+</tr>
+<tr class="row-even"><td><p>–clicks</p></td>
+<td><p>包括鼠标点击</p></td>
+</tr>
+<tr class="row-odd"><td><p>–delay</p></td>
+<td><p>开始录制前的延迟（以毫秒为单位）</p></td>
+</tr>
+<tr class="row-even"><td><p>-t or –length</p></td>
+<td><p>录制时长（单位: 秒）</p></td>
+</tr>
+<tr class="row-odd"><td><p>–source</p></td>
+<td><p>录制的位置 (See <a class="reference internal" href="#verb-source">1.6 开始位置截图参数 - verb source</a>)</p></td>
+</tr>
+<tr class="row-even"><td><p>–mic</p></td>
+<td><p>要使用的麦克风索引.(-1 = 无（默认))（0 是第一个设备)。</p></td>
+</tr>
+<tr class="row-odd"><td><p>–speaker</p></td>
+<td><p>要使用的扬声器输出索引。 （-1 = 无（默认））（0 是第一个设备）。</p></td>
+</tr>
+<tr class="row-even"><td><p>–webcam</p></td>
+<td><p>要使用的网络摄像头。 （-1 = 无（默认））（0 是第一个网络摄像头）。</p></td>
+</tr>
+<tr class="row-odd"><td><p>-f or –framerate</p></td>
+<td><p>帧率（默认为 10）</p></td>
+</tr>
+<tr class="row-even"><td><p>–encoder</p></td>
+<td><p>要使用的视频编码器。见 <a class="reference internal" href="#verb-start">1.4 开始录制参数 - verb start</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>–vq</p></td>
+<td><p>视频质量(1 到 100)(默认为 70)</p></td>
+</tr>
+<tr class="row-even"><td><p>–aq</p></td>
+<td><p>音频质量（1 到 100）（默认为 50）</p></td>
+</tr>
+<tr class="row-odd"><td><p>-f or –file</p></td>
+<td><p>输出文件路径</p></td>
+</tr>
+<tr class="row-even"><td><p>-y</p></td>
+<td><p>覆盖现有文件</p></td>
+</tr>
+<tr class="row-odd"><td><p>–replay</p></td>
+<td><p>回放录制.以秒为单位指定持续时间作为参数。例如: –replay 20</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id13">1.3 使用示例</a><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id14">1.3.1 使用光标和按键以及来自第一个扬声器输出的音频录制10秒</a><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<dl class="simple">
+<dt>Target</dt><dd><ul class="simple">
+<li><p>光标</p></li>
+<li><p>按键</p></li>
+<li><p>第一个扬声器输出的音频</p></li>
+<li><p>录制10秒.</p></li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>Code 示例:</p></li>
+</ul>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> <span class="nv">captura</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%ProgramFiles(x86)%</span><span class="s2">\Captura\captura-cli.exe&quot;</span>
+<span class="k">start</span> <span class="s2">&quot;&quot;</span> <span class="nv">%captura%</span> start --length 10 --cursor --keys --speaker=0
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#id15">1.3.2 使用其录制固定窗口</a><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>1.录制固定窗口
+2.绑定键盘开始 / 取消 / 暂定
+3.保存位置
+4.编码器
+5.制作封面</p>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="nv">DIM</span> <span class="nv">objShell</span>
+<span class="nf">set</span> <span class="nv">objShell=wscript.createObject</span><span class="p">(</span><span class="s">&quot;wscript.shell&quot;</span><span class="p">)</span>
+<span class="nv">iReturn=objShell.Run</span><span class="p">(</span><span class="s">&quot;record-special-window.bat&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="nv">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>defalias <span class="s1">&#39;sc &#39;</span>shell-command<span class="o">)</span>
+<span class="o">(</span>defun video-record<span class="o">()</span>
+  <span class="s2">&quot;在当前文件夹中生成GIF图.&quot;</span>
+  <span class="o">(</span>interactive<span class="o">)</span>
+  <span class="o">(</span>sc <span class="s2">&quot;%AppData%/.emacs.d/.utils/dos/record-special-window.bat&quot;</span><span class="o">)</span>
+  <span class="o">(</span>message <span class="s2">&quot;video已经生成!&quot;</span><span class="o">)</span>
+  <span class="o">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="verb-start">
+<span id="e11a2-3f26-4475-a350-71e9a1005bc1"></span><h2><a class="toc-backref" href="#id16">1.4 开始录制参数 - verb start</a><a class="headerlink" href="#verb-start" title="永久链接至标题">¶</a></h2>
+<p>默认情况下，使用 SharpAvi Motion JPEG 编码器。</p>
+<div class="section" id="sharpavi">
+<h3><a class="toc-backref" href="#id17">1.4.1 SharpAvi</a><a class="headerlink" href="#sharpavi" title="永久链接至标题">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">sharpavi:&lt;index&gt;</span></code> 作为参数. index是标识编码器的从零开始的索引.</p>
+<p>您可以使用 <code class="docutils literal notranslate"><span class="pre">captura-cli</span> <span class="pre">list</span></code> 检查编码器索引。</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nil
+
+:: 检查编码器索引
+%captura-cli% list
+
+:: 使用 SharpAvi Motion JPEG 编码器
+:: %captura-cli% start --encoder sharpavi:0
+</pre></div>
+</div>
+<div class="section" id="id8">
+<h4><a class="toc-backref" href="#id18">1.4.1.1 检查录制文件的质量</a><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li><p>视频大小: 13.3M,质量高,体积大,下乘.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="mf">
+<h3><a class="toc-backref" href="#id19">1.4.2 MF(媒体基金会)</a><a class="headerlink" href="#mf" title="永久链接至标题">¶</a></h3>
+<p>更多阅读 <a class="reference external" href="https://en.wikipedia.org/wiki/Media_Foundation">here</a>.</p>
+<p>Media Foundation (MF) 是一个基于 组件对象模型( COM ) 的 多媒体框架管道和基础设施平台。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>nil
+captura-cli start --encoder mf
+</pre></div>
+</div>
+</div>
+<div class="section" id="ffempg">
+<h3><a class="toc-backref" href="#id20">1.4.3 ffempg</a><a class="headerlink" href="#ffempg" title="永久链接至标题">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">ffmpeg:&lt;index&gt;</span></code> 作为参数。index是标识编码器的从零开始的索引.</p>
+<p>你可以使用 <code class="docutils literal notranslate"><span class="pre">captura-cli</span> <span class="pre">list</span></code> 检查编码器索引.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nil
+%captura-cli% start --encoder ffmpeg:0 :: 4s的视频大小约180kb.还行
+</pre></div>
+</div>
+</div>
+<div class="section" id="stream">
+<h3><a class="toc-backref" href="#id21">1.4.4 Stream</a><a class="headerlink" href="#stream" title="永久链接至标题">¶</a></h3>
+<p>还支持投屏至 Twitch,使用 <code class="docutils literal notranslate"><span class="pre">stream:&lt;url&gt;</span></code> 作为参数。url 是流媒体服务的 rtmp url.</p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>captura-cli start --encoder stream:rtmp://live.twitch.tv/app/TWITCH_KEY
+</pre></div>
+</div>
+</div>
+<div class="section" id="steps">
+<h3><a class="toc-backref" href="#id22">1.4.5 Steps(分步)</a><a class="headerlink" href="#steps" title="永久链接至标题">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">steps:video</span></code> 和 <code class="docutils literal notranslate"><span class="pre">steps:images</span></code> 作为步骤录制模式的编码器。</p>
+<div class="section" id="video-aiv">
+<h4><a class="toc-backref" href="#id23">1.4.5.1 分步录制为 video(aiv格式)</a><a class="headerlink" href="#video-aiv" title="永久链接至标题">¶</a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nil
+%captura-cli% start --encoder steps:video
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h4><a class="toc-backref" href="#id24">1.4.5.2 分步录制为 video(aiv格式)</a><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h4>
+<p>分步录制到包含图像的文件夹 (png)</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nil
+%captura-cli% start --encoder steps:images
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="verb-shot">
+<h2><a class="toc-backref" href="#id25">1.5 开始截屏参数 - verb shot</a><a class="headerlink" href="#verb-shot" title="永久链接至标题">¶</a></h2>
+<table class="table">
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–cursor</p></td>
+<td><p>截图中包含光标</p></td>
+</tr>
+<tr class="row-odd"><td><p>–source</p></td>
+<td><p>截图包含的范围</p></td>
+</tr>
+<tr class="row-even"><td><p>-f / –file</p></td>
+<td><p>输出路径</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nil
+%captura-cli% shot --cursor
+</pre></div>
+</div>
+</div>
+<div class="section" id="verb-source">
+<span id="c10d08b4-58d1-4daf-adb3-9d3df7285845"></span><h2><a class="toc-backref" href="#id26">1.6 开始位置截图参数 - verb source</a><a class="headerlink" href="#verb-source" title="永久链接至标题">¶</a></h2>
+<div class="section" id="desktop">
+<h3><a class="toc-backref" href="#id27">1.6.1 Desktop</a><a class="headerlink" href="#desktop" title="永久链接至标题">¶</a></h3>
+<p>使用 desktop 参数来捕获整个桌面(默认).适用于 <code class="docutils literal notranslate"><span class="pre">captura-cli</span> <span class="pre">start</span></code> 和
+<code class="docutils literal notranslate"><span class="pre">captura-cli</span> <span class="pre">shot</span></code>.这是默认选项,因此与不使用此选项一样.</p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>nil
+<span class="nv">%captura-cli%</span> start --source desktop
+</pre></div>
+</div>
+</div>
+<div class="section" id="region">
+<h3><a class="toc-backref" href="#id28">1.6.2 Region</a><a class="headerlink" href="#region" title="永久链接至标题">¶</a></h3>
+<p>分别使用左侧、顶部、宽度和高度.作为逗号分隔值来表示要捕获的区域.适用于
+<code class="docutils literal notranslate"><span class="pre">captura-cli</span> <span class="pre">start</span></code> 和 <code class="docutils literal notranslate"><span class="pre">captura-cli</span> <span class="pre">shot</span></code>. 该区域的尺寸必须是均匀的。
+如果不是，则根据需要将它们减 1.</p>
+<p>以选择区域截图为例:</p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>nil
+<span class="nv">%captura-cli%</span> shot --source 0,0,960,1080
+</pre></div>
+</div>
+</div>
+<div class="section" id="screen">
+<h3><a class="toc-backref" href="#id29">1.6.3 Screen</a><a class="headerlink" href="#screen" title="永久链接至标题">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">screen:&lt;index&gt;</span></code> 作为参数. <code class="docutils literal notranslate"><span class="pre">index</span></code> 是标识屏幕的从零开始的索引. 适
+用于 <code class="docutils literal notranslate"><span class="pre">captura-cli</span> <span class="pre">start</span></code> 和 <code class="docutils literal notranslate"><span class="pre">captura-cli</span> <span class="pre">shot</span></code>.</p>
+<p>你可以使用 <code class="docutils literal notranslate"><span class="pre">captura-cli</span> <span class="pre">list</span></code> 检查屏幕索引.结果为:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>AVAILABLE SCREENS
+------------------------------
+0 : \\.\DISPLAY6
+</pre></div>
+</div>
+</div>
+<div class="section" id="no-video">
+<h3><a class="toc-backref" href="#id30">1.6.4 No Video</a><a class="headerlink" href="#no-video" title="永久链接至标题">¶</a></h3>
+<p>如果不想录制视频使用 none. 仅适用于 captura-cli start.可用于仅音频录制,例
+如仅记录扬声器输出:</p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>nil
+<span class="nv">%captura-cli%</span> start --source none --speaker 0
+</pre></div>
+</div>
+</div>
+<div class="section" id="window">
+<h3><a class="toc-backref" href="#id31">1.6.5 Window</a><a class="headerlink" href="#window" title="永久链接至标题">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">win:&lt;hWnd&gt;</span></code> 作为参数. <code class="docutils literal notranslate"><span class="pre">hWnd</span></code> 是窗口的句柄. 与 <code class="docutils literal notranslate"><span class="pre">captura-cli</span> <span class="pre">start</span></code>
+一起使用时,窗口句柄必须在 <code class="docutils literal notranslate"><span class="pre">captura-cli</span></code> 列表输出中.</p>
+<p>你可以使用 <code class="docutils literal notranslate"><span class="pre">captura-cli</span> <span class="pre">list</span></code> 检查可见的窗口句柄.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>AVAILABLE WINDOWS
+------------------------------
+1247654   : C:\Windows\System32\cmd.exe - &quot;C:\Program Files (x86)\Captura\captura-cli.exe&quot;  list
+3803322   : Captura
+3604572   : 原神
+</pre></div>
+</div>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>nil
+<span class="nv">%captura-cli%</span> start --source win:3604572
+</pre></div>
+</div>
+</div>
+<div class="section" id="webcam">
+<h3><a class="toc-backref" href="#id32">1.6.6 Webcam</a><a class="headerlink" href="#webcam" title="永久链接至标题">¶</a></h3>
+<p>使用网络摄像头作为参数仅捕获网络摄像头. 只能与 <code class="docutils literal notranslate"><span class="pre">captura-cli</span> <span class="pre">start</span></code> 一
+起使用. 使用 <code class="docutils literal notranslate"><span class="pre">--webcam</span></code> 参数设置网络摄像头。</p>
+<p>你可以使用 <code class="docutils literal notranslate"><span class="pre">captura-cli</span> <span class="pre">list</span></code> 检查可用的网络摄像头.例如:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>AVAILABLE WEBCAMS
+------------------------------
+0 : OBS Virtual Camera
+</pre></div>
+</div>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>nil
+<span class="nv">%captura-cli%</span> start --source webcam --webcam 0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="cmd">
+<h2><a class="toc-backref" href="#id33">1.7 Cmd 问题</a><a class="headerlink" href="#cmd" title="永久链接至标题">¶</a></h2>
+<div class="section" id="programfile-x86">
+<h3><a class="toc-backref" href="#id34">1.7.1 1.无法引用 ProgramFile(x86)中的程序</a><a class="headerlink" href="#programfile-x86" title="永久链接至标题">¶</a></h3>
+<p>SloveRef: <a class="reference external" href="https://superuser.com/questions/1155910/windows-cannot-find-c-program">https://superuser.com/questions/1155910/windows-cannot-find-c-program</a></p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">echo</span> off
+<span class="k">cls</span>
+<span class="k">start</span> <span class="s2">&quot;&quot;</span> <span class="s2">&quot;</span><span class="nv">%ProgramFiles(x86)%</span><span class="s2">\Google\Chrome\Application\Chrome.exe&quot;</span> --incognito <span class="s2">&quot;https://accounts.google.com/ServiceLogin?service=mail&amp;passive=true&amp;rm=false&amp;continue=https://mail.google.com/mail/&amp;ss=1&amp;scc=1&amp;ltmpl=default&amp;ltmplcache=2&amp;emr=1&amp;osid=1#identifier&quot;</span>
+<span class="k">exit</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../bug.n/init-bugn.html" title="previous page">1 Bug.n</a>
+    <a class='right-next' id="next-link" href="../autohotkey/init-autohot-key.html" title="next page">1 Autohotkey</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Revolt<br/>
+        
+            &copy; Copyright 2021, Revolt.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

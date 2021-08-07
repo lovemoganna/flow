@@ -1,0 +1,10 @@
+Windows 技巧
+=====================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Batch Script:
+
+   bug.n/init-bugn
+   captura/init-captura
+   autohotkey/init-autohot-key

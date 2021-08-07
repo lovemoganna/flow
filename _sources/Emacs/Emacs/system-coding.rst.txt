@@ -1,0 +1,63 @@
+===================
+Emacs Coding System
+===================
+
+    :Author: Revolt
+    :Date: <2021-07-24 Sat 17:30>
+
+.. contents::
+
+
+
+Emacs编码系统
+-------------
+
+在Emacs下学会查看编码系统很重要，这有利于编码问题的查找和解决。
+
+命令清单
+~~~~~~~~
+
+1. 查看编码系统中具体某个coding的说明
+
+   ``M-x describe-coding-system (C-h C coding RET)``
+
+2. 查看当前正在使用的编码系统
+
+   ``M-x describe-coding-system (C-h C RET)``
+
+3. 显示Emacs支持的所有编码系统
+
+   ``list-coding-system``
+
+4. 更改编码系统的优先级
+
+   .. code:: elisp
+
+       (prefer-coding-system 'utf-8)
+
+5. 设置文件存储的编码
+
+   ``M-x set-buffer-file-coding-system`` 设置当前buffer保存文件和重新
+   访问文件的编码.
+
+   一旦写入,就会将值存储在 ``buffer-file-coding-system`` 当中.
+
+   .. code:: elisp
+
+       (print buffer-file-coding-system)
+
+6. 设置文件显示的编码
+
+   ``M-x revert-buffer-with-coding-system``,使用选择的编码重新打开文件
+
+7. 设置下一个指令的编码
+
+   ``universal-coding-system-argument`` (C-x RET c coding RET)
+
+   如果在打开文件 ``C-x C-f`` 之前,调用此指令,会用选定的编码打开文件，
+   也会用此编码保存文件;
+
+   如果在保存文件 ``C-x C-w`` 之前,调用此指令,会用选定的编码保存文件.
+
+   如果选用这种方式保存文件,与 ``set-buffer-file-coding-system`` 功能
+   类似,只是如果遇到编码系统不能处理的字符,没有任何警告.
