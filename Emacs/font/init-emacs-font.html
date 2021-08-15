@@ -1,0 +1,729 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emacs Daemon &#8212; Revolt&#39;s NoteBook</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/assets/css/website.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/assets/js/website.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Makefile mode" href="../Makefile-mode/init-makefile-mode.html" />
+    <link rel="prev" title="Emacs Coding System" href="../Emacs/system-coding.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Revolt's NoteBook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Sphinx Books Archives
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  测试模板:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../usage.html">
+   reStructedText 文档风格指南
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sphinx集成:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../sphinx-doc/index.html">
+   Sphinx模板、插件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/useage.html">
+     Sphinx小节测试
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/ox-rst.html">
+     Org Mode导出 Rst 文档后端测试
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/ox-rst-en.html">
+     reStructuredText后端导出原始文档
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Emacs major mode:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Emacs 文档
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode-two.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode-three.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Emacs/system-coding.html">
+     Emacs Coding System
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Emacs Daemon
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Makefile-mode/init-makefile-mode.html">
+     Makefile mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Magit/init-magit.html">
+     Magit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQ/init-faq.html">
+     Elisp Programming FAQ
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Org-Roam/init-org-roam.html">
+     Org Roam Tutorial EP 1
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Windows下的所有应用:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Windows/index.html">
+   Windows 技巧
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/bug.n/init-bugn.html">
+     1 Bug.n
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/captura/init-captura.html">
+     1 Captura-cli
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/autohotkey/init-autohot-key.html">
+     1 Autohotkey
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/youtube-dl/init-youtube-dl.html">
+     Youtube-dl
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Emacs/font/init-emacs-font.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/lovemoganna/revolt-theme"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/lovemoganna/revolt-theme/issues/new?title=Issue%20on%20page%20%2FEmacs/font/init-emacs-font.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/lovemoganna/revolt-theme/edit/master/Emacs/font/init-emacs-font.rst"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> 目录
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Emacs Daemon
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     启动守护进程
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     检测Emacs Daemon的活动
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     干掉Emacs Daemon
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#daemon">
+     关于使用Daemon的调整
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#window-system-os">
+       不要使用
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         window-system
+        </span>
+       </code>
+       来检测你的OS
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       检测系统类型
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       检测配置是否在Daemon中被加载
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ui">
+     为新窗口配置UI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elisp">
+     命令行执行Elisp脚本
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     我自己的配置
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       预先载入主题
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       覆盖主题预设的字体
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#todolist">
+     脚本化直接打开TODOLIST
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     参考文献
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="emacs-daemon">
+<h1><a class="toc-backref" href="#id12">Emacs Daemon</a><a class="headerlink" href="#emacs-daemon" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Revolt</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>&lt;2021-08-13 Fri 13:46&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#emacs-daemon" id="id12">Emacs Daemon</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id13">Emacs Daemon</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id14">启动守护进程</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id15">检测Emacs Daemon的活动</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id16">干掉Emacs Daemon</a></p></li>
+<li><p><a class="reference internal" href="#daemon" id="id17">关于使用Daemon的调整</a></p>
+<ul>
+<li><p><a class="reference internal" href="#window-system-os" id="id18">不要使用 <code class="docutils literal notranslate"><span class="pre">window-system</span></code> 来检测你的OS</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id19">检测系统类型</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id20">检测配置是否在Daemon中被加载</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#ui" id="id21">为新窗口配置UI</a></p></li>
+<li><p><a class="reference internal" href="#elisp" id="id22">命令行执行Elisp脚本</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id23">我自己的配置</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id9" id="id24">预先载入主题</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id25">覆盖主题预设的字体</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#todolist" id="id26">脚本化直接打开TODOLIST</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id27">参考文献</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id13">Emacs Daemon</a><a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>.. admonition:: And, by the way…</p>
+<p>#+RST admonition:: 感悟
+我会终结重复发生的孤独和痛苦,Emacs中的字体恰恰是这其中的一个</p>
+<p>– Mr.Revolt</p>
+<p>Emacs可以在服务器模式下运行:</p>
+<ul class="simple">
+<li><p>每次启动/登录只需花费一次Emacs启动时间！</p></li>
+<li><p>缓冲区跨Emacs框架持续存在,可以关闭Emacs窗口并稍后重新打开</p></li>
+<li><p>可从命令行执行任意命令和表达式</p></li>
+</ul>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id14">启动守护进程</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>最简单的入门方法是在正在运行的 Emacs 会话中使用以下命令：</p>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">server-start</span><span class="p">)</span>               <span class="c1">; 为这个 Emacs 会话启用服务器模式（守护进程）</span>
+</pre></div>
+</div>
+<p>然而,这在实践中与将 Emacs 作为真正的守护进程运行非常不同！我们稍后会说明原因。</p>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="nv">emacs</span> <span class="nv">--daemon</span>
+<span class="nv">emacs</span> <span class="nv">--fg-daemon</span>         <span class="c1">; 或者作为前台进程运行（有助于诊断错误）</span>
+<span class="nv">emacs</span> <span class="nv">--daemon=two</span>        <span class="c1">;载入另外一个守护进程</span>
+</pre></div>
+</div>
+<p>你还可以拥有独立的守护进程:</p>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="nv">emacs</span> <span class="nv">--daemon=my-other-daemon</span> <span class="c1">; 开启一个名为 &#39;my-other-daemon&#39; 的守护进程</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id15">检测Emacs Daemon的活动</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>该变量仅适用于Linux <code class="docutils literal notranslate"><span class="pre">server-socket-dir</span></code>. Windows默认生成在
+<code class="docutils literal notranslate"><span class="pre">.emacs.d/server</span></code> 目录中.</p>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id16">干掉Emacs Daemon</a><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">kill-emacs</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>emacsclient -e <span class="s2">&quot;(kill-emacs)&quot;</span> -f two <span class="c1"># 更多参数,参考 emacsclient --help</span>
+</pre></div>
+</div>
+<p>大多数情况下不需要干掉Daemon,大不了重新加载配置.但如果你想跟Window电脑
+重启一样的话,你可以如上操作.</p>
+</div>
+<div class="section" id="daemon">
+<h3><a class="toc-backref" href="#id17">关于使用Daemon的调整</a><a class="headerlink" href="#daemon" title="永久链接至标题">¶</a></h3>
+<p>我们必须做一些微调:</p>
+<div class="section" id="window-system-os">
+<h4><a class="toc-backref" href="#id18">不要使用 <code class="docutils literal notranslate"><span class="pre">window-system</span></code> 来检测你的OS</a><a class="headerlink" href="#window-system-os" title="永久链接至标题">¶</a></h4>
+<p>而是使用 <code class="docutils literal notranslate"><span class="pre">system-type</span></code> 变量替代. 当你的配置载入 daemon 的时候
+<code class="docutils literal notranslate"><span class="pre">window-system</span></code> 值为 <code class="docutils literal notranslate"><span class="pre">nil</span></code>.</p>
+</div>
+<div class="section" id="id6">
+<h4><a class="toc-backref" href="#id19">检测系统类型</a><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h4>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">pcase</span> <span class="nv">system-type</span>
+  <span class="p">(</span><span class="ss">&#39;gnu/linux</span> <span class="s">&quot;Linux平台!&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="ss">&#39;windows-nt</span> <span class="s">&quot;Windows平台!&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="ss">&#39;darwin</span> <span class="s">&quot;MacOS平台!&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h4><a class="toc-backref" href="#id20">检测配置是否在Daemon中被加载</a><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">daemonp</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">message</span> <span class="s">&quot;已经载入守护进程!&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">message</span> <span class="s">&quot;已经载入常规Emacs中!&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ui">
+<h3><a class="toc-backref" href="#id21">为新窗口配置UI</a><a class="headerlink" href="#ui" title="永久链接至标题">¶</a></h3>
+<p>每次加载Emacs时,守护进程中的配置,某些方面的face,你的第一窗口都不会被激
+活.因为它们在第一次加载窗口时会被覆盖.所以在加载第一个窗口后,需要预设
+一些face.</p>
+<p>已经在字体中集成,此处仅供参考.</p>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">efs/set-font-faces</span> <span class="p">()</span>
+  <span class="p">(</span><span class="nf">message</span> <span class="s">&quot;设置 faces!&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;default</span> <span class="no">nil</span> <span class="nb">:font</span> <span class="s">&quot;Fira Code&quot;</span> <span class="nb">:height</span> <span class="nv">efs/default-font-size</span><span class="p">)</span>
+
+  <span class="c1">;; Set the fixed pitch face</span>
+  <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;fixed-pitch</span> <span class="no">nil</span> <span class="nb">:font</span> <span class="s">&quot;Fira Code&quot;</span> <span class="nb">:height</span> <span class="nv">efs/default-font-size</span><span class="p">)</span>
+
+  <span class="c1">;; Set the variable pitch face</span>
+  <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;variable-pitch</span> <span class="no">nil</span> <span class="nb">:font</span> <span class="s">&quot;Roboto Mono&quot;</span> <span class="nb">:height</span> <span class="nv">efs/default-variable-font-size</span> <span class="nb">:weight</span> <span class="ss">&#39;regular</span><span class="p">))</span>
+
+<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">daemonp</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;after-make-frame-functions</span>
+          <span class="p">(</span><span class="nb">lambda</span> <span class="p">(</span><span class="nv">frame</span><span class="p">)</span>
+            <span class="p">(</span><span class="k">setq</span> <span class="nv">doom-modeline-icon</span> <span class="no">t</span><span class="p">)</span>
+            <span class="p">(</span><span class="nb">with-selected-frame</span> <span class="nv">frame</span>
+              <span class="p">(</span><span class="nv">efs/set-font-faces</span><span class="p">))))</span>
+  <span class="p">(</span><span class="nv">efs/set-font-faces</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nv">doom-modeline-init</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>在 Emacs 27 中，您可以使用 <code class="docutils literal notranslate"><span class="pre">server-after-make-frame-hook</span></code>,这样您的函数只会被调用一次！</p>
+<p>另一对有用的变量：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">init-frame-alist</span></code>: 在第一个窗口上设置的窗口参数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default-frame-alist</span></code>: 应用于每个窗口的窗口参数</p></li>
+</ul>
+<p>这些都可用于配置在守护程序中加载配置时无法正常工作的UI元素.</p>
+</div>
+<div class="section" id="elisp">
+<h3><a class="toc-backref" href="#id22">命令行执行Elisp脚本</a><a class="headerlink" href="#elisp" title="永久链接至标题">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>emacsclient -e <span class="s2">&quot;(buffer-name)&quot;</span>
+emacsclient -e <span class="s2">&quot;(read-string \&quot;Enter a string: \&quot;)&quot;</span>
+</pre></div>
+</div>
+<p>-u 抑制输出.
+-n 跳过等待.
+-f 指定Daemon名字.
+-a 如果守护进程没有运行,给其提供一个备用命令.例如: <code class="docutils literal notranslate"><span class="pre">emacsclient</span> <span class="pre">-c</span> <span class="pre">-a</span> <span class="pre">emacs</span></code></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>emacsclient -u -e <span class="s2">&quot;(org-save-all-org-buffers)&quot;</span> -a <span class="s2">&quot;echo &#39;Emacs is not currently running&#39;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>emacs --fg-daemon<span class="o">=</span>worker
+emacsclient -f worker -u -e <span class="s2">&quot;(org-babel-tangle-file \&quot;~/.emacs.d/init-user.org.gpg\&quot;)&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id23">我自己的配置</a><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>主要是篡改 Org Mode 中的字体.</p>
+<div class="section" id="id9">
+<h4><a class="toc-backref" href="#id24">预先载入主题</a><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h4>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">load-theme</span> <span class="ss">&#39;monokai</span> <span class="no">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h4><a class="toc-backref" href="#id25">覆盖主题预设的字体</a><a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h4>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">revolt/set-font-faces</span> <span class="p">()</span>
+  <span class="p">(</span><span class="nf">message</span> <span class="s">&quot;设置faces!&quot;</span><span class="p">)</span>
+  <span class="s">&quot;可以使用 Consolas 字体&quot;</span>
+  <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;default</span> <span class="no">nil</span> <span class="nb">:font</span> <span class="s">&quot;IBM Plex Mono Medium&quot;</span> <span class="nb">:height</span> <span class="mi">90</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;fixed-pitch</span> <span class="no">nil</span> <span class="nb">:font</span> <span class="s">&quot;Fira Code&quot;</span> <span class="nb">:height</span> <span class="mi">90</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;variable-pitch</span> <span class="no">nil</span> <span class="nb">:font</span> <span class="s">&quot;Roboto Mono&quot;</span> <span class="nb">:height</span> <span class="mi">90</span> <span class="nb">:weight</span> <span class="ss">&#39;regular</span><span class="p">)</span>
+  <span class="c1">;; 给相应的字符集设置中文字体，这里的字体是冬青黑体简体中文 W3。 Microsoft YaHei UI / WenQuanYi Zen Hei Mono</span>
+  <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">charset</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">han</span> <span class="nv">cjk-misc</span> <span class="nv">chinese-gbk</span><span class="p">))</span>
+    <span class="p">(</span><span class="nf">set-fontset-font</span> <span class="s">&quot;fontset-default&quot;</span>
+                  <span class="nv">charset</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&quot;WenQuanYi Zen Hei Mono&quot;</span> <span class="nb">:size</span> <span class="mi">12</span> <span class="nb">:height</span> <span class="mi">90</span><span class="p">)))</span>
+
+  <span class="c1">;; (custom-theme-set-faces</span>
+  <span class="c1">;;  &#39;user</span>
+  <span class="c1">;;  &#39;(variable-pitch ((t (:family &quot;Roboto Mono&quot; :height 120 :weight light))))</span>
+  <span class="c1">;;  &#39;(fixed-pitch ((t ( :family &quot;Fira Code&quot; :slant normal :weight normal :height 1.0 :width normal)))))</span>
+
+  <span class="c1">;;; 篡改Headline的字体</span>
+
+  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;org-faces</span><span class="p">)</span>
+
+  <span class="c1">;; (set-face-attribute &#39;org-table nil :family &quot;WenQuanYi Zen Hei Mono&quot;)</span>
+  <span class="c1">;; (set-face-attribute &#39;org-column nil :family &quot;WenQuanYi Zen Hei Mono&quot; :height 120)</span>
+
+  <span class="p">(</span><span class="nv">set-face-font</span> <span class="ss">&#39;org-level-1</span> <span class="s">&quot;-outline-Sarasa Gothic TC-bold-normal-normal-*-*-*-*-*-p-*-iso10646-1&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">set-face-font</span> <span class="ss">&#39;org-level-2</span> <span class="s">&quot;-outline-Sarasa Gothic TC-bold-normal-normal-*-*-*-*-*-p-*-iso10646-1&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">set-face-font</span> <span class="ss">&#39;org-level-3</span> <span class="s">&quot;-outline-Sarasa Gothic TC-bold-normal-normal-12-*-*-*-*-p-*-iso10646-1&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">set-face-font</span> <span class="ss">&#39;org-level-4</span> <span class="s">&quot;-outline-Sarasa Gothic TC-normal-normal-normal-*-12-*-*-*-p-*-iso8859-1&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">set-face-font</span> <span class="ss">&#39;org-level-5</span> <span class="s">&quot;-outline-Sarasa Gothic TC-normal-normal-normal-*-12-*-*-*-p-*-iso8859-1&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">set-face-font</span> <span class="ss">&#39;org-level-6</span> <span class="s">&quot;-outline-Sarasa Gothic TC-normal-normal-normal-*-12-*-*-*-p-*-iso8859-1&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">set-face-font</span> <span class="ss">&#39;org-level-7</span> <span class="s">&quot;-outline-Sarasa Gothic TC-normal-normal-normal-*-12-*-*-*-p-*-iso8859-1&quot;</span><span class="p">)</span>
+
+  <span class="p">(</span><span class="nv">set-face-foreground</span> <span class="ss">&#39;org-level-1</span> <span class="s">&quot;#adb&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">set-face-foreground</span> <span class="ss">&#39;org-level-2</span> <span class="s">&quot;#d11481&quot;</span><span class="p">)</span>
+
+  <span class="c1">;;; 篡改Org mode 内部所有元数据的字体</span>
+
+  <span class="p">(</span><span class="nv">custom-theme-set-faces</span>
+   <span class="ss">&#39;user</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-block</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="nb">:inherit</span> <span class="nv">fixed-pitch</span><span class="p">))))</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-block-begin-line</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="nb">:inherit</span> <span class="nv">variable-pitch</span> <span class="nb">:height</span> <span class="mf">1.0</span><span class="p">))))</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-block-end-line</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="nb">:inherit</span> <span class="nv">variable-pitch</span> <span class="nb">:height</span> <span class="mf">1.0</span><span class="p">))))</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-code</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="nb">:inherit</span> <span class="p">(</span><span class="nv">shadow</span> <span class="nv">fixed-pitch</span><span class="p">)</span> <span class="nb">:height</span> <span class="mf">0.85</span><span class="p">))))</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-document-info</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="nb">:foreground</span> <span class="s">&quot;dark orange&quot;</span><span class="p">))))</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-document-info-keyword</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="nb">:inherit</span> <span class="p">(</span><span class="nv">shadow</span> <span class="nv">fixed-pitch</span><span class="p">)))))</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-indent</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="nb">:inherit</span> <span class="p">(</span><span class="nv">org-hide</span> <span class="nv">fixed-pitch</span><span class="p">)))))</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-link</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="nb">:foreground</span> <span class="s">&quot;cyan&quot;</span> <span class="nb">:underline</span> <span class="no">t</span><span class="p">))))</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-meta-line</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="nb">:inherit</span> <span class="p">(</span><span class="nv">font-lock-comment-face</span> <span class="nv">fixed-pitch</span><span class="p">)))))</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-property-value</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="nb">:inherit</span> <span class="nv">fixed-pitch</span> <span class="nb">:height</span> <span class="mf">1.0</span><span class="p">)))</span> <span class="no">t</span><span class="p">)</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-special-keyword</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="nb">:inherit</span> <span class="p">(</span><span class="nv">font-lock-comment-face</span> <span class="nv">fixed-pitch</span><span class="p">)</span> <span class="nb">:height</span> <span class="mf">1.0</span><span class="p">))))</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-table</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="nb">:inherit</span> <span class="nv">fixed-pitch</span> <span class="nb">:foreground</span> <span class="s">&quot;#83a598&quot;</span> <span class="nb">:weight</span> <span class="nv">normal</span> <span class="nb">:height</span> <span class="mf">1.0</span><span class="p">))))</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-tag</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="nb">:inherit</span> <span class="p">(</span><span class="nv">shadow</span> <span class="nv">fixed-pitch</span><span class="p">)</span> <span class="nb">:weight</span> <span class="nv">bold</span> <span class="nb">:height</span> <span class="mf">1.0</span><span class="p">))))</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-verbatim</span> <span class="p">((</span><span class="no">t</span> <span class="p">(</span><span class="nb">:inherit</span> <span class="p">(</span><span class="nv">shadow</span> <span class="nv">fixed-pitch</span><span class="p">))))))</span>
+
+  <span class="c1">;; Emacs 25.2之后的版本无法单独设置符号的字体，这句禁用这个特性恢复原来的行为。</span>
+  <span class="p">(</span><span class="k">setq</span> <span class="nv">use-default-font-for-symbols</span> <span class="no">nil</span><span class="p">)</span>
+
+  <span class="c1">;; 设置默认字体和用于显示特殊符号的字体，如果不需要下面三句可以删除。</span>
+  <span class="p">(</span><span class="nf">set-fontset-font</span> <span class="s">&quot;fontset-default&quot;</span>
+                <span class="ss">&#39;unicode</span> <span class="s">&quot;Roboto Mono&quot;</span> <span class="no">nil</span> <span class="ss">&#39;append</span><span class="p">))</span>
+
+<span class="c1">;;; 配置守护进程的窗口配置</span>
+<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">daemonp</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;after-make-frame-functions</span>
+          <span class="p">(</span><span class="nb">lambda</span> <span class="p">(</span><span class="nv">frame</span><span class="p">)</span>
+            <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;doom-modeline</span><span class="p">)</span>
+            <span class="p">(</span><span class="k">setq</span> <span class="nv">doom-modeline-icon</span> <span class="no">t</span><span class="p">)</span>
+            <span class="p">(</span><span class="nv">doom-modeline-mode</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1">; 开启 doom modeline</span>
+            <span class="c1">;; (set-frame-size-according-to-resolution) ; 初始化窗口大小,此调用错误,估计是之前那个作者的个人设置.我不需要。</span>
+            <span class="p">(</span><span class="nb">with-selected-frame</span> <span class="nv">frame</span>
+              <span class="p">(</span><span class="nv">revolt/set-font-faces</span><span class="p">))))</span>
+  <span class="p">(</span><span class="nv">revolt/set-font-faces</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="todolist">
+<h3><a class="toc-backref" href="#id26">脚本化直接打开TODOLIST</a><a class="headerlink" href="#todolist" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>开启 Emacs Daemon 服务器 (需要时间)</p></li>
+<li><p>延迟20秒让 Emacsclient 默认打开文件</p></li>
+<li><p>TODO 你要觉得时间太长还可以在 1,2 之间加上一段音乐 (后台hidden运行)</p></li>
+</ol>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">echo</span> off
+chcp 65001
+
+<span class="k">start</span> D:\Emacs\bin\Emacs --fg-daemon=worker <span class="p">&amp;</span>
+timeout /t 20 /nobreak <span class="p">&gt;</span> NUL <span class="p">&amp;</span>
+D<span class="p">:</span><span class="nl">\Emacs\bin\emacsclient</span><span class="c1"> -c -n -f worker -eval &quot;(find-file \&quot;c:\\Users\\admin\\Desktop\\html\\sphinx-blog\\docs\\source\\Windows\\youtube-dl\\init-youtube-dl\&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3><a class="toc-backref" href="#id27">参考文献</a><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Emacs Daemon的概念与设置: <a class="reference external" href="https://www.youtube.com/watch?v=ZjCRxAMPdNc">https://www.youtube.com/watch?v=ZjCRxAMPdNc</a></p></li>
+<li><p>IBM Plex Mono字体: <a class="reference external" href="https://github.com/IBM/plex/releases">https://github.com/IBM/plex/releases</a>
+更纱黑体: <a class="reference external" href="https://github.com/be5invis/Sarasa-Gothic">https://github.com/be5invis/Sarasa-Gothic</a></p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../Emacs/system-coding.html" title="previous page">Emacs Coding System</a>
+    <a class='right-next' id="next-link" href="../Makefile-mode/init-makefile-mode.html" title="next page">Makefile mode</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Revolt<br/>
+        
+            &copy; Copyright 2021, Revolt.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

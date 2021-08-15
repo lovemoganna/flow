@@ -1,0 +1,169 @@
+=====================
+Elisp Programming FAQ
+=====================
+
+    :Author: Revolt
+    :Date: <2021-08-15 Sun 00:05>
+
+
+
+Emacs FAQ
+---------
+
+Progn 有什么用?
+~~~~~~~~~~~~~~~
+
+援引:  `https://emacs.stackexchange.com/questions/18570/when-why-should-i-use-progn <https://emacs.stackexchange.com/questions/18570/when-why-should-i-use-progn>`_
+
+progn - 按照顺序评估,但只返回最后一个值.
+
+作用1 - 充当细心全面的老好人
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: elisp
+
+    (use-package undo-tree
+    	     :defer t
+    	     :ensure t
+    	     :diminish undo-tree-mode
+    	     :config
+    	     (progn
+    	       (global-undo-tree-mode)
+    	       (setq undo-tree-visualizer-timestamps t)
+    	       (setq undo-tree-visualizer-diff t)))
+
+- progn 通常在处理宏的时候使用。
+
+  第一种情况: 有些宏(例如: ``use-package`` )只接受一个 form, 其他宏接受所
+  有剩余 ``former``.
+
+- progn在上面的案例中将一系列form转换为单个form.
+
+  在上面的例子中, 先使用progn,所以 ``:config`` 后有一个form,其次,这个form
+  是3个form.
+
+  如果这个 ``use-package`` 宏只希望 ``:config`` 之后有一个form,那可能会造成错
+  误.
+
+使用progn在这两种情况下都生效,如果宏接受多种 form 才起作用,则会忽略它。
+
+总结
+::::
+
+意思就是如果这个宏如果只接受 1个 form, progn 可以满足.
+
+如果接受多个 form,直接可以忽略 progn 将多个 form 转换为 单个 form 的特
+性.
+
+作用2 - 充当万能王
+^^^^^^^^^^^^^^^^^^
+
+只需要一个表达式就可以做很多事情
+
+示例写法
+^^^^^^^^
+
+.. code:: elisp
+
+    (progn
+      (message "hello")
+      (message "world")
+      )
+
+什么是 lisp form?
+~~~~~~~~~~~~~~~~~
+
+援引: `https://stackoverflow.com/questions/2877371/definition-of-lisp-form#2877854 <https://stackoverflow.com/questions/2877371/definition-of-lisp-form#2877854>`_
+
+解释
+^^^^
+
+一个lisp form 既是一个lisp数据集,也是一个程序,它可以被评估而不出错。
+
+lisp 数据集 - ``(3 4 1)``
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+是一个lisp数据集,是由一个3、4和1的列表. 然而,这不是一个 form,因为试图
+评估它并不会产生另一个数据集,而是一个错误.
+
+正常 form - ``3``
+^^^^^^^^^^^^^^^^^
+
+是一个数据集,也是一个 form.也被称为 "正常 form" 或 "自我评估的数据集",
+它对自己进行评估。
+
+复合 form - ``(+ 3 4 1)``
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+是一个 ``复合form``,对它的评价结果为 ``正常form`` 8。
+
+过程调用 和 语法
+::::::::::::::::
+
+``复合form`` 可以是 ``过程(Procedure）调用`` 和 ``特殊form`` ,特殊 form 的头部是
+语法,如:
+
+.. code:: elisp
+
+    (if (oddp 2) (print "me") (print "or me"))
+
+这是一个 ``特殊form``,因为它的头部是语法,而不是过程.
+
+在这种情况下,只有这个复合 ``form`` 的第二和第四个成员被评估,第一个成员是语
+法,第三个成员被丢弃。
+
+过程调用和特殊形式的区别
+::::::::::::::::::::::::
+
+过程调用将 ``form`` 的所有参数视为 ``本身的form``,并试图首先评估它,而特殊形式
+不一定这样做。
+
+.. code:: elisp
+
+    ((a 1) (b 2))
+
+在Common Lisp中不是一个 form,在Scheme中可能是一个有效的 form,但前提是
+该 ``form (a 1)`` 评估为过程数据集.所以:
+
+.. code:: elisp
+
+    (let ((a 1) (b 2)) (+ a b))
+
+是一个 ``特殊form``,它不对它的第二个成员进行求值, 如果它不是 ``特殊form``,则
+以与预期不同的方式评估其第三个成员。
+
+也就是说,a和b作为 ``第三个form`` 的 ``子form`` 具有不同的约束力.在这种情况
+下,let是一个句法关键字,表示 ``特殊form``.
+
+请注意,很有可能 ``特殊form`` 仍然评估它们的所有参数,但它们仍然不是过程调
+用,因为它们的头部是语法.
+
+而 ``过程可以作为参数传递给其他函数``,语法则不能,因此:
+
+.. code:: elisp
+
+    (func arg1 #'let)
+
+是一个错误,同样:
+
+.. code:: elisp
+
+    (funcall let ((a 1) (b 2)) (+ a b))
+
+是一个错误,明显它与过程调用不同。
+
+总结
+^^^^
+
+1. form 的特性: 既是数据集,也可以被正确评估.
+
+2. form 的分类:
+   主要分为 正常 form 和 复合 form,复合 form 又分为 过程评估 和 特殊
+   form,特殊 form 以 语法开头.
+
+   正常 form 可以自我评估.
+
+3. 过程可以作为参数传递给其他函数
+
+模式匹配 :编程范式:
+~~~~~~~~

@@ -1,0 +1,282 @@
+============
+Emacs Daemon
+============
+
+    :Author: Revolt
+    :Date: <2021-08-13 Fri 13:46>
+
+.. contents::
+
+
+
+Emacs Daemon
+------------
+
+\.. admonition\:\: And, by the way...
+
+#+RST admonition\:\: 感悟
+我会终结重复发生的孤独和痛苦,Emacs中的字体恰恰是这其中的一个
+
+-- Mr.Revolt
+
+Emacs可以在服务器模式下运行:
+
+- 每次启动/登录只需花费一次Emacs启动时间！
+
+- 缓冲区跨Emacs框架持续存在,可以关闭Emacs窗口并稍后重新打开
+
+- 可从命令行执行任意命令和表达式
+
+启动守护进程
+~~~~~~~~~~~~
+
+最简单的入门方法是在正在运行的 Emacs 会话中使用以下命令：
+
+.. code:: elisp
+
+    (server-start)		 ; 为这个 Emacs 会话启用服务器模式（守护进程）
+
+然而,这在实践中与将 Emacs 作为真正的守护进程运行非常不同！我们稍后会说明原因。
+
+.. code:: elisp
+
+    emacs --daemon
+    emacs --fg-daemon	      ; 或者作为前台进程运行（有助于诊断错误）
+    emacs --daemon=two	      ;载入另外一个守护进程
+
+你还可以拥有独立的守护进程:
+
+.. code:: elisp
+
+    emacs --daemon=my-other-daemon ; 开启一个名为 'my-other-daemon' 的守护进程
+
+检测Emacs Daemon的活动
+~~~~~~~~~~~~~~~~~~~~~~
+
+该变量仅适用于Linux ``server-socket-dir``. Windows默认生成在
+``.emacs.d/server`` 目录中.
+
+干掉Emacs Daemon
+~~~~~~~~~~~~~~~~
+
+.. code:: elisp
+
+    (kill-emacs)
+
+.. code:: sh
+
+    emacsclient -e "(kill-emacs)" -f two # 更多参数,参考 emacsclient --help
+
+大多数情况下不需要干掉Daemon,大不了重新加载配置.但如果你想跟Window电脑
+重启一样的话,你可以如上操作.
+
+关于使用Daemon的调整
+~~~~~~~~~~~~~~~~~~~~
+
+我们必须做一些微调:
+
+不要使用 ``window-system`` 来检测你的OS
+:::::::::::::::::::::::::::::::::::::::
+
+而是使用 ``system-type`` 变量替代. 当你的配置载入 daemon 的时候
+``window-system`` 值为 ``nil``.
+
+检测系统类型
+::::::::::::
+
+.. code:: elisp
+
+    (pcase system-type
+      ('gnu/linux "Linux平台!")
+      ('windows-nt "Windows平台!")
+      ('darwin "MacOS平台!"))
+
+检测配置是否在Daemon中被加载
+::::::::::::::::::::::::::::
+
+.. code:: elisp
+
+    (if (daemonp)
+	(message "已经载入守护进程!")
+      (message "已经载入常规Emacs中!"))
+
+为新窗口配置UI
+~~~~~~~~~~~~~~
+
+每次加载Emacs时,守护进程中的配置,某些方面的face,你的第一窗口都不会被激
+活.因为它们在第一次加载窗口时会被覆盖.所以在加载第一个窗口后,需要预设
+一些face.
+
+已经在字体中集成,此处仅供参考.
+
+.. code:: elisp
+
+    (defun efs/set-font-faces ()
+      (message "设置 faces!")
+      (set-face-attribute 'default nil :font "Fira Code" :height efs/default-font-size)
+
+      ;; Set the fixed pitch face
+      (set-face-attribute 'fixed-pitch nil :font "Fira Code" :height efs/default-font-size)
+
+      ;; Set the variable pitch face
+      (set-face-attribute 'variable-pitch nil :font "Roboto Mono" :height efs/default-variable-font-size :weight 'regular))
+
+    (if (daemonp)
+	(add-hook 'after-make-frame-functions
+	      (lambda (frame)
+		(setq doom-modeline-icon t)
+		(with-selected-frame frame
+		  (efs/set-font-faces))))
+      (efs/set-font-faces))
+
+    (doom-modeline-init)
+
+在 Emacs 27 中，您可以使用 ``server-after-make-frame-hook``,这样您的函数只会被调用一次！
+
+另一对有用的变量：
+
+- ``init-frame-alist``: 在第一个窗口上设置的窗口参数
+
+- ``default-frame-alist``: 应用于每个窗口的窗口参数
+
+这些都可用于配置在守护程序中加载配置时无法正常工作的UI元素.
+
+命令行执行Elisp脚本
+~~~~~~~~~~~~~~~~~~~
+
+.. code:: sh
+
+    emacsclient -e "(buffer-name)"
+    emacsclient -e "(read-string \"Enter a string: \")"
+
+-u 抑制输出.
+-n 跳过等待.
+-f 指定Daemon名字.
+-a 如果守护进程没有运行,给其提供一个备用命令.例如: ``emacsclient -c -a emacs``
+
+.. code:: sh
+
+    emacsclient -u -e "(org-save-all-org-buffers)" -a "echo 'Emacs is not currently running'"
+
+.. code:: sh
+
+    emacs --fg-daemon=worker
+    emacsclient -f worker -u -e "(org-babel-tangle-file \"~/.emacs.d/init-user.org.gpg\")"
+
+我自己的配置
+~~~~~~~~~~~~
+
+篡改主题
+^^^^^^^^
+
+主要是篡改 Org Mode 中的字体.
+
+预先载入主题
+::::::::::::
+
+.. code:: elisp
+
+    (load-theme 'monokai t)
+
+覆盖主题预设的字体
+::::::::::::::::::
+
+.. code:: elisp
+
+    (defun revolt/set-font-faces ()
+      (message "设置faces!")
+      "可以使用 Consolas 字体"
+      (set-face-attribute 'default nil :font "IBM Plex Mono Medium" :height 90)
+      (set-face-attribute 'fixed-pitch nil :font "Fira Code" :height 90)
+      (set-face-attribute 'variable-pitch nil :font "Roboto Mono" :height 90 :weight 'regular)
+      ;; 给相应的字符集设置中文字体，这里的字体是冬青黑体简体中文 W3。 Microsoft YaHei UI / WenQuanYi Zen Hei Mono
+      (dolist (charset '(han cjk-misc chinese-gbk))
+	(set-fontset-font "fontset-default"
+		      charset (font-spec :family "WenQuanYi Zen Hei Mono" :size 12 :height 90)))
+
+      ;; (custom-theme-set-faces
+      ;;  'user
+      ;;  '(variable-pitch ((t (:family "Roboto Mono" :height 120 :weight light))))
+      ;;  '(fixed-pitch ((t ( :family "Fira Code" :slant normal :weight normal :height 1.0 :width normal)))))
+
+      ;;; 篡改Headline的字体
+
+      (require 'org-faces)
+
+      ;; (set-face-attribute 'org-table nil :family "WenQuanYi Zen Hei Mono")
+      ;; (set-face-attribute 'org-column nil :family "WenQuanYi Zen Hei Mono" :height 120)
+
+      (set-face-font 'org-level-1 "-outline-Sarasa Gothic TC-bold-normal-normal-*-*-*-*-*-p-*-iso10646-1")
+      (set-face-font 'org-level-2 "-outline-Sarasa Gothic TC-bold-normal-normal-*-*-*-*-*-p-*-iso10646-1")
+      (set-face-font 'org-level-3 "-outline-Sarasa Gothic TC-bold-normal-normal-12-*-*-*-*-p-*-iso10646-1")
+      (set-face-font 'org-level-4 "-outline-Sarasa Gothic TC-normal-normal-normal-*-12-*-*-*-p-*-iso8859-1")
+      (set-face-font 'org-level-5 "-outline-Sarasa Gothic TC-normal-normal-normal-*-12-*-*-*-p-*-iso8859-1")
+      (set-face-font 'org-level-6 "-outline-Sarasa Gothic TC-normal-normal-normal-*-12-*-*-*-p-*-iso8859-1")
+      (set-face-font 'org-level-7 "-outline-Sarasa Gothic TC-normal-normal-normal-*-12-*-*-*-p-*-iso8859-1")
+
+      (set-face-foreground 'org-level-1 "#adb")
+      (set-face-foreground 'org-level-2 "#d11481")
+
+      ;;; 篡改Org mode 内部所有元数据的字体
+
+      (custom-theme-set-faces
+       'user
+       '(org-block ((t (:inherit fixed-pitch))))
+       '(org-block-begin-line ((t (:inherit variable-pitch :height 1.0))))
+       '(org-block-end-line ((t (:inherit variable-pitch :height 1.0))))
+       '(org-code ((t (:inherit (shadow fixed-pitch) :height 0.85))))
+       '(org-document-info ((t (:foreground "dark orange"))))
+       '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
+       '(org-indent ((t (:inherit (org-hide fixed-pitch)))))
+       '(org-link ((t (:foreground "cyan" :underline t))))
+       '(org-meta-line ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+       '(org-property-value ((t (:inherit fixed-pitch :height 1.0))) t)
+       '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch) :height 1.0))))
+       '(org-table ((t (:inherit fixed-pitch :foreground "#83a598" :weight normal :height 1.0))))
+       '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 1.0))))
+       '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
+
+      ;; Emacs 25.2之后的版本无法单独设置符号的字体，这句禁用这个特性恢复原来的行为。
+      (setq use-default-font-for-symbols nil)
+
+      ;; 设置默认字体和用于显示特殊符号的字体，如果不需要下面三句可以删除。
+      (set-fontset-font "fontset-default"
+		    'unicode "Roboto Mono" nil 'append))
+
+    ;;; 配置守护进程的窗口配置
+    (if (daemonp)
+	(add-hook 'after-make-frame-functions
+	      (lambda (frame)
+		(require 'doom-modeline)
+		(setq doom-modeline-icon t)
+		(doom-modeline-mode 1)	; 开启 doom modeline
+		;; (set-frame-size-according-to-resolution) ; 初始化窗口大小,此调用错误,估计是之前那个作者的个人设置.我不需要。
+		(with-selected-frame frame
+		  (revolt/set-font-faces))))
+      (revolt/set-font-faces))
+
+脚本化直接打开TODOLIST
+~~~~~~~~~~~~~~~~~~~~~~
+
+1. 开启 Emacs Daemon 服务器 (需要时间)
+
+2. 延迟20秒让 Emacsclient 默认打开文件
+
+3. TODO 你要觉得时间太长还可以在 1,2 之间加上一段音乐 (后台hidden运行)
+
+.. code:: bat
+
+    @echo off
+    chcp 65001
+
+    start D:\Emacs\bin\Emacs --fg-daemon=worker &
+    timeout /t 20 /nobreak > NUL &
+    D:\Emacs\bin\emacsclient -c -n -f worker -eval "(find-file \"c:\\Users\\admin\\Desktop\\html\\sphinx-blog\\docs\\source\\Windows\\youtube-dl\\init-youtube-dl\")
+
+参考文献
+~~~~~~~~
+
+1. Emacs Daemon的概念与设置: `https://www.youtube.com/watch?v=ZjCRxAMPdNc <https://www.youtube.com/watch?v=ZjCRxAMPdNc>`_
+
+2. IBM Plex Mono字体: `https://github.com/IBM/plex/releases <https://github.com/IBM/plex/releases>`_
+   更纱黑体: `https://github.com/be5invis/Sarasa-Gothic <https://github.com/be5invis/Sarasa-Gothic>`_

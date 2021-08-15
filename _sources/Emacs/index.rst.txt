@@ -10,5 +10,10 @@ Emacs 文档
    Batch-mode/init-batch-mode-three.rst
 
    Emacs/system-coding.rst
+   font/init-emacs-font.rst
    Makefile-mode/init-makefile-mode.rst
 
+   Magit/init-magit.rst
+   FAQ/init-faq.rst
+   Org-Roam/init-org-roam.rst
+	     

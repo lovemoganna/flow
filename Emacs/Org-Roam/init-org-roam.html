@@ -1,0 +1,714 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Org Roam Tutorial EP 1 &#8212; Revolt&#39;s NoteBook</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/assets/css/website.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/assets/js/website.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Windows 技巧" href="../../Windows/index.html" />
+    <link rel="prev" title="Elisp Programming FAQ" href="../FAQ/init-faq.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Revolt's NoteBook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Sphinx Books Archives
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  测试模板:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../usage.html">
+   reStructedText 文档风格指南
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sphinx集成:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../sphinx-doc/index.html">
+   Sphinx模板、插件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/useage.html">
+     Sphinx小节测试
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/ox-rst.html">
+     Org Mode导出 Rst 文档后端测试
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/ox-rst-en.html">
+     reStructuredText后端导出原始文档
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Emacs major mode:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Emacs 文档
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode-two.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode-three.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Emacs/system-coding.html">
+     Emacs Coding System
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../font/init-emacs-font.html">
+     Emacs Daemon
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Makefile-mode/init-makefile-mode.html">
+     Makefile mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Magit/init-magit.html">
+     Magit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQ/init-faq.html">
+     Elisp Programming FAQ
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Org Roam Tutorial EP 1
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Windows下的所有应用:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Windows/index.html">
+   Windows 技巧
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/bug.n/init-bugn.html">
+     1 Bug.n
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/captura/init-captura.html">
+     1 Captura-cli
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/autohotkey/init-autohot-key.html">
+     1 Autohotkey
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/youtube-dl/init-youtube-dl.html">
+     Youtube-dl
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Emacs/Org-Roam/init-org-roam.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/lovemoganna/revolt-theme"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/lovemoganna/revolt-theme/issues/new?title=Issue%20on%20page%20%2FEmacs/Org-Roam/init-org-roam.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/lovemoganna/revolt-theme/edit/master/Emacs/Org-Roam/init-org-roam.rst"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> 目录
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#org-roam">
+   1 Org Roam
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     1.1 Org Roam简介
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     1.2 抽屉-盒 模型理论
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     1.3 转瞬即逝的笔记
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     1.4 永久笔记
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     1.5 安装
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       1.5.1 基础配置
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id8">
+         1.5.1.1 设置Org Roam存储位置
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id9">
+         1.5.1.2 即时更新数据库
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     1.6 入门
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       1.6.1 Org-roam 节点
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       1.6.2 设置 Org-roam
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       1.6.3 创建和链接节点
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     1.7 自定义节点缓存
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       1.7.1 缓存什么?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id16">
+       1.7.2 何时缓存
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     1.8 Org Roam 缓冲区
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="org-roam-tutorial-ep-1">
+<h1><a class="toc-backref" href="#id18">Org Roam Tutorial EP 1</a><a class="headerlink" href="#org-roam-tutorial-ep-1" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>revolt</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>&lt;2021-08-15 Sun&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#org-roam-tutorial-ep-1" id="id18">Org Roam Tutorial EP 1</a></p>
+<ul>
+<li><p><a class="reference internal" href="#org-roam" id="id19">1 Org Roam</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id20">1.1 Org Roam简介</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id21">1.2 抽屉-盒 模型理论</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id22">1.3 转瞬即逝的笔记</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id23">1.4 永久笔记</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id24">1.5 安装</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id7" id="id25">1.5.1 基础配置</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id8" id="id26">1.5.1.1 设置Org Roam存储位置</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id27">1.5.1.2 即时更新数据库</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id10" id="id28">1.6 入门</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id11" id="id29">1.6.1 Org-roam 节点</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id30">1.6.2 设置 Org-roam</a></p></li>
+<li><p><a class="reference internal" href="#id13" id="id31">1.6.3 创建和链接节点</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id14" id="id32">1.7 自定义节点缓存</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id15" id="id33">1.7.1 缓存什么?</a></p></li>
+<li><p><a class="reference internal" href="#id16" id="id34">1.7.2 何时缓存</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id17" id="id35">1.8 Org Roam 缓冲区</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="org-roam">
+<h2><a class="toc-backref" href="#id19">1 Org Roam</a><a class="headerlink" href="#org-roam" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id20">1.1 Org Roam简介</a><a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>Org-roam 具有以下优势:</p>
+<ul class="simple">
+<li><p>隐私和安全:你的个人 wiki 只属于您,完全离线并在您的控制之下.使用GPG
+加密您的笔记.</p></li>
+<li><p>纯文本的持久性: 与 Roam Research等Web 解决方案不同，笔记首先是纯
+Org-mode 文件——Org-roam 只是构建了一个辅助数据库，赋予个人 wiki 超能
+力。以纯文本形式记录笔记对于维基的寿命至关重要。永远不必担心专有网络
+解决方案被取消。即使 Org-roam 不复存在，这些笔记仍然有效。</p></li>
+<li><p>免费和开源:Org-roam 是免费和开源的，这意味着如果您对 Org-roam 的任
+何部分感到不满意，您可以选择扩展 Org-roam，或打开拉取请求。</p></li>
+<li><p>利用 Org-mode 生态系统:几十年来，Emacs 和 Org-mode 已经发展成为一个
+成熟的纯文本组织系统。基于 Org-mode 的构建已经使 Org-roam 领先于许多
+其他解决方案。</p></li>
+<li><p>建立在 Emacs 之上: Emacs 也是一个很棒的文本编辑界面，Org-roam 继承
+了 Emacs 可用的许多强大的文本导航和编辑包。</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id21">1.2 抽屉-盒 模型理论</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>主要是强调连接思想,用于建立思想网络.</p>
+<p>这种方法归功于德国社会学家尼克拉斯·卢曼 (Niklas Luhmann)，他使用这种方
+法制作了大量书面作品。Luhmann 的纸盒只是一盒卡片。这些卡片很小——通常只
+能容纳一个概念。大小限制鼓励将想法分解为单独的概念。这些想法被明确地联
+系在一起。想法的分解鼓励对想法的切向探索，增加思考的表面。在笔记之间建
+立明确的联系也鼓励人们思考概念之间的联系。</p>
+<p>在每个音符的角落，Luhmann 为每个音符分配了一个有序的 ID，让他可以在音
+符之间进行链接和跳转。在 Org-roam 中，我们简单地使用超链接。</p>
+<p>Org-roam 是一种在 Org 模式下数字化的滑动盒。每个 zettel(卡片)都是纯
+文本的 Org 模式文件。与维护纸质卡片盒的方式相同，Org-roam 可以轻松创建
+新的 zettels，使用强大的模板系统预填充样板内容。</p>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id22">1.3 转瞬即逝的笔记</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>纸盒需要一种快速捕捉想法的方法。这些被称为转瞬即逝的笔记:它们是对需要
+稍后处理或丢弃的信息或想法的简单提醒。这通常是使用 org-capture(参见
+(org Capture)或使用 Org-roam 的每日笔记功能(参见Org-roam 日报)来完
+成的。这提供了一个用于收集想法的中央收件箱，稍后将其处理为永久笔记。</p>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id23">1.4 永久笔记</a><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>永久笔记进一步分为两类:文献笔记和 概念笔记。文献注释可以是对特定来源
+(例如书籍、网站或论文)的简短注释，您希望稍后访问。概念笔记在创作时需
+要更加小心:它们需要不言自明和详细。Org-roam 的模板系统支持添加不同的
+模板以方便创建这些笔记。</p>
+<p>如需进一步阅读 Zettelkasten 方法，Sonke Ahrens 的“如何聪明的做笔记”是
+一本不错的指南,这本书我就看过几章。</p>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id24">1.5 安装</a><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id7">
+<h4><a class="toc-backref" href="#id25">1.5.1 基础配置</a><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="c1">;; Org and Org-roam</span>
+
+<span class="c1">;;; Tell Emacs where sqlite3.exe is stored</span>
+<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="s">&quot;D:\\sqlite&quot;</span><span class="p">)</span>
+
+<span class="c1">;;; Tell Emacs to start org-roam-mode when Emacs starts</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;after-init-hook</span> <span class="ss">&#39;org-roam-mode</span><span class="p">)</span>
+
+<span class="c1">;;; Define key bindings for Org-roam</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-c n r&quot;</span><span class="p">)</span> <span class="nf">#&#39;</span><span class="nv">org-roam-buffer-toggle-display</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-c n i&quot;</span><span class="p">)</span> <span class="nf">#&#39;</span><span class="nv">org-roam-insert</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-c n f&quot;</span><span class="p">)</span> <span class="nf">#&#39;</span><span class="nv">org-roam-find-file</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-c n b&quot;</span><span class="p">)</span> <span class="nf">#&#39;</span><span class="nv">org-roam-switch-to-buffer</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-c n d&quot;</span><span class="p">)</span> <span class="nf">#&#39;</span><span class="nv">org-roam-find-directory</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-c n c&quot;</span><span class="p">)</span> <span class="nf">#&#39;</span><span class="nv">org-roam-db-build-cache</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-c n u&quot;</span><span class="p">)</span> <span class="nf">#&#39;</span><span class="nv">org-roam-buffer-update</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-c n x&quot;</span><span class="p">)</span> <span class="nf">#&#39;</span><span class="nv">org-roam-db-clear</span><span class="p">)</span>
+
+<span class="c1">;;; Recommendation for Windows users for performance</span>
+<span class="c1">;;; https://github.com/org-roam/org-roam/issues/1289#issuecomment-744046148</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">org-roam-db-update-method</span> <span class="ss">&#39;immediate</span><span class="p">)</span>
+
+<span class="c1">;;; Let&#39;s also assign C-z to undo here</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-z&quot;</span><span class="p">)</span> <span class="ss">&#39;undo</span><span class="p">)</span> <span class="c1">;Emacs default is bound to hide Emacs.</span>
+</pre></div>
+</div>
+<div class="section" id="id8">
+<h5><a class="toc-backref" href="#id26">1.5.1.1 设置Org Roam存储位置</a><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h5>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="c1">;; file-directory-p</span>
+<span class="c1">;;(make-directory &quot;~/.emacs.d/org-roam&quot;)</span>
+
+<span class="c1">;;; 存储Org Roam文件</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">org-roam-directory</span> <span class="s">&quot;~/.emacs.d/org-roam/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h5><a class="toc-backref" href="#id27">1.5.1.2 即时更新数据库</a><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h5>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="c1">;;; Recommendation for Windows users for performance</span>
+<span class="c1">;;; https://github.com/org-roam/org-roam/issues/1289#issuecomment-744046148</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">org-roam-db-update-method</span> <span class="ss">&#39;immediate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3><a class="toc-backref" href="#id28">1.6 入门</a><a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id11">
+<h4><a class="toc-backref" href="#id29">1.6.1 Org-roam 节点</a><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h4>
+<p>我们首先从我们将在整个手册中使用的一些术语开始。我们将 Org-roam 中的基
+本名称称为节点。我们定义一个节点如下:</p>
+<p>节点是具有 ID 的任何标题或顶级文件.</p>
+<div class="highlight-org notranslate"><div class="highlight"><pre><span></span>:PROPERTIES:
+:ID:       foo
+:END:
+#+title: Foo
+
+* Bar
+  :PROPERTIES:
+  :ID:       bar
+  :END:
+</pre></div>
+</div>
+<p>我们创建了2个节点:</p>
+<ul>
+<li><p>ID为foo的文件节点 <code class="docutils literal notranslate"><span class="pre">foo</span></code></p></li>
+<li><p>带有ID为bar的标题节点 <code class="docutils literal notranslate"><span class="pre">Bar</span></code>.</p>
+<p>没有 ID 的标题不会被视为 Org-roam 节点。组织 ID 可以通过交互式命令添
+加到文件或标题中 <code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">org-id-get-create</span></code>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h4><a class="toc-backref" href="#id30">1.6.2 设置 Org-roam</a><a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
+<p>Org-roam 的功能源于其积极的缓存:它抓取 <code class="docutils literal notranslate"><span class="pre">org-roam-directory</span></code> 内的所有
+文件,并维护所有链接和节点的缓存.</p>
+<p>也就是说要开始使用 Org-roam，请选择一个位置来存储 Org-roam 文件。将包
+含您的笔记的目录由变量指定 org-roam-directory。Org-roam 在内部递归搜索
+org-roam-directory 笔记。这个变量需要在任何调用 Org-roam 函数之前设置。</p>
+<p>运行 <code class="docutils literal notranslate"><span class="pre">org-roam-db-build-cache</span></code> 会构建缓存.</p>
+</div>
+<div class="section" id="id13">
+<h4><a class="toc-backref" href="#id31">1.6.3 创建和链接节点</a><a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h4>
+<p>Org-roam 可以轻松创建笔记并将它们链接在一起。创建节点有两个主要功能:</p>
+<ul class="simple">
+<li><p>org-roam-node-insert: 如果节点不存在，则创建一个节点，并在该点插入一个指向该节点的链接。</p></li>
+<li><p>org-roam-node-find: 如果不存在则创建一个节点，并访问该节点。</p></li>
+<li><p>org-roam-capture: 如果节点不存在则创建一个节点，完成后恢复当前窗口配置。</p></li>
+</ul>
+<p>我们先试试org-roam-node-find。调用M-x org-roam-node-find将显示驻留在
+org-roam-directory. 它现在应该什么都不显示，因为目录中没有注释。输入您
+要创建的笔记的标题，然后按RET。这开始了笔记创建过程。此过程使用
+org-capture的模板系统，并且可以自定义(请参阅模板系统)。使用默认模板，
+按 C-c C-c完成笔记捕获。</p>
+<p>现在我们有了一个节点，我们可以尝试使用M-x org-roam-node-insert.</p>
+<p>这将显示节点列表，其中应包含您刚刚创建的节点。选择节点将插入id: 到该节
+点的链接。如果您输入了一个不存在的标题，您将再次进入节点创建过程。</p>
+</div>
+</div>
+<div class="section" id="id14">
+<h3><a class="toc-backref" href="#id32">1.7 自定义节点缓存</a><a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id15">
+<h4><a class="toc-backref" href="#id33">1.7.1 缓存什么?</a><a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h4>
+<p>默认情况下,所有节点(任何带有 ID 的标题或文件)都由 Org-roam 缓存。在某
+些情况下,您可能希望拥有带有 ID 的标题，但又不想让 Org-roam 缓存它们。</p>
+<p>要从 Org-roam 数据库中排除标题,请将 <code class="docutils literal notranslate"><span class="pre">ROAM_EXCLUDE</span></code> 属性设置为非 nil 值.
+例如:</p>
+<div class="highlight-org notranslate"><div class="highlight"><pre><span></span>* Foo
+  :PROPERTIES:
+  :ID:       foo
+  :ROAM_EXCLUDE: t
+  :END:
+</pre></div>
+</div>
+<p>注意一旦添加类此标志,就会不被缓存,在运行
+<code class="docutils literal notranslate"><span class="pre">org-roam-buffer-toggle-display</span></code> 的时候,会忽视此节点</p>
+</div>
+<div class="section" id="id16">
+<h4><a class="toc-backref" href="#id34">1.7.2 何时缓存</a><a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h4>
+<p>默认情况下，Org-roam 是急切的缓存:每次修改和保存 Org-roam 文件时，它
+都会更新相应文件的数据库。这使数据库保持最新，在使用交互式命令时不会引
+起任何意外。</p>
+<p>但是，根据您的 Org 文件的大小，数据库更新可能是一个缓慢的操作。您可以
+通过设置org-roam-db-update-on-save为来禁用数据库的自动更新nil。</p>
+<p>变量:org-roam-db-update-on-save</p>
+<p>如果是 t，则在保存文件时更新 Org-roam 数据库。如果您的文件很大并且更新
+数据库很慢，请禁用此选项。</p>
+</div>
+</div>
+<div class="section" id="id17">
+<h3><a class="toc-backref" href="#id35">1.8 Org Roam 缓冲区</a><a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+<p>Org-roam 提供 Org-roam 缓冲区:一个用于查看与其他笔记(反向链接、参考链
+接、未链接的参考等)关系的界面。这里有两个主要命令可以使用:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">org-roam-buffer-toggle-display</span></code>: 启动一个 Org-roam 缓冲区来跟踪当前
+所在的节点。这意味着缓冲区的内容会随着点的移动而变化(如有必要)。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">org-roam-buffer-display-dedicated</span></code>: 在不访问其文件的情况下为特定节
+点启动 Org-roam 缓冲区。与org-roam-buffer-toggle您可以有多个这样的缓
+冲区不同，它们的内容不会自动替换为新节点。</p></li>
+</ul>
+<p>要调出跟踪当前节点的缓冲区，请调用M-x org-roam-buffer-toggle。</p>
+<p>功能:org-roam-buffer-toggle</p>
+<p>切换org-roam-buffer.</p>
+<p>要调出专用于特定节点的缓冲区，请调用 <code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">org-roam-buffer-display-dedicated</span></code></p>
+<p>功能: <code class="docutils literal notranslate"><span class="pre">org-roam-buffer-display-dedicated</span></code> 在不访问节点本身的情况下启动
+节点专用的 Org-roam 缓冲区。</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../FAQ/init-faq.html" title="previous page">Elisp Programming FAQ</a>
+    <a class='right-next' id="next-link" href="../../Windows/index.html" title="next page">Windows 技巧</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Revolt<br/>
+        
+            &copy; Copyright 2021, Revolt.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

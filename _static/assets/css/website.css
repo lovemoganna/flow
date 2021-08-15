@@ -23,4 +23,12 @@ td.linenos pre, td.code pre {
     padding-top: 7px;
     padding-bottom: 7px;
 }
- 
+
+table.table {
+    display: table-cell;
+    background: #aca2a80f;
+}
+/* 自定义CSS,使用 .. rst-class:: align-center 调用 */
+table.align-center {
+    text-align: center;
+}

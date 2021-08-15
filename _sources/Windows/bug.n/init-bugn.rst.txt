@@ -27,6 +27,7 @@ Windows下的窗口管理器。
 .. code:: text
     :number-lines: 1
 
+    :linenos:
     # 单击 build.ahk 开始构建 bug.n
     D:\bug.n\bug.n\tools
     - build.ahk

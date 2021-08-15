@@ -157,8 +157,8 @@ center block
 上标和下标
 ~~~~~~~~~~
 
-H\ :sub:`2`\O
-E = mc\ :sup:`2`\
+H\_{2}O
+E = mc^2
 
 LaTeX片段
 ~~~~~~~~~
@@ -194,7 +194,7 @@ If :math:`a^2=b` and :math:`b=2`, then the solution must be either
     :number-lines: 1
 
     (save-excursion                  (ref:sc)
-                                     (goto-char (point-min)))      (ref:jump)
+    				 (goto-char (point-min)))      (ref:jump)
 
 In line 1 we remember the current position.
 Line 2 jumps to point-min.
@@ -205,9 +205,15 @@ Line 2 jumps to point-min.
 图片
 ^^^^
 
-.. image:: ./image.jpg
+.. figure:: ./pexels.jpg
     :alt: alternate text
-    :align: right
+    :align: left
+    :height: 100px
+    :width: 200px
+    :scale: 75%
+
+
+    测试样本
 
 表格
 ^^^^
@@ -251,8 +257,9 @@ Line 2 jumps to point-min.
     | END1 | END2 | END3 |
     +------+------+------+
 
-.. table:: 表4
-    :name: table_4
+.. rst-class:: align-center
+
+.. table:: 表4 - 添加了自定义的CSS,相当有趣
 
     +------+------+------+
     | TOP1 | TOP2 | TOP3 |
@@ -315,16 +322,19 @@ Internal cross references, label `sampletable`_
 
 .. _samplefigure:
 
-.. image:: ../_static/assets/photos/girls.jpg
+.. figure:: ../_static/assets/photos/girls.jpg
+    :alt: alternate text
+    :align: left
+    :height: 300px
+    :width: 500px
+    :scale: 75%
 
-内部交叉链接,标签 `samplefigure`_
 
-脚注
-~~~~
+    图片示例样本
 
-组织模式 [1]_  用于记录笔记、维护待办事项列表、规划项目和使用快速有效的纯文本系统创作文档。
+内部交叉链接,标签 `samplefigure`_.
 
-reStructuredText [2]_  是纯文本，它使用简单直观的结构来指示文档的结构。
+---
 
 导出Rst片段
 ~~~~~~~~~~~
@@ -344,6 +354,30 @@ See also :meth:`mypackage.mymodule.MyClass.mymethod()`.
     #+BEGIN_EXPORT rst
     .. class:: alert
     #+END_EXPORT
+
+示例
+^^^^
+
+.. raw:: html
+
+   <video width="320" height="240" controls>
+   <source src="/_static/assets/video/JS.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+   </video>
+
+TODO 异端测试
+~~~~~~~~~~~~~
+
+model^rgb\_led = modelrgbled
+
+L^A T\_E X = LATEX
+
+脚注
+~~~~
+
+组织模式 [1]_  用于记录笔记、维护待办事项列表、规划项目和使用快速有效的纯文本系统创作文档。
+
+reStructuredText [2]_  是纯文本，它使用简单直观的结构来指示文档的结构。
 
 
 .. [1] 组织模式 `http://orgmode.org <http://orgmode.org>`_

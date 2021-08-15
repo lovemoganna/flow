@@ -43,7 +43,7 @@ hello,world
 reStructuredText 入门
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-- C-c C-a C-a     插入标题
+- `C-c C-a C-a`   插入标题
 - C-c C-s C-a     自动添加横杠
 - C-c C-=         自动补全标题
 - C-u C-=         取消补全
@@ -265,6 +265,9 @@ And here is the bibliography:
 .. sidebar:: 什么/玩意
 
   .. image:: ./_static/assets/photos/girls.jpg
+     :width: 160px
+     :height: 100px
+
 
   *上联* 一片痴心二不拉几撸三行四段代码出五处警告六处错误心里七上八下虽九死不得安生十分蛋疼
 
@@ -296,8 +299,8 @@ Footnotes
    这是脚注的第二段。
 
 .. [#label] 脚注可以手动编号（如 [1]_ 中）或自动使用“#”前缀标签。此
-            脚注有一个标签，因此可以从多个位置引用，既可以作为脚注引用
-            ([#label]_)，也可以作为超链接引用 (label_)。
+	    脚注有一个标签，因此可以从多个位置引用，既可以作为脚注引用
+	    ([#label]_)，也可以作为超链接引用 (label_)。
 
 .. [#] 此脚注仅使用“#”标签自动和匿名编号。
 
@@ -385,11 +388,17 @@ __ Targets_
 
 .. code-block:: rst
 
-   .. image:: ./_static/assets/photos/girls.jpg 
+   .. image:: ./_static/assets/photos/girls.jpg
       :align: center
+      :width: 200px
+      :height: 100px
+
 
 .. image:: ./_static/assets/photos/girls.jpg
    :align: center
+   :width: 200px
+   :height: 100px
+
 
 .. raw:: html
 
@@ -399,9 +408,15 @@ __ Targets_
 
    .. image:: ./_static/assets/photos/girls.jpg
       :align: right
+      :width: 200px
+      :height: 100px
 
-.. image:: ./_static/assets/photos/girls.jpg 
+
+.. image:: ./_static/assets/photos/girls.jpg
    :align: right
+   :width: 200px
+   :height: 100px
+
 
 .. raw:: html
 
@@ -412,9 +427,11 @@ __ Targets_
 
 .. figure:: ./_static/assets/photos/girls.jpg
    :alt: reStructuredText, the markup syntax
+   :width: 200px
+   :height: 100px
 
    图形是带有标题或图例的图片
-   
+
    +------------+-----------------------------------------------+
    | re         | Revised, revisited, based on 're' module.     |
    +------------+-----------------------------------------------+
@@ -429,23 +446,26 @@ __ Targets_
 
 .. figure:: ./_static/assets/photos/girls.jpg
    :align: left
+   :width: 200px
+   :height: 100px
 
    此标题应与左侧对齐。
 
 提醒
 ~~~~~~~~~~~
 
-.. Attention:: 大指令.
+.. Attention:: 注意事项.
 
-.. Caution:: 不要拿任何木制镍币.
+.. Caution:: 副作用.
 
-.. DANGER:: 工作中的疯狂科学家!
+.. DANGER:: 严禁行为!
 
-.. Error:: 不能运算.
+.. Error:: Error.
 
-.. Hint:: 它比面包盒还大.
+.. Hint:: Tips.
 
 .. Important::
+   - 重要事项.
    - 洗脸刷牙.
    - 打扫房子.
 
@@ -533,13 +553,81 @@ Topics, Sidebars, and Rubrics
 :download:`This long long long long long long long long long long long long long long long download link should be blue, normal weight text with a leading icon, and should wrap white-spaces <./_static/assets/photos/girls.jpg>`
 
 
+音频
+----
+
+.. raw:: html
+
+	 <audio controls="controls">
+	 <source src="_static/assets/audio/Thunderstorm.mp3" type="audio/mp3">
+	 Your browser does not support the <code>audio</code> element.
+	 </audio>
+
+
+视频
+----
+
+.. raw:: html
+
+	 <video width="320" height="240" controls>
+	 <source src="_static/assets/video/JS.mp4" type="video/mp4">
+	 Your browser does not support the video tag.
+	 </video>
+
+表格
+----
+
+普通表格
+~~~~~~~~~
+
+.. rst-class:: align-center
+.. table:: Truth table for "not"
+   :widths: auto
+
+   =====  =====
+     A    not A
+   =====  =====
+   False  True asd
+   True   False asdasd
+   =====  =====
+
+这里表格的居中,是直接篡改的 website.css 里面的样式，只不过在此调用了一番.
+
+CSV 表格
+~~~~~~~~
+
+.. csv-table:: CSV表格示例!
+   :header: "Treat", "Quantity", "Description"
+   :widths: 15, 10, 30
+
+   "Albatross", 2.99, "On a stick!"
+   "Crunchy Frog", 1.49, "If we took the bones out, it wouldn't be
+   crunchy, now would it?"
+   "Gannet Ripple", 1.99, "On a stick!"
+
+参考文献
+-------
+
+1. Rst 文档参考大全: https://docutils.sourceforge.io/docs/ref/rst/directives.html#tables
+2. Org to rst 参考文档: https://github.com/msnoigrs/ox-rst
+3. 打开 Org 文档表格自动对齐的设置: https://orgmode.org/manual/Column-Width-and-Alignment.html#Column-width-and-alignment
+4. 自定义样式以及应用的方式之一: https://stackoverflow.com/questions/7348208/how-to-right-align-columns-content-in-restructuredtext-simple-tables
+5. 自定义样式以及应用的方式之二:
+   https://github.com/sphinx-doc/sphinx/issues/3942
+
 TODO List
 ---------
 
 .. todo::
 
-   麦克乐
-   烤全鸭
-   大拉串
+   1. 搜集插件制作的教程,学会写自己的插件
+
+      参照此内容写一个调用视频比较方便的插件.这样更容易客制化(篡改)style.
+
+      ref: https://github.com/sphinx-contrib/video
+
+   2. 学习 Org Roam
+
+      让所有的血液循环起来
 
 .. todolist::

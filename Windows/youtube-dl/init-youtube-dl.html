@@ -1,0 +1,1449 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube-dl &#8212; Revolt&#39;s NoteBook</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/assets/css/website.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/assets/js/website.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="prev" title="1 Autohotkey" href="../autohotkey/init-autohot-key.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Revolt's NoteBook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Sphinx Books Archives
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  测试模板:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../usage.html">
+   reStructedText 文档风格指南
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sphinx集成:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../sphinx-doc/index.html">
+   Sphinx模板、插件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/useage.html">
+     Sphinx小节测试
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/ox-rst.html">
+     Org Mode导出 Rst 文档后端测试
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/ox-rst-en.html">
+     reStructuredText后端导出原始文档
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Emacs major mode:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Emacs/index.html">
+   Emacs 文档
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Emacs/Batch-mode/init-batch-mode.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Emacs/Batch-mode/init-batch-mode-two.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Emacs/Batch-mode/init-batch-mode-three.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Emacs/Emacs/system-coding.html">
+     Emacs Coding System
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Emacs/font/init-emacs-font.html">
+     Emacs Daemon
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Emacs/Makefile-mode/init-makefile-mode.html">
+     Makefile mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Emacs/Magit/init-magit.html">
+     Magit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Emacs/FAQ/init-faq.html">
+     Elisp Programming FAQ
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Emacs/Org-Roam/init-org-roam.html">
+     Org Roam Tutorial EP 1
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Windows下的所有应用:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Windows 技巧
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../bug.n/init-bugn.html">
+     1 Bug.n
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../captura/init-captura.html">
+     1 Captura-cli
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autohotkey/init-autohot-key.html">
+     1 Autohotkey
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Youtube-dl
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Windows/youtube-dl/init-youtube-dl.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/lovemoganna/revolt-theme"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/lovemoganna/revolt-theme/issues/new?title=Issue%20on%20page%20%2FWindows/youtube-dl/init-youtube-dl.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/lovemoganna/revolt-theme/edit/master/Windows/youtube-dl/init-youtube-dl.rst"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> 目录
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   1 学会使用youtube-dl
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     1.1 参数含义
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       1.1.1 选项
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       1.1.2 地理限制
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       1.1.3 视频选择
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       1.1.4 下载选项
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       1.1.5 文件系统选项
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       1.1.6 缩略图选项
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       1.1.7 详细/仿真选项：
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       1.1.8 策略
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id16">
+       1.1.9 视频格式选项
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       1.1.10 标题选项
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adobe">
+       1.1.11 Adobe通行证选项
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id18">
+       1.1.12 授权选项
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id19">
+       1.1.13 后处理选项
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     1.2 使用场景
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id21">
+       1.2.1 下载所有的缩略图
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id22">
+       1.2.2 重复下载10次
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id23">
+       1.2.3 重命名 &amp; 指定位置下载
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id26">
+         1.2.3.1 携带元数据信息
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id28">
+       1.2.4 下载多个视频
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id29">
+       1.2.5 只下载音频
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id30">
+       1.2.6 下载带有描述、元数据、注释、字幕和缩略图的视频
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id31">
+       1.2.7 列出所有可用格式的视频或播放列表
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id32">
+         1.2.7.1 下载特定质量和/或格式的视频
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id33">
+       1.2.8 按照文件扩展名下载
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id35">
+       1.2.9 设置视频大小限制
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id37">
+       1.2.10 按日期下载视频
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id38">
+       1.2.11 从播放列表下载特定视频
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id39">
+       1.2.12 恢复下载
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id40">
+     1.3 使用场景2
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id41">
+       1.3.1 列出所有字幕
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id42">
+       1.3.2 下载带字幕的视频
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id44">
+       1.3.3 下载英文字幕并合并
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id45">
+       1.3.4 检查所有字幕
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id47">
+         1.3.4.1 只下载字幕
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id49">
+     1.4 使用场景3
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id50">
+       1.4.1 合成单语言字幕
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id51">
+       1.4.2 合成双语言字幕
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id52">
+     1.5 示例
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id53">
+       1.5.1 下载目标文件
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id54">
+       1.5.2 转换音频
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id55">
+       1.5.3 制作字幕
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id56">
+       1.5.4 合成字幕
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id57">
+       1.5.5 转换为英文字幕
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="youtube-dl">
+<h1>Youtube-dl<a class="headerlink" href="#youtube-dl" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>1 学会使用youtube-dl<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>目标链接: <a class="reference external" href="https://www.youtube.com/watch?v=DDs5bXh4erM">https://www.youtube.com/watch?v=DDs5bXh4erM</a></p>
+<div class="section" id="id2">
+<h3>1.1 参数含义<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id3">
+<h4>1.1.1 选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h4>
+<table class="table">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-i, –ignore-errors</p></td>
+<td><p>继续下载错误,例如跳过播放列表中不可用的视频</p></td>
+</tr>
+<tr class="row-odd"><td><p>–abort-on-error</p></td>
+<td><p>如果(在播放列表或者命令行中)发生错误中止下载更多视频</p></td>
+</tr>
+<tr class="row-even"><td><p>–dump-user-agent</p></td>
+<td><p>显示当前浏览器的校验</p></td>
+</tr>
+<tr class="row-odd"><td><p>–list-extractors</p></td>
+<td><p>列出所有支持的网站</p></td>
+</tr>
+<tr class="row-even"><td><p>–extractor-descriptions</p></td>
+<td><p>输出所有支持网站的描述</p></td>
+</tr>
+<tr class="row-odd"><td><p>–force-generic-extractor</p></td>
+<td><p>强制提取使用通用网站提取器</p></td>
+</tr>
+<tr class="row-even"><td><p>–default-search PREFIX</p></td>
+<td><p>对不合格的URL使用这个前缀. <a class="footnote-reference brackets" href="#id58" id="id4">1</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>–ignore-config</p></td>
+<td><p>不读取配置文件. <a class="footnote-reference brackets" href="#id59" id="id5">2</a></p></td>
+</tr>
+<tr class="row-even"><td><p>–config-location PATH</p></td>
+<td><p>配置文件的位置；可以是配置文件的路径,也可以是其包含的目录.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–flat-playlist</p></td>
+<td><p>不要提取视频 播放列表,只列出它们.</p></td>
+</tr>
+<tr class="row-even"><td><p>–mark-watched</p></td>
+<td><p>–mark-watched 标记观看过的视频(仅限 YouTube)</p></td>
+</tr>
+<tr class="row-odd"><td><p>–no-mark-watched</p></td>
+<td><p>不要标记观看过的视频 (仅限于YouTube)</p></td>
+</tr>
+<tr class="row-even"><td><p>–no-color</p></td>
+<td><p>不要在输出中发出颜色代码</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id6">
+<h4>1.1.2 地理限制<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h4>
+<table class="table">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–geo-verification-proxy &lt;url&gt;</p></td>
+<td><p>使用这个代理来验证一些有地理限制的网站的IP地址.实际下载时使用由–proxy指定的默认代理(如果不存在该选项,则使用无代理)</p></td>
+</tr>
+<tr class="row-odd"><td><p>–geo-bypass</p></td>
+<td><p>通过伪造 =X-Forwarded-For HTTP头来绕过地理限制</p></td>
+</tr>
+<tr class="row-even"><td><p>–no-geo-bypass</p></td>
+<td><p>不通过伪造X-Forwarded-For HTTP头来绕过地理限制</p></td>
+</tr>
+<tr class="row-odd"><td><p>–geo-bypass-country CODE</p></td>
+<td><p>用明确提供的双字母ISO 3166-2国家代码强制绕过地理限制</p></td>
+</tr>
+<tr class="row-even"><td><p>–geo-bypass-ip-block <code class="docutils literal notranslate"><span class="pre">IP_BLOCK</span></code></p></td>
+<td><p>使用明确提供的CIDR符号的IP块来绕过地理限制.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id7">
+<h4>1.1.3 视频选择<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
+<table class="table">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–playlist-start NUMBER</p></td>
+<td><p>播放列表视频开始(默认为 1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>–playlist-end NUMBER</p></td>
+<td><p>播放列表视频结束位置(默认为 1)</p></td>
+</tr>
+<tr class="row-even"><td><p>–playlist-items <code class="docutils literal notranslate"><span class="pre">ITEM_SPEC</span></code></p></td>
+<td><p>要下载的播放列表视频项目. <a class="footnote-reference brackets" href="#id60" id="id8">3</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>–match-title REGEX</p></td>
+<td><p>只下载匹配的标题(regex或无大小写的子串)</p></td>
+</tr>
+<tr class="row-even"><td><p>–reject-title REGEX</p></td>
+<td><p>跳过下载匹配的标题(regex或无大小写的子字符串).</p></td>
+</tr>
+<tr class="row-odd"><td><p>–max-downloads NUMBER</p></td>
+<td><p>在下载完NUMBER的文件后放弃.</p></td>
+</tr>
+<tr class="row-even"><td><p>–min-filesize SIZE</p></td>
+<td><p>不下载任何小于SIZE的视频(如50k或44.6m)</p></td>
+</tr>
+<tr class="row-odd"><td><p>–max-filesize SIZE</p></td>
+<td><p>不下载任何大于SIZE的视频(如50k或44.6m).</p></td>
+</tr>
+<tr class="row-even"><td><p>–date DATE</p></td>
+<td><p>只下载在此日期上传的视频</p></td>
+</tr>
+<tr class="row-odd"><td><p>–datebefore DATE</p></td>
+<td><p>只下载在此日期或之前上传的视频(即包括在内).</p></td>
+</tr>
+<tr class="row-even"><td><p>–max-views COUNT</p></td>
+<td><p>不下载浏览量超过 COUNT 的视频.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–no-playlist</p></td>
+<td><p>只下载视频,如果URL指的是一个视频和一个播放列表.</p></td>
+</tr>
+<tr class="row-even"><td><p>–yes-playlist</p></td>
+<td><p>下载播放列表,如果URL指的是一个视频和一个播放列表.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–age-limit YEARS</p></td>
+<td><p>只下载适合指定年龄的视频</p></td>
+</tr>
+<tr class="row-even"><td><p>–download-archive FILE</p></td>
+<td><p>只下载档案文件中没有列出的视频.在其中记录所有下载的视频的ID.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–include-ads</p></td>
+<td><p>也下载广告(试验性的).</p></td>
+</tr>
+<tr class="row-even"><td><p>–match-filter FILTER</p></td>
+<td><p>通用的视频过滤器.指定任何键 <a class="footnote-reference brackets" href="#id61" id="id9">4</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id10">
+<h4>1.1.4 下载选项<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h4>
+<table class="table">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-r, –limit-rate RATE</p></td>
+<td><p>最大的下载速率,单位是字节/秒(例如,50K或4.2M).</p></td>
+</tr>
+<tr class="row-odd"><td><p>-R, –retries RETRIES</p></td>
+<td><p>重试次数(默认为10),或 “无限”.</p></td>
+</tr>
+<tr class="row-even"><td><p>–fragment-retries RETRIES</p></td>
+<td><p>一个片段的重试次数(默认为10),或 “无限”(DASH、hlsnative和ISM).</p></td>
+</tr>
+<tr class="row-odd"><td><p>–skip-unavailable-fragments</p></td>
+<td><p>跳过不可用的片段(DASH, hlsnative and ISM)</p></td>
+</tr>
+<tr class="row-even"><td><p>–abort-on unavailable-fragment</p></td>
+<td><p>当某些片段不可用时,中止下载.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–keep-fragments</p></td>
+<td><p>在下载完成后,将下载的片段保留在磁盘上；默认情况下,片段会被清除掉</p></td>
+</tr>
+<tr class="row-even"><td><p>–buffer-size SIZE</p></td>
+<td><p>下载缓冲区的大小(例如1024或16K)(默认为1024).</p></td>
+</tr>
+<tr class="row-odd"><td><p>–no-resize-buffer</p></td>
+<td><p>不自动调整缓冲区的大小.默认情况下,缓冲区的大小会从初始值SIZE自动调整.</p></td>
+</tr>
+<tr class="row-even"><td><p>–http-chunk-size</p></td>
+<td><p>基于分块的HTTP下载的分块大小(例如10485760或10M)(默认为禁用).对于绕过网络服务器施加的带宽限制可能很有用(试验性的).</p></td>
+</tr>
+<tr class="row-odd"><td><p>–playlist-reverse</p></td>
+<td><p>按相反顺序下载播放列表中的视频</p></td>
+</tr>
+<tr class="row-even"><td><p>–playlist-random</p></td>
+<td><p>以随机顺序下载播放列表的视频</p></td>
+</tr>
+<tr class="row-odd"><td><p>–xattr-set-filesize</p></td>
+<td><p>用预期的文件大小设置文件x属性ytdl.filesize</p></td>
+</tr>
+<tr class="row-even"><td><p>–hls-prefer-native</p></td>
+<td><p>使用本地HLS下载器而不是ffmpeg</p></td>
+</tr>
+<tr class="row-odd"><td><p>–hls-prefer-ffmpeg</p></td>
+<td><p>使用ffmpeg而不是本地HLS下载器</p></td>
+</tr>
+<tr class="row-even"><td><p>–hls-use-mpegts</p></td>
+<td><p>对HLS视频使用mpegts容器,允许在下载时播放视频(有些播放器可能无法播放).</p></td>
+</tr>
+<tr class="row-odd"><td><p>–external-downloader COMMAND</p></td>
+<td><p>使用指定的外部下载器.目前支持aria2c、avconv、axel、c url、ffmpeg、httpie、wget.</p></td>
+</tr>
+<tr class="row-even"><td><p>–external-downloader-args ARGS</p></td>
+<td><p>把这些参数给外部下载器</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id11">
+<h4>1.1.5 文件系统选项<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h4>
+<table class="table">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-a, –batch-file FILE</p></td>
+<td><p>包含要下载的URL的文件(‘-‘代表stdin),每行一个URL.以’#’、’;’或’]’开头的行被认为是注释,并被忽略.–id 在文件名中只使用视频ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>-o, –output TEMPLATE</p></td>
+<td><p>输出文件名模板,所有信息见 “OUTPUT TEMPLATE”.</p></td>
+</tr>
+<tr class="row-even"><td><p>–output-na-placeholder PLACEHOLDER</p></td>
+<td><p>输出文件名模板中不可用的元字段的占位值(默认为 “NA”).</p></td>
+</tr>
+<tr class="row-odd"><td><p>–autonumber-start NUMBER</p></td>
+<td><p>指定%(autonumber)的起始值(默认为1)</p></td>
+</tr>
+<tr class="row-even"><td><p>–restrict-filenames</p></td>
+<td><p>限制文件名只能使用ASCII字符,并避免在文件名中使用”&amp;”和空格.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-w, –no-overwrites</p></td>
+<td><p>不覆盖文件</p></td>
+</tr>
+<tr class="row-even"><td><p>-c, –continue</p></td>
+<td><p>强制恢复部分下载的文件.默认情况下,如果可能的话,youtube-dl会恢复下载.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–no-continue</p></td>
+<td><p>不恢复部分下载的文件(从头开始).</p></td>
+</tr>
+<tr class="row-even"><td><p>–no-part</p></td>
+<td><p>不使用.part文件–直接写进输出文件.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–no-mtime</p></td>
+<td><p>不使用Last-modified标头来设置文件的修改时间.</p></td>
+</tr>
+<tr class="row-even"><td><p>–write-description</p></td>
+<td><p>将视频描述写入.description文件中</p></td>
+</tr>
+<tr class="row-odd"><td><p>–write-annotations</p></td>
+<td><p>将视频注解写入.annotations.xml文件中</p></td>
+</tr>
+<tr class="row-even"><td><p>–load-info-json FILE</p></td>
+<td><p>包含视频信息的JSON文件(用”-write-info-json “选项创建).</p></td>
+</tr>
+<tr class="row-odd"><td><p>–cookies FILE</p></td>
+<td><p>从中读取cookie的文件,并将cookie jar转入其中.</p></td>
+</tr>
+<tr class="row-even"><td><p>–cache-dir DIR</p></td>
+<td><p>在文件系统中的位置,youtube-dl可以永久地存储一些下载的信息. <a class="footnote-reference brackets" href="#id62" id="id12">5</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>–no-cache-dir</p></td>
+<td><p>禁用文件系统缓存</p></td>
+</tr>
+<tr class="row-even"><td><p>–rm-cache-dir</p></td>
+<td><p>删除所有文件系统缓存文件</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id13">
+<h4>1.1.6 缩略图选项<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h4>
+<table class="table">
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–write-thumbnail</p></td>
+<td><p>将缩略图象写入磁盘</p></td>
+</tr>
+<tr class="row-odd"><td><p>–write-all-thumbnails</p></td>
+<td><p>将所有的缩略图格式写到磁盘上</p></td>
+</tr>
+<tr class="row-even"><td><p>–list-thumbnails</p></td>
+<td><p>模拟并列举所有可用的 缩略图格式</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id14">
+<h4>1.1.7 详细/仿真选项：<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h4>
+<table class="table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-q, –quiet</p></td>
+<td><p>激活安静模式</p></td>
+</tr>
+<tr class="row-odd"><td><p>–no-warnings</p></td>
+<td><p>忽略警告</p></td>
+</tr>
+<tr class="row-even"><td><p>-s, –simulate</p></td>
+<td><p>不下载视频,也不向磁盘写入任何内容</p></td>
+</tr>
+<tr class="row-odd"><td><p>–skip-download</p></td>
+<td><p>不下载视频</p></td>
+</tr>
+<tr class="row-even"><td><p>-g, –get-url</p></td>
+<td><p>模拟,安静但打印URL</p></td>
+</tr>
+<tr class="row-odd"><td><p>-e, –get-title</p></td>
+<td><p>模拟,安静但打印标题</p></td>
+</tr>
+<tr class="row-even"><td><p>–get-id</p></td>
+<td><p>模拟,安静但打印id</p></td>
+</tr>
+<tr class="row-odd"><td><p>–get-thumbnail</p></td>
+<td><p>模拟,安静但打印缩略图URL</p></td>
+</tr>
+<tr class="row-even"><td><p>–get-description</p></td>
+<td><p>模拟,安静但打印视频描述</p></td>
+</tr>
+<tr class="row-odd"><td><p>–get-duration</p></td>
+<td><p>模拟,安静但打印视频长度</p></td>
+</tr>
+<tr class="row-even"><td><p>–get-filename</p></td>
+<td><p>模拟,安静但打印输出文件名</p></td>
+</tr>
+<tr class="row-odd"><td><p>–get-format</p></td>
+<td><p>模拟,安静但打印输出格式</p></td>
+</tr>
+<tr class="row-even"><td><p>–j, –dump-json</p></td>
+<td><p>模拟,安静但打印JSON信息.参见 “OUTPUT TEMPLATE “中对可用键的描述.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-J, –dump-single-json</p></td>
+<td><p>模拟,安静但打印每个命令行参数的JSON信息.如果URL指的是一个播放列表,则在单行中转储整个播放列表信息.</p></td>
+</tr>
+<tr class="row-even"><td><p>–print-json</p></td>
+<td><p>保持安静,将视频信息打印成JSON格式(视频仍在下载中).</p></td>
+</tr>
+<tr class="row-odd"><td><p>–newline</p></td>
+<td><p>以新行形式输出进度条</p></td>
+</tr>
+<tr class="row-even"><td><p>–no-progress</p></td>
+<td><p>不打印进度条</p></td>
+</tr>
+<tr class="row-odd"><td><p>–console-title</p></td>
+<td><p>在控制台标题栏显示进度</p></td>
+</tr>
+<tr class="row-even"><td><p>–v, –verbose</p></td>
+<td><p>打印各种调试信息</p></td>
+</tr>
+<tr class="row-odd"><td><p>–dump-pages</p></td>
+<td><p>打印用base64编码的下载页面,以调试问题(非常粗略).</p></td>
+</tr>
+<tr class="row-even"><td><p>–write-pages</p></td>
+<td><p>将下载的中间页写入当前目录下的文件以调试问题</p></td>
+</tr>
+<tr class="row-odd"><td><p>–print-traffic</p></td>
+<td><p>显示发送和读取的HTTP流量</p></td>
+</tr>
+<tr class="row-even"><td><p>–C, –call-home</p></td>
+<td><p>联系youtube-dl服务器进行调试</p></td>
+</tr>
+<tr class="row-odd"><td><p>–no-call-home</p></td>
+<td><p>不要联系优酷网服务器进行调试</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id15">
+<h4>1.1.8 策略<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h4>
+<table class="table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–encoding ENCODING</p></td>
+<td><p>强制使用指定的编码(实验性).</p></td>
+</tr>
+<tr class="row-odd"><td><p>–no-check-certificate</p></td>
+<td><p>抑制HTTPS证书的验证</p></td>
+</tr>
+<tr class="row-even"><td><p>–prefer-insecure</p></td>
+<td><p>使用未加密的连接来检索视频的信息.(目前只支持YouTube)</p></td>
+</tr>
+<tr class="row-odd"><td><p>–user-agent UA</p></td>
+<td><p>指定一个自定义的用户代理</p></td>
+</tr>
+<tr class="row-even"><td><p>–referer URL</p></td>
+<td><p>指定一个自定义的referer,在视频访问被限制在一个域内时使用.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–add-header FIELD:VALUE</p></td>
+<td><p>指定一个自定义HTTP头和它的值,用冒号’:’分开.你可以多次使用这个选项</p></td>
+</tr>
+<tr class="row-even"><td><p>–bidi-workaround</p></td>
+<td><p>在缺乏双向文本支持的终端上工作.需要bidiv或fribidi可执行文件在PATH中.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–sleep-interval SECONDS</p></td>
+<td><p>单独使用时,每次下载前睡眠的秒数；与 –max-sleep-interval 一起使用时,每次下载前随机睡眠的范围的下限(可能的最小睡眠秒数).</p></td>
+</tr>
+<tr class="row-even"><td><p>–max-sleep-interval SECONDS</p></td>
+<td><p>每次下载前的随机睡眠范围的上限(可能的最大睡眠秒数).必须与–min- sleep-interval一起使用.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id16">
+<h4>1.1.9 视频格式选项<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h4>
+<table class="table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-f, –format FORMAT</p></td>
+<td><p>视频格式代码,所有信息见 “格式选择”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–all-formats</p></td>
+<td><p>下载所有可用的视频格式</p></td>
+</tr>
+<tr class="row-even"><td><p>–prefer-free-formats</p></td>
+<td><p>优先选择免费的视频格式,除非要求特定的格式</p></td>
+</tr>
+<tr class="row-odd"><td><p>–F, –list-formats</p></td>
+<td><p>列出所请求视频的所有可用格式</p></td>
+</tr>
+<tr class="row-even"><td><p>–youtube-skip-dash-manifest</p></td>
+<td><p>不下载YouTube视频的DASH清单和相关数据</p></td>
+</tr>
+<tr class="row-odd"><td><p>–merge-output-format FORMAT</p></td>
+<td><p>如果需要合并(例如bestvideo+bestaudio),则输出到给定的容器格式.mkv, mp4, ogg, webm, flv中的一种.如果不需要合并,则忽略.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id17">
+<h4>1.1.10 标题选项<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h4>
+<table class="table">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–write-sub</p></td>
+<td><p>编写字幕文件</p></td>
+</tr>
+<tr class="row-odd"><td><p>–write-auto-sub</p></td>
+<td><p>写入自动生成的字幕文件(仅YouTube)</p></td>
+</tr>
+<tr class="row-even"><td><p>–all-subs</p></td>
+<td><p>下载视频的所有可用字幕</p></td>
+</tr>
+<tr class="row-odd"><td><p>–list-subs</p></td>
+<td><p>列出视频的所有可用字幕</p></td>
+</tr>
+<tr class="row-even"><td><p>–sub-format FORMAT</p></td>
+<td><p>字幕格式,接受偏好的格式,例如.”srt “或 “ass/srt/best”</p></td>
+</tr>
+<tr class="row-odd"><td><p>–sub-lang LANGS</p></td>
+<td><p>要下载的字幕的语言(可选),用逗号隔开,使用 –list-subs 获取可用的语言标签</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="adobe">
+<h4>1.1.11 Adobe通行证选项<a class="headerlink" href="#adobe" title="永久链接至标题">¶</a></h4>
+<table class="table">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–ap-mso MSO Adobe</p></td>
+<td><p>通过多系统运营商(电视供应商)的标识符,使用–ap-list-mso获取可用的多系统运营商列表.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–ap-username USERNAME</p></td>
+<td><p>多系统运营商账户登录</p></td>
+</tr>
+<tr class="row-even"><td><p>–ap-password PASSWORD</p></td>
+<td><p>多系统运营商账户密码.如果没有这个选项,youtube-dl将以交互方式询问.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–ap-list-mso</p></td>
+<td><p>列出所有支持的多系统操作员</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id18">
+<h4>1.1.12 授权选项<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h4>
+<table class="table">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-u, –username USERNAME</p></td>
+<td><p>用这个账户ID登录</p></td>
+</tr>
+<tr class="row-odd"><td><p>-p, –密码 PASSWORD</p></td>
+<td><p>帐户密码.如果没有这个选项,youtube-dl将以交互方式询问.</p></td>
+</tr>
+<tr class="row-even"><td><p>-2, –twofactor TWOFACTOR</p></td>
+<td><p>双因素认证码</p></td>
+</tr>
+<tr class="row-odd"><td><p>-n, –netrc</p></td>
+<td><p>使用.netrc认证数据</p></td>
+</tr>
+<tr class="row-even"><td><p>–video-password PASSWORD</p></td>
+<td><p>视频密码(vimeo, youku</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id19">
+<h4>1.1.13 后处理选项<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h4>
+<table class="table">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 92%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-x, –extract-audio</p></td>
+<td><p>将视频文件转换成纯音频文件(需要ffmpeg/avconv和ffprobe/avprobe</p></td>
+</tr>
+<tr class="row-odd"><td><p>–audio-format FORMAT</p></td>
+<td><p>指定音频格式.”best”, “aac”, “flac”, “mp3”, “m4a”, “opus”, “vorbis”, 或 “wav”; 默认为 “best”; 没有-x则无效果</p></td>
+</tr>
+<tr class="row-even"><td><p>–audio-quality QUALITY</p></td>
+<td><p>指定ffmpeg/avconv的音频质量,对于VBR或特定的比特率(如128K),插入一个介于0(更好)和9(更差)之间的值(默认为5</p></td>
+</tr>
+<tr class="row-odd"><td><p>–recode-video FORMAT</p></td>
+<td><p>必要时将视频编码为另一种格式(目前支持：MP4 FLV OG WEBM MKVAVI)</p></td>
+</tr>
+<tr class="row-even"><td><p>–postprocessor-args ARGS</p></td>
+<td><p>给后处理程序提供这些参数</p></td>
+</tr>
+<tr class="row-odd"><td><p>-k, –keep-video</p></td>
+<td><p>后期处理后保持磁盘上的视频文件；默认情况下,视频会被清除掉</p></td>
+</tr>
+<tr class="row-even"><td><p>–no-post-overwrites</p></td>
+<td><p>不覆盖后期处理的文件；默认情况下,后期处理的文件被覆盖了</p></td>
+</tr>
+<tr class="row-odd"><td><p>–embed-subs</p></td>
+<td><p>在视频中嵌入字幕(只针对mp4、webm和mkv视频</p></td>
+</tr>
+<tr class="row-even"><td><p>–embed-thumbnail</p></td>
+<td><p>在音频中嵌入缩略图作为封面画</p></td>
+</tr>
+<tr class="row-odd"><td><p>–add-metadata</p></td>
+<td><p>给视频文件写入元数据</p></td>
+</tr>
+<tr class="row-even"><td><p>–metadata-from-title FORMAT</p></td>
+<td><p>从视频标题中解析额外的元数据,如歌曲名称/艺术家.格式的语法与–output相同.也可以使用带有命名捕获组的正则表达式.被解析的参数会取代现有的值.例如： –metadata-from-title “%(artist)s - %(title)s” 匹配 “Coldplay - Paradise “这样的标题.例子(regex): –metadata-from-title “(?P&lt;artist&gt;.+?) - (?P&lt;title&gt;.+)” –xattrs 将元数据写入视频文件的xattrs(使用dublin core和xdg标准)</p></td>
+</tr>
+<tr class="row-odd"><td><p>–fixup POLICY</p></td>
+<td><p>自动纠正文件的已知错误.从不(什么都不做)、警告(只发出警告)、detect<sub>or</sub><sub>warn</sub>(默认；如果我们能修复文件,则警告)中选择一个.</p></td>
+</tr>
+<tr class="row-even"><td><p>–prefer-avconv</p></td>
+<td><p>在运行后处理程序时优先选择avconv而不是ffmpeg.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–prefer-ffmpeg</p></td>
+<td><p>在运行后处理程序时,优先选择ffmpeg而不是avconv(默认).</p></td>
+</tr>
+<tr class="row-even"><td><p>–ffmpeg-location PATH</p></td>
+<td><p>ffmpeg/avconv 二进制文件的位置；二进制文件的路径或其包含的目录.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–exec CMD</p></td>
+<td><p>在下载和后处理后对文件执行命令,类似于find的-exec语法.例子： –exec ‘adb push {} <em>sdcard/Music</em> &amp;&amp; rm {}’</p></td>
+</tr>
+<tr class="row-even"><td><p>–convert-subs FORMAT</p></td>
+<td><p>将字幕转换成其他格式(目前支持：srt ass vtt lrc)</p></td>
+</tr>
+</tbody>
+</table>
+<p>–audio-format mp3
+-k
+–embed-subs
+–ffmpeg-location F:filessoulsoftffmpegbin\
+–convert-subs srt</p>
+</div>
+</div>
+<div class="section" id="id20">
+<h3>1.2 使用场景<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h3>
+<p>-mC3tZESTSs</p>
+<div class="section" id="id21">
+<h4>1.2.1 下载所有的缩略图<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h4>
+<p>–write-all-thumbnails</p>
+</div>
+<div class="section" id="id22">
+<h4>1.2.2 重复下载10次<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h4>
+<p>-R 10</p>
+<p>–hls-prefer-ffmpeg</p>
+<p>youtube-dl.exe -f best -R 10 –hls-prefer-ffmpeg –ffmpeg-location F:filessoulsoftffmpegbinffmpeg.exe <a class="reference external" href="https://www.youtube.com/watch?v=8OwEzOCcTNk">https://www.youtube.com/watch?v=8OwEzOCcTNk</a></p>
+</div>
+<div class="section" id="id23">
+<h4>1.2.3 重命名 &amp; 指定位置下载<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h4>
+<p>youtube-dl.exe -o “Julia Wu-依然.mp4” <a class="reference external" href="https://www.youtube.com/watch?v=8OwEzOCcTNk">https://www.youtube.com/watch?v=8OwEzOCcTNk</a>
+youtube-dl.exe -o “F:\Julia Wu-依然.mp4” <a class="reference external" href="https://www.youtube.com/watch?v=8OwEzOCcTNk">https://www.youtube.com/watch?v=8OwEzOCcTNk</a></p>
+<div class="section" id="id26">
+<h5>1.2.3.1 携带元数据信息<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h5>
+<p>例如标题、上传者名称(频道名称)和上传日期等</p>
+<p>youtube-dl.exe -o “F:\\%(title)s by %(uploader)s on %(upload<sub>date</sub>)s in %(playlist)s.%(ext)s-Julia Wu-依然.mp4” <a class="reference external" href="https://www.youtube.com/watch?v=8OwEzOCcTNk">https://www.youtube.com/watch?v=8OwEzOCcTNk</a></p>
+</div>
+</div>
+<div class="section" id="id28">
+<h4>1.2.4 下载多个视频<a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h4>
+<p>youtube-dl &lt;url1&gt; &lt;url2&gt;
+youtube-dl -a url.txt</p>
+</div>
+<div class="section" id="id29">
+<h4>1.2.5 只下载音频<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h4>
+<p>youtube-dl -x –audio-format mp3 url</p>
+<p>youtube-dl.exe -x –audio-format m4a –ffmpeg-location F:filessoulsoftffmpegbin\ <a class="reference external" href="https://www.youtube.com/watch?v=JVa4Hd7qYXY">https://www.youtube.com/watch?v=JVa4Hd7qYXY</a></p>
+</div>
+<div class="section" id="id30">
+<h4>1.2.6 下载带有描述、元数据、注释、字幕和缩略图的视频<a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h4>
+<p>youtube-dl –write-description –write-info-json –write-annotations –write-sub –write-thumbnail &lt;url&gt;</p>
+<p>youtube-dl –write-description –write-info-json –write-annotations –write-sub –write-thumbnail <a class="reference external" href="https://www.youtube.com/watch?v=zyRNIdpbIxg">https://www.youtube.com/watch?v=zyRNIdpbIxg</a></p>
+</div>
+<div class="section" id="id31">
+<h4>1.2.7 列出所有可用格式的视频或播放列表<a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h4>
+<p>youtube-dl –list-formats</p>
+<p>youtube-dl -F</p>
+<div class="section" id="id32">
+<h5>1.2.7.1 下载特定质量和/或格式的视频<a class="headerlink" href="#id32" title="永久链接至标题">¶</a></h5>
+<p>best
+worst
+bestvideo
+worstvideo
+bestaudio
+worstaudio</p>
+<p>组合下载 (需要ffmpeg合并)
+youtube-dl -f bestvideo+bestaudio
+youtube-dl -f bestvideo+bestaudio –ffmpeg-location F:filessoulsoftffmpegbin\ <a class="reference external" href="https://www.youtube.com/watch?v=5Kv9fDxYIiY">https://www.youtube.com/watch?v=5Kv9fDxYIiY</a></p>
+<p>分开下载
+youtube-dl -f ‘bestvideo,bestaudio’</p>
+<p>区间
+youtube-dl -f ‘bestvideo[height&lt;=480]+bestaudio/best[height&lt;=480]’
+youtube-dl -f “best[height&lt;=480]”</p>
+</div>
+</div>
+<div class="section" id="id33">
+<h4>1.2.8 按照文件扩展名下载<a class="headerlink" href="#id33" title="永久链接至标题">¶</a></h4>
+<p>youtube-dl -f mp4</p>
+<p>youtube-dl -f “bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best” <a class="reference external" href="https://www.youtube.com/watch?v=7E-cwdnsiow">https://www.youtube.com/watch?v=7E-cwdnsiow</a></p>
+<p>youtube-dl -f mp4 -o “%(title)sf%(format<sub>id</sub>)s.%(ext)s” <a class="reference external" href="https://www.youtube.com/watch?v=7E-cwdnsiow">https://www.youtube.com/watch?v=7E-cwdnsiow</a></p>
+</div>
+<div class="section" id="id35">
+<h4>1.2.9 设置视频大小限制<a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>只下载大于100M的视频</p>
+<p>youtube-dl –min-filesize 100M &lt;playlist<sub>url</sub>&gt;
+youtube-dl –max-filesize 100M &lt;playlist<sub>url</sub>&gt;
+youtube-dl -f “best[filesize&lt;100M]” <a class="reference external" href="https://www.youtube.com/watch?v=7E-cwdnsiow">https://www.youtube.com/watch?v=7E-cwdnsiow</a></p>
+</li>
+</ul>
+</div>
+<div class="section" id="id37">
+<h4>1.2.10 按日期下载视频<a class="headerlink" href="#id37" title="永久链接至标题">¶</a></h4>
+<p>youtube-dl –date 20181001 &lt;URL&gt;</p>
+<ul>
+<li><p>特定日期上传或者之前上传的视频</p>
+<p>youtube-dl –datebefore 20180101 &lt;URL&gt;</p>
+<p>youtube-dl –dateafter 20180101 &lt;URL&gt;</p>
+<p>youtube-dl –dateafter now-6months &lt;URL&gt;</p>
+<p>youtube-dl –dateafter 20180101 –datebefore 20190101</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id38">
+<h4>1.2.11 从播放列表下载特定视频<a class="headerlink" href="#id38" title="永久链接至标题">¶</a></h4>
+<p>仅支持youtube</p>
+<p>youtube-dl –dateafter 20190709 –datebefore 20200810 –ffmpeg-location F:filessoulsoftffmpegbin\ <a class="reference external" href="https://v.youku.com/v_show/id_XNDE4MDIxNjg2NA==.html?f=52180465">https://v.youku.com/v_show/id_XNDE4MDIxNjg2NA==.html?f=52180465</a></p>
+</div>
+<div class="section" id="id39">
+<h4>1.2.12 恢复下载<a class="headerlink" href="#id39" title="永久链接至标题">¶</a></h4>
+<p>-c</p>
+</div>
+</div>
+<div class="section" id="id40">
+<h3>1.3 使用场景2<a class="headerlink" href="#id40" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id41">
+<h4>1.3.1 列出所有字幕<a class="headerlink" href="#id41" title="永久链接至标题">¶</a></h4>
+<p>youtube-dl –list-subs <a class="reference external" href="https://www.youtube.com/watch?v=_Mz4LpFyBqo">https://www.youtube.com/watch?v=_Mz4LpFyBqo</a></p>
+</div>
+<div class="section" id="id42">
+<h4>1.3.2 下载带字幕的视频<a class="headerlink" href="#id42" title="永久链接至标题">¶</a></h4>
+<p>youtube-dl –write-auto-sub –ffmpeg-location F:filessoulsoftffmpegbin\ <a class="reference external" href="https://www.youtube.com/watch?v=DDs5bXh4erM">https://www.youtube.com/watch?v=DDs5bXh4erM</a></p>
+</div>
+<div class="section" id="id44">
+<h4>1.3.3 下载英文字幕并合并<a class="headerlink" href="#id44" title="永久链接至标题">¶</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>youtube-dl --write-srt --sub-lang en --ffmpeg-location F:<span class="se">\f</span>iles<span class="se">\s</span>oul<span class="se">\s</span>oft<span class="se">\f</span>fmpeg<span class="se">\b</span>in<span class="se">\ </span>https://www.youtube.com/watch?v<span class="o">=</span>DDs5bXh4erM
+</pre></div>
+</div>
+</div>
+<div class="section" id="id45">
+<h4>1.3.4 检查所有字幕<a class="headerlink" href="#id45" title="永久链接至标题">¶</a></h4>
+<p>youtube-dl –list-subs <a class="reference external" href="https://www.youtube.com/watch?v=_Mz4LpFyBqo">https://www.youtube.com/watch?v=_Mz4LpFyBqo</a></p>
+<div class="section" id="id47">
+<h5>1.3.4.1 只下载字幕<a class="headerlink" href="#id47" title="永久链接至标题">¶</a></h5>
+<p>youtube-dl –write-srt –sub-lang en  –skip-download  <a class="reference external" href="https://youtube.com/watch?v=mfQel3jxK-g">https://youtube.com/watch?v=mfQel3jxK-g</a></p>
+<p>youtube-dl –write-srt –sub-lang zh-Hans –skip-download –ffmpeg-location F:filessoulsoftffmpegbin\ <a class="reference external" href="https://www.youtube.com/watch?v=DDs5bXh4erM">https://www.youtube.com/watch?v=DDs5bXh4erM</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="id49">
+<h3>1.4 使用场景3<a class="headerlink" href="#id49" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id50">
+<h4>1.4.1 合成单语言字幕<a class="headerlink" href="#id50" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>F<span class="p">:</span><span class="nl">\files\soul\soft\ffmpeg\bin\ffmpeg</span><span class="c1"> -i target.mp4 -strict -2 -vf subtitles=zh_tw.srt:force_style=&#39;Fontsize=20\,Fontname=Microsoft-YaHei-UI\,MarginV=30\,Bold=-1\,BorderStyle=1&#39; -qscale:v 3 target-cn.mp4.mp4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id51">
+<h4>1.4.2 合成双语言字幕<a class="headerlink" href="#id51" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>F<span class="p">:</span><span class="nl">\files\soul\soft\ffmpeg\bin\ffmpeg</span><span class="c1"> -i target-cn.mp4.mp4 -strict -2 -vf subtitles=en.srt:force_style=&#39;Fontsize=15\,Fontname=Microsoft-YaHei-UI\,Bold=-1\,BorderStyle=1&#39; -qscale:v 3 hack_with_double_subtitles.mp4</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://blog.csdn.net/weixin_45478646/article/details/108566925">https://blog.csdn.net/weixin_45478646/article/details/108566925</a></p>
+</div>
+</div>
+<div class="section" id="id52">
+<h3>1.5 示例<a class="headerlink" href="#id52" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id53">
+<h4>1.5.1 下载目标文件<a class="headerlink" href="#id53" title="永久链接至标题">¶</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>youtube-dl.exe --proxy socks5://127.0.0.1:1081 --write-all-thumbnails -R <span class="m">10</span> --verbose -x --audio-format m4a --ffmpeg-location D:<span class="se">\f</span>fmpeg<span class="se">\b</span>in --write-description --write-info-json --write-annotations --write-sub --write-thumbnail -f best https://www.youtube.com/watch?v<span class="o">=</span>-mC3tZESTSs
+</pre></div>
+</div>
+</div>
+<div class="section" id="id54">
+<h4>1.5.2 转换音频<a class="headerlink" href="#id54" title="永久链接至标题">¶</a></h4>
+</div>
+<div class="section" id="id55">
+<h4>1.5.3 制作字幕<a class="headerlink" href="#id55" title="永久链接至标题">¶</a></h4>
+</div>
+<div class="section" id="id56">
+<h4>1.5.4 合成字幕<a class="headerlink" href="#id56" title="永久链接至标题">¶</a></h4>
+</div>
+<div class="section" id="id57">
+<h4>1.5.5 转换为英文字幕<a class="headerlink" href="#id57" title="永久链接至标题">¶</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ls -ll
+</pre></div>
+</div>
+<dl class="footnote brackets">
+<dt class="label" id="id58"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dd><p>例如,”gvsearch2:”从google视频下载两个视频,用于youtube-dl “大苹
+果”. 使用值 “auto” 让 YouTube-dl 猜测( <code class="docutils literal notranslate"><span class="pre">&quot;auto_warning&quot;</span></code> 在猜测时发出警
+告).”error”只是抛出一个错误. 默认值 <code class="docutils literal notranslate"><span class="pre">&quot;fixup_error&quot;</span></code> 修复破损的URL,但如
+果不能这样做,则发出错误,而不是搜索.</p>
+</dd>
+<dt class="label" id="id59"><span class="brackets"><a class="fn-backref" href="#id5">2</a></span></dt>
+<dd><p>当在全局配置文件 <code class="docutils literal notranslate"><span class="pre">/etc/youtube-dl.conf</span></code> 中给出.不要读取
+<code class="docutils literal notranslate"><span class="pre">~/.config/youtube-dl/config</span></code> 中的用户配置(Windows下为
+<code class="docutils literal notranslate"><span class="pre">%APPDATA%/youtube-dl/config.txt</span></code>).</p>
+</dd>
+<dt class="label" id="id60"><span class="brackets"><a class="fn-backref" href="#id8">3</a></span></dt>
+<dd><p>指定播放列表中视频的索引,用逗号隔开,如. <code class="docutils literal notranslate"><span class="pre">&quot;--</span> <span class="pre">playlist-items</span> <span class="pre">1,2,5,8&quot;</span></code> 如果你想下载播放列表中1、2、5、8索引的视频.你可以指定范围.
+<code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">--playlist-items</span> <span class="pre">1-3,7,10-13&quot;</span></code>,它将下载索引为1,2,3,7,10,11,12和13的
+视频.</p>
+</dd>
+<dt class="label" id="id61"><span class="brackets"><a class="fn-backref" href="#id9">4</a></span></dt>
+<dd><p>(见 “OUTPUT TEMPLATE “的可用键列表),如果该键存在,则进行匹配；如
+果该键不存在,则检查！键&gt;NUMBER(如 <code class="docutils literal notranslate"><span class="pre">&quot;comment_count</span> <span class="pre">&gt;</span> <span class="pre">12&quot;</span></code>,也可以用&gt;=、&lt;、
+&lt;=、！=、=)与数字进行比较；键=’LITERAL’(如 “uploader = ‘Mike Smith’”,
+也可以用！=)与字符串字面进行匹配；&amp;则要求多次匹配.除非你在运算符后面加
+一个问号(?),否则不知道的值将被排除.例如,为了只匹配那些被喜欢超过100次,
+不喜欢少于50次(或者不喜欢功能在给定的服务中不可用),但也有描述的视频,使
+用–匹配过滤器 <code class="docutils literal notranslate"><span class="pre">&quot;like_count</span> <span class="pre">&gt;</span> <span class="pre">100</span> <span class="pre">&amp;</span> <span class="pre">dislike_count</span> <span class="pre">&lt;?</span> <span class="pre">50</span> <span class="pre">&amp;</span> <span class="pre">description&quot;</span></code>.</p>
+</dd>
+<dt class="label" id="id62"><span class="brackets"><a class="fn-backref" href="#id12">5</a></span></dt>
+<dd><p>默认为 <code class="docutils literal notranslate"><span class="pre">$XDG_CACHE_HOME/youtube-dl</span></code> 或 <code class="docutils literal notranslate"><span class="pre">~/.cache/youtube-dl</span></code>
+.目前,只有YouTube播放器文件(对于有混淆签名的视频)被缓存,但这可能会改变.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../autohotkey/init-autohot-key.html" title="previous page">1 Autohotkey</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Revolt<br/>
+        
+            &copy; Copyright 2021, Revolt.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

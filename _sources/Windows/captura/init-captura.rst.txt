@@ -4,7 +4,7 @@
 1 Captura-cli
 -------------
 
-.. code:: sh
+.. code:: shell
     :name: captura-cli
 
     @echo off
@@ -121,7 +121,7 @@ Target
 
 .. code:: text
 
-    nil
+    (("Microsoft" "Windows" "[Version" "10.0.22000.120]" "" "") ("(c)" "Microsoft" "Corporation." "All" "rights" "reserved.") ("" "" "" "" "" "") ("c:\\Users\\admin\\Desktop\\html\\sphinx-blog\\docs\\source\\Windows\\captura>@echo" "off" "" "" "" "") ("More?" "" "" "" "" ""))
 
     :: 检查编码器索引
     %captura-cli% list
@@ -143,7 +143,7 @@ Media Foundation (MF) 是一个基于 组件对象模型( COM ) 的 多媒体框
 
 .. code:: sh
 
-    nil
+    (("Microsoft" "Windows" "[Version" "10.0.22000.120]" "" "") ("(c)" "Microsoft" "Corporation." "All" "rights" "reserved.") ("" "" "" "" "" "") ("c:\\Users\\admin\\Desktop\\html\\sphinx-blog\\docs\\source\\Windows\\captura>@echo" "off" "" "" "" "") ("More?" "" "" "" "" ""))
     captura-cli start --encoder mf
 
 1.4.3 ffempg
@@ -155,7 +155,7 @@ Media Foundation (MF) 是一个基于 组件对象模型( COM ) 的 多媒体框
 
 .. code:: text
 
-    nil
+    (("Microsoft" "Windows" "[Version" "10.0.22000.120]" "" "") ("(c)" "Microsoft" "Corporation." "All" "rights" "reserved.") ("" "" "" "" "" "") ("c:\\Users\\admin\\Desktop\\html\\sphinx-blog\\docs\\source\\Windows\\captura>@echo" "off" "" "" "" "") ("More?" "" "" "" "" ""))
     %captura-cli% start --encoder ffmpeg:0 :: 4s的视频大小约180kb.还行
 
 1.4.4 Stream
@@ -177,7 +177,7 @@ Media Foundation (MF) 是一个基于 组件对象模型( COM ) 的 多媒体框
 
 .. code:: text
 
-    nil
+    (("Microsoft" "Windows" "[Version" "10.0.22000.120]" "" "") ("(c)" "Microsoft" "Corporation." "All" "rights" "reserved.") ("" "" "" "" "" "") ("c:\\Users\\admin\\Desktop\\html\\sphinx-blog\\docs\\source\\Windows\\captura>@echo" "off" "" "" "" "") ("More?" "" "" "" "" ""))
     %captura-cli% start --encoder steps:video
 
 1.4.5.2 分步录制为 video(aiv格式)
@@ -187,7 +187,7 @@ Media Foundation (MF) 是一个基于 组件对象模型( COM ) 的 多媒体框
 
 .. code:: text
 
-    nil
+    (("Microsoft" "Windows" "[Version" "10.0.22000.120]" "" "") ("(c)" "Microsoft" "Corporation." "All" "rights" "reserved.") ("" "" "" "" "" "") ("c:\\Users\\admin\\Desktop\\html\\sphinx-blog\\docs\\source\\Windows\\captura>@echo" "off" "" "" "" "") ("More?" "" "" "" "" ""))
     %captura-cli% start --encoder steps:images
 
 1.5 开始截屏参数 - verb shot
@@ -208,7 +208,7 @@ Media Foundation (MF) 是一个基于 组件对象模型( COM ) 的 多媒体框
 
 .. code:: text
 
-    nil
+    (("Microsoft" "Windows" "[Version" "10.0.22000.120]" "" "") ("(c)" "Microsoft" "Corporation." "All" "rights" "reserved.") ("" "" "" "" "" "") ("c:\\Users\\admin\\Desktop\\html\\sphinx-blog\\docs\\source\\Windows\\captura>@echo" "off" "" "" "" "") ("More?" "" "" "" "" ""))
     %captura-cli% shot --cursor
 
 .. _c10d08b4-58d1-4daf-adb3-9d3df7285845:
@@ -225,7 +225,7 @@ Media Foundation (MF) 是一个基于 组件对象模型( COM ) 的 多媒体框
 
 .. code:: bat
 
-    nil
+    (("Microsoft" "Windows" "[Version" "10.0.22000.120]" "" "") ("(c)" "Microsoft" "Corporation." "All" "rights" "reserved.") ("" "" "" "" "" "") ("c:\\Users\\admin\\Desktop\\html\\sphinx-blog\\docs\\source\\Windows\\captura>@echo" "off" "" "" "" "") ("More?" "" "" "" "" ""))
     %captura-cli% start --source desktop
 
 1.6.2 Region
@@ -240,7 +240,7 @@ Media Foundation (MF) 是一个基于 组件对象模型( COM ) 的 多媒体框
 
 .. code:: bat
 
-    nil
+    (("Microsoft" "Windows" "[Version" "10.0.22000.120]" "" "") ("(c)" "Microsoft" "Corporation." "All" "rights" "reserved.") ("" "" "" "" "" "") ("c:\\Users\\admin\\Desktop\\html\\sphinx-blog\\docs\\source\\Windows\\captura>@echo" "off" "" "" "" "") ("More?" "" "" "" "" ""))
     %captura-cli% shot --source 0,0,960,1080
 
 1.6.3 Screen
@@ -265,7 +265,7 @@ Media Foundation (MF) 是一个基于 组件对象模型( COM ) 的 多媒体框
 
 .. code:: bat
 
-    nil
+    (("Microsoft" "Windows" "[Version" "10.0.22000.120]" "" "") ("(c)" "Microsoft" "Corporation." "All" "rights" "reserved.") ("" "" "" "" "" "") ("c:\\Users\\admin\\Desktop\\html\\sphinx-blog\\docs\\source\\Windows\\captura>@echo" "off" "" "" "" "") ("More?" "" "" "" "" ""))
     %captura-cli% start --source none --speaker 0
 
 1.6.5 Window
@@ -286,7 +286,7 @@ Media Foundation (MF) 是一个基于 组件对象模型( COM ) 的 多媒体框
 
 .. code:: bat
 
-    nil
+    (("Microsoft" "Windows" "[Version" "10.0.22000.120]" "" "") ("(c)" "Microsoft" "Corporation." "All" "rights" "reserved.") ("" "" "" "" "" "") ("c:\\Users\\admin\\Desktop\\html\\sphinx-blog\\docs\\source\\Windows\\captura>@echo" "off" "" "" "" "") ("More?" "" "" "" "" ""))
     %captura-cli% start --source win:3604572
 
 1.6.6 Webcam
@@ -305,7 +305,7 @@ Media Foundation (MF) 是一个基于 组件对象模型( COM ) 的 多媒体框
 
 .. code:: bat
 
-    nil
+    (("Microsoft" "Windows" "[Version" "10.0.22000.120]" "" "") ("(c)" "Microsoft" "Corporation." "All" "rights" "reserved.") ("" "" "" "" "" "") ("c:\\Users\\admin\\Desktop\\html\\sphinx-blog\\docs\\source\\Windows\\captura>@echo" "off" "" "" "" "") ("More?" "" "" "" "" ""))
     %captura-cli% start --source webcam --webcam 0
 
 1.7 Cmd 问题

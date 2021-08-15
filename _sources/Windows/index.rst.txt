@@ -2,9 +2,13 @@ Windows 技巧
 =====================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Batch Script:
+   :maxdepth: 1
+   :caption: Batch Script :
 
-   bug.n/init-bugn
-   captura/init-captura
-   autohotkey/init-autohot-key
+   bug.n/init-bugn.rst
+
+   captura/init-captura.rst
+
+   autohotkey/init-autohot-key.rst
+
+   youtube-dl/init-youtube-dl.rst

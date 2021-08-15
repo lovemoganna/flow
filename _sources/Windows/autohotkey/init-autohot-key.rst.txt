@@ -1,6 +1,4 @@
 
-.. contents::
-
 
 
 1 Autohotkey
