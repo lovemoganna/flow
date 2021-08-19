@@ -1,0 +1,57 @@
+============
+Elmacro Mode
+============
+
+    :Author: Revolt
+    :Date: <2021-08-19 Thu 22:34>
+
+
+
+1 Emacs Macro
+-------------
+
+主要目的将键盘宏或最新的交互式命令显示为 emacs lisp。
+
+1.1 例1 - 将行尾最后一个单词大写
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: text
+
+    violets are Blue0
+    roses are Red
+
+- ``move-beginning-of-line``
+
+- ``move-end-of-line``
+
+录制宏的过程: ``F3 C-e M-b M-u C-a C-n F4``
+
+显示宏录制的代码
+
+.. code:: elisp
+
+    (defun upcase-last-word ()
+      (interactive)
+      (end-of-visual-line 1)
+      (backward-word 1)
+      (capitalize-word 1)
+      (next-line 1 1)
+      (beginning-of-visual-line 1))
+
+
+使用测试:
+
+.. code:: text
+
+    aedaskdjasd adasd
+
+运行 ``upcase-last-word`` 测试结果为:
+
+.. code:: text
+
+    asdaskdjasd Adasd
+
+1.2 参考文献
+~~~~~~~~~~~~
+
+1. `https://github.com/Silex/elmacro <https://github.com/Silex/elmacro>`_

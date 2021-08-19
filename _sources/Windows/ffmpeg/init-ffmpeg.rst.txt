@@ -1,0 +1,100 @@
+======
+ffmpeg
+======
+
+
+
+
+1 ffmpeg
+--------
+
+1.1 字幕环节
+~~~~~~~~~~~~
+
+1.1.1 区分硬字幕和软字幕
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: shell
+
+    ffmpeg -i <videoname>.mp4
+
+查看 stream 中有无 subtitle 这项,有就是软字幕,没有就是硬字幕.
+
+更多可以参见 `here <https://www.dianbo.org/forum.php?mod=viewthread&tid=11486>`_.
+
+1.1.2 如何去掉硬字幕
+^^^^^^^^^^^^^^^^^^^^
+
+软件下载地址: `http://virtualdub.sourceforge.net/ <http://virtualdub.sourceforge.net/>`_
+
+参见 `here <https://www.dianbo.org/forum.php?mod=viewthread&tid=8439>`_.
+
+1.2 音频环节
+~~~~~~~~~~~~
+
+1.2.1 m4a to mp3
+^^^^^^^^^^^^^^^^
+
+.. code:: shell
+
+    ffmpeg -i show.m4a -c:a libmp3lame -q:a 8 output.mp3
+
+1.2.2 抽取字幕
+^^^^^^^^^^^^^^
+
+1.2.2.1 检测视频
+::::::::::::::::
+
+.. code:: shell
+
+    ffmpeg -i
+
+1.2.3 清除硬字幕
+^^^^^^^^^^^^^^^^
+
+`https://zh-cn.aiseesoft.com/resource/subtitle-remover.html <https://zh-cn.aiseesoft.com/resource/subtitle-remover.html>`_
+
+1.3 视频环节
+~~~~~~~~~~~~
+
+1.3.1 mp4 to AVI
+^^^^^^^^^^^^^^^^
+
+.. code:: shell
+
+    ffmpeg -i road_1.mp4 -q:v 6  road_1.avi
+
+1.4 常用命令
+~~~~~~~~~~~~
+
+`https://www.cxyzjd.com/article/luanjinlu/78141744 <https://www.cxyzjd.com/article/luanjinlu/78141744>`_
+`https://www.cxyzjd.com/article/cyc1425/104751270 <https://www.cxyzjd.com/article/cyc1425/104751270>`_
+`https://www.starky.ltd/2019/03/10/ffmpeg-user-manual-and-practical-examples/ <https://www.starky.ltd/2019/03/10/ffmpeg-user-manual-and-practical-examples/>`_
+
+1.5 不知名 Wiki
+~~~~~~~~~~~~~~~
+
+`https://trac.ffmpeg.org/ <https://trac.ffmpeg.org/>`_
+
+1.6 硬字幕提取器
+~~~~~~~~~~~~~~~~
+
+- `https://github.com/YaoFANGUK/video-subtitle-extractor <https://github.com/YaoFANGUK/video-subtitle-extractor>`_
+
+- `https://forum.videohelp.com/threads/358181-How-to-remove-hard-coded-subtitles-HELP-PLEASE <https://forum.videohelp.com/threads/358181-How-to-remove-hard-coded-subtitles-HELP-PLEASE>`_
+
+1.7 使用 blender 去除字幕
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.8 Web端视频测试
+~~~~~~~~~~~~~~~~~
+
+1.8.1 压缩视频质量
+^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <video width="320" height="240" controls>
+   <source src="/_static/assets/video/JS.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+   </video>

@@ -567,12 +567,21 @@ Topics, Sidebars, and Rubrics
 视频
 ----
 
+本地视频
+~~~~~~~~~
+
 .. raw:: html
 
 	 <video width="320" height="240" controls>
 	 <source src="_static/assets/video/JS.mp4" type="video/mp4">
 	 Your browser does not support the video tag.
 	 </video>
+
+
+远程视频
+~~~~~~~~~
+
+..  youtube:: DIGfO2Dgc9Y
 
 表格
 ----
@@ -614,6 +623,7 @@ CSV 表格
 4. 自定义样式以及应用的方式之一: https://stackoverflow.com/questions/7348208/how-to-right-align-columns-content-in-restructuredtext-simple-tables
 5. 自定义样式以及应用的方式之二:
    https://github.com/sphinx-doc/sphinx/issues/3942
+6. 其他阅读: https://techwritingmatters.com/documenting-with-sphinx-tutorial-part-3-writing
 
 TODO List
 ---------

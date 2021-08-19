@@ -1,0 +1,965 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantuml Mode &#8212; Revolt&#39;s NoteBook</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/assets/css/website.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/assets/js/website.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Elmacro Mode" href="../Macro/init-macro.html" />
+    <link rel="prev" title="Org Roam Tutorial EP 1" href="../Org-Roam/init-org-roam.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Revolt's NoteBook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Sphinx Books Archives
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  测试模板:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../usage.html">
+   reStructedText 文档风格指南
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sphinx集成:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../sphinx-doc/index.html">
+   Sphinx模板、插件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/useage.html">
+     Sphinx小节测试
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/ox-rst.html">
+     Org Mode导出 Rst 文档后端测试
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/ox-rst-en.html">
+     reStructuredText后端导出原始文档
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Emacs major mode:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Emacs 文档
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode-two.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode-three.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Emacs/system-coding.html">
+     Emacs Coding System
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../font/init-emacs-font.html">
+     Emacs Daemon
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Makefile-mode/init-makefile-mode.html">
+     Makefile mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Magit/init-magit.html">
+     Magit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQ/init-faq.html">
+     Elisp Programming FAQ
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Org-Roam/init-org-roam.html">
+     Org Roam Tutorial EP 1
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Plantuml Mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Macro/init-macro.html">
+     Elmacro Mode
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Windows下的所有应用:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Windows/index.html">
+   Windows 技巧
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/bug.n/init-bugn.html">
+     1 Bug.n
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/captura/init-captura.html">
+     1 Captura-cli
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/autohotkey/init-autohot-key.html">
+     1 Autohotkey
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/youtube-dl/init-youtube-dl.html">
+     Youtube-dl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/ffmpeg/init-ffmpeg.html">
+     ffmpeg
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Emacs/Plantuml/init-plantuml.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/lovemoganna/revolt-theme"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/lovemoganna/revolt-theme/issues/new?title=Issue%20on%20page%20%2FEmacs/Plantuml/init-plantuml.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/lovemoganna/revolt-theme/edit/master/Emacs/Plantuml/init-plantuml.rst"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> 目录
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#links">
+   1 Links
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#information-on-the-local-installation">
+   2 Information on the local installation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#help-text">
+     2.1 Help text
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-test">
+   3 simple test
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagram-type-examples">
+   4 Diagram type examples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sequence-diagrams">
+     4.1 sequence diagrams
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#old-style-activity-diagrams">
+     4.2 old style activity diagrams
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#new-style-activity-diagrams">
+     4.3 new style activity diagrams
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#swimlanes">
+     4.4 swimlanes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#class-diagrams">
+   5 Class diagrams
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#component-diagrams">
+   6 Component diagrams
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mindmaps">
+   7 Mindmaps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skinparam">
+   8 skinparam
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gradients">
+     8.1 Gradients
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scaling">
+   9 Scaling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#todo-using-svg-graphics">
+   10 TODO using SVG graphics
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="plantuml-mode">
+<h1>Plantuml Mode<a class="headerlink" href="#plantuml-mode" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Derek Feichtinger</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>&lt;2021-05-07 Fri 10:11&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="section" id="links">
+<h2>1 Links<a class="headerlink" href="#links" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>Homepage:  <a class="reference external" href="http://plantuml.com/">http://plantuml.com/</a></p></li>
+<li><p>Downloads:  <a class="reference external" href="http://plantuml.sourceforge.net/">http://plantuml.sourceforge.net/</a></p></li>
+<li><p>Source code: <a class="reference external" href="https://github.com/plantuml/plantuml">https://github.com/plantuml/plantuml</a></p></li>
+<li><p>Language Reference: <a class="reference external" href="http://plantuml.com/PlantUML_Language_Reference_Guide.pdf">http://plantuml.com/PlantUML_Language_Reference_Guide.pdf</a></p></li>
+<li><p>Page Link: <a class="reference external" href="https://raw.githubusercontent.com/dfeich/org-babel-examples/master/plantuml/plantuml-babel.org">https://raw.githubusercontent.com/dfeich/org-babel-examples/master/plantuml/plantuml-babel.org</a></p></li>
+</ul>
+</div>
+<div class="section" id="information-on-the-local-installation">
+<h2>2 Information on the local installation<a class="headerlink" href="#information-on-the-local-installation" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Emacs</span> <span class="n">version</span><span class="p">:</span> <span class="n">GNU</span> <span class="n">Emacs</span> <span class="mf">27.2</span> <span class="p">(</span><span class="n">build</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x86_64</span><span class="o">-</span><span class="n">w64</span><span class="o">-</span><span class="n">mingw32</span><span class="p">)</span>
+ <span class="n">of</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">26</span>
+<span class="n">org</span> <span class="n">version</span><span class="p">:</span> <span class="mf">9.4</span><span class="o">.</span><span class="mi">4</span>
+</pre></div>
+</div>
+<div class="section" id="help-text">
+<h3>2.1 Help text<a class="headerlink" href="#help-text" title="永久链接至标题">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>java -jar <span class="s2">&quot;</span><span class="nv">$jpath</span><span class="s2">&quot;</span> -help
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="simple-test">
+<h2>3 simple test<a class="headerlink" href="#simple-test" title="永久链接至标题">¶</a></h2>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
+&#39; this is a comment
+Alice -&gt; Bob: Authentication Request
+Bob --&gt; Alice: Authentication Response
+John --&gt; Alice: another Authentication Request
+Alice --&gt; John: another Authentication Response
+@enduml
+</pre></div>
+</div>
+<img alt="../../_images/sequence1.png" src="../../_images/sequence1.png" />
+</div>
+<div class="section" id="diagram-type-examples">
+<h2>4 Diagram type examples<a class="headerlink" href="#diagram-type-examples" title="永久链接至标题">¶</a></h2>
+<div class="section" id="sequence-diagrams">
+<h3>4.1 sequence diagrams<a class="headerlink" href="#sequence-diagrams" title="永久链接至标题">¶</a></h3>
+<p>Note: The <code class="docutils literal notranslate"><span class="pre">skin</span></code> parameter I used in the earlier versions of this document is no longer supported by plantuml.</p>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
+title Example Sequence Diagram
+activate Client
+    Client -&gt; Server: Session Initiation
+    note right: Client requests new session
+    activate Server
+            Client &lt;-- Server: Authorization Request
+            note left: Server requires authentication
+            Client -&gt; Server: Authorization Response
+            note right: Client provides authentication details
+            Server --&gt; Client: Session Token
+            note left: Session established
+    deactivate Server
+    Client -&gt; Client: Saves token
+deactivate Client
+@enduml
+</pre></div>
+</div>
+<img alt="../../_images/sequence2.png" src="../../_images/sequence2.png" />
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
+actor User
+participant &quot;First Class&quot; as A
+participant &quot;Second Class&quot; as B
+participant &quot;Last Class&quot; as C
+
+
+User -&gt; A: DoWork
+activate A
+
+    A -&gt; B: &lt;&lt; createRequest &gt;&gt;
+    activate B
+
+            B -&gt; C: DoWork
+            activate C
+                    C --&gt; B: WorkDone
+                    destroy C
+
+                    B --&gt; A: Request &lt;u&gt;Created&lt;/u&gt;
+            deactivate B
+
+            A --&gt; User: Done
+    deactivate A
+    @enduml
+</pre></div>
+</div>
+<img alt="../../_images/sequence3.png" src="../../_images/sequence3.png" />
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>left to right direction
+actor remoteUser
+actor service
+rectangle Gateway {
+    remoteUser -- (connect camera)
+    (connect camera) -- service
+    remoteUser -- (console)
+    (console) -- service
+}
+</pre></div>
+</div>
+<img alt="../../_images/sequence4.png" src="../../_images/sequence4.png" />
+</div>
+<div class="section" id="old-style-activity-diagrams">
+<h3>4.2 old style activity diagrams<a class="headerlink" href="#old-style-activity-diagrams" title="永久链接至标题">¶</a></h3>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>title Example Activity Diagram
+note right: Example Function
+(*)--&gt; &quot;Step 1&quot;
+--&gt; &quot;Step 2&quot;
+-&gt; &quot;Step 3&quot;
+--&gt; &quot;Step 4&quot;
+--&gt; === STARTLOOP ===
+note top: For each element in the array
+if &quot;Are we done?&quot; then
+    -&gt; [no] &quot;Do this&quot;
+    -&gt; &quot;Do that&quot;
+    note bottom: Important note\ngoes here
+    -up-&gt; &quot;Increment counters&quot;
+    --&gt; === STARTLOOP ===
+else
+    --&gt; [yes] === ENDLOOP ===
+endif
+--&gt; &quot;Last Step&quot;
+--&gt; (*)
+</pre></div>
+</div>
+<img alt="../../_images/activity1.png" src="../../_images/activity1.png" />
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>title Servlet Container
+
+(*) --&gt; &quot;ClickServlet.handleRequest()&quot;
+--&gt; &quot;new Page&quot;
+
+if &quot;Page.onSecurityCheck&quot; then
+    -&gt;[true] &quot;Page.onInit()&quot;
+
+    if &quot;isForward?&quot; then
+            -&gt;[no] &quot;Process controls&quot;
+
+            if &quot;continue processing?&quot; then
+                    --&gt;[yes] ===RENDERING===
+            else
+                    --&gt;[no] ===REDIRECT_CHECK===
+            endif
+
+    else
+            --&gt;[yes] ===RENDERING===
+    endif
+
+    if &quot;is Post?&quot; then
+            --&gt;[yes] &quot;Page.onPost()&quot;
+            --&gt; &quot;Page.onRender()&quot; as render
+            --&gt; ===REDIRECT_CHECK===
+    else
+            --&gt;[no] &quot;Page.onGet()&quot;
+            --&gt; render
+    endif
+
+else
+    --&gt;[false] ===REDIRECT_CHECK===
+endif
+
+if &quot;Do redirect?&quot; then
+    -&gt;[yes] &quot;redirect request&quot;
+    --&gt; ==BEFORE_DESTROY===
+else
+    if &quot;Do Forward?&quot; then
+            -left-&gt;[yes] &quot;Forward request&quot;
+            --&gt; ==BEFORE_DESTROY===
+    else
+            -right-&gt;[no] &quot;Render page template&quot;
+            --&gt; ==BEFORE_DESTROY===
+    endif
+endif
+
+--&gt; &quot;Page.onDestroy()&quot;
+--&gt;(*)
+</pre></div>
+</div>
+<img alt="../../_images/activity2.png" src="../../_images/activity2.png" />
+</div>
+<div class="section" id="new-style-activity-diagrams">
+<h3>4.3 new style activity diagrams<a class="headerlink" href="#new-style-activity-diagrams" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="http://plantuml.sourceforge.net/activity2.html">http://plantuml.sourceforge.net/activity2.html</a></p></li>
+</ul>
+</div>
+<div class="section" id="swimlanes">
+<h3>4.4 swimlanes<a class="headerlink" href="#swimlanes" title="永久链接至标题">¶</a></h3>
+<p>Swimlanes actually are activity diagrams using the new syntax.</p>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
+|Swimlane1|
+start
+:foo1;
+|#AntiqueWhite|Swimlane2|
+:foo2;
+:foo3;
+|Swimlane1|
+:foo4;
+|Swimlane2|
+:foo5;
+stop
+@enduml
+</pre></div>
+</div>
+<img alt="../../_images/swimlane1.png" src="../../_images/swimlane1.png" />
+</div>
+</div>
+<div class="section" id="class-diagrams">
+<h2>5 Class diagrams<a class="headerlink" href="#class-diagrams" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="http://plantuml.sourceforge.net/classes.html">http://plantuml.sourceforge.net/classes.html</a></p>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>class Proposal {
+    also called a &quot;study&quot;
+    ..
+    ProposalID
+    Proposer
+    PrincipalInvestigator
+}
+
+class Visit &lt;&lt; (V,#Ff8c00) &gt;&gt; {
+    has a 1:1 mapping to a
+    single user. Also used to
+    reserve badges.
+    ..
+    Username
+    starttime
+    endtime
+    proposalID
+    beamline
+}
+
+note left: why is Visit linked\nto a single beamline?
+
+class Shift {
+    ProposalID
+    starttime
+    endtime
+    contactPerson
+}
+
+Proposal *-- Shift
+Proposal *-- Visit
+</pre></div>
+</div>
+<img alt="../../_images/class1.png" src="../../_images/class1.png" />
+</div>
+<div class="section" id="component-diagrams">
+<h2>6 Component diagrams<a class="headerlink" href="#component-diagrams" title="永久链接至标题">¶</a></h2>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
+
+package &quot;Some Group&quot; {
+    HTTP - [First Component]
+    [Another Component]
+}
+
+node &quot;Other Groups&quot; {
+    FTP - [Second Component]
+    [First Component] --&gt; FTP
+}
+
+cloud {
+    [Example 1]
+}
+
+
+database &quot;MySql&quot; {
+    folder &quot;This is my folder&quot; {
+            [Folder 3]
+    }
+    frame &quot;Foo&quot; {
+            [Frame 4]
+    }
+}
+
+
+[Another Component] --&gt; [Example 1]
+[Example 1] --&gt; [Folder 3]
+[Folder 3] --&gt; [Frame 4]
+
+@enduml
+</pre></div>
+</div>
+<img alt="../../_images/component1.png" src="../../_images/component1.png" />
+<p>The next example was posted by Cecil Westerhof on emacs-orgmode.gnu.org mailing list [2019-10-18 Fri]</p>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
+
+component [Producer 1\nProducer 2\nProducer ...\nProducer n] as Producers
+
+cloud {
+    [Internet] as Internet1
+}
+
+node RabbitMQ #LightSteelBlue {
+    [Exchange]
+    [Queue 1\nQueue 2\nQueue ...\nQueue n] as Queues
+}
+
+cloud {
+    [Internet] as Internet2
+}
+
+[Consumer 1\nConsumer 2\nConsumer ...\nConsumer n] as Consumers
+
+
+[Producers] -&gt; [Internet1]  : Publish
+[Internet1] -&gt; [Exchange]   : Publish
+[Exchange]  -&gt; [Queues]     : Route
+[Queues]    -&gt; [Internet2]  : Consume
+[Internet2] -&gt; [Consumers]  : Consume
+
+@enduml
+</pre></div>
+</div>
+<img alt="../../_images/component2.png" src="../../_images/component2.png" />
+</div>
+<div class="section" id="mindmaps">
+<h2>7 Mindmaps<a class="headerlink" href="#mindmaps" title="永久链接至标题">¶</a></h2>
+<ul>
+<li><p>[2019-07-21 Sun]  Needs plantuml-1.2019.08 or newer. Still in testing and features may change</p></li>
+<li><p><a class="reference external" href="http://plantuml.com/mindmap-diagram">http://plantuml.com/mindmap-diagram</a></p></li>
+<li><p>Nice Link about mindmaps in PlantUML: <a class="reference external" href="http://hangaroundtheweb.com/2019/07/mind-maps-in-spacemacs/">http://hangaroundtheweb.com/2019/07/mind-maps-in-spacemacs/</a></p>
+<p>The examples are taken from the official plantuml page.</p>
+<p>This syntax looks like the most versatile and useful to me</p>
+<ul class="simple">
+<li><p>Leading “+/-” specify hierarchy level and whether the node is on the right or left of the central
+node.</p></li>
+<li><p>Undescores directly following the leading position characters prevent the creation of a box around an item.</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startmindmap
++ OS
+++ Ubuntu
++++_ Linux Mint
++++_ Kubuntu
++++_ Lubuntu
++++_ KDE Neon
+++ LMDE
+++ SolydXK
+++ SteamOS
+++ Raspbian
+-- Windows 95
+-- Windows 98
+-- Windows NT
+---_ Windows 8
+---_ Windows 10
+@endmindmap
+</pre></div>
+</div>
+<img alt="../../_images/mindmap1.png" src="../../_images/mindmap1.png" />
+<p>A mindmap based on org mode syntax. Note that the org headline asterisks need to be escaped by “,” inside
+of a source block. It’s nice that they allow for an org mode syntax, but I think this is less convenient
+to write and work with. The org headlines do not allow for text following them (syntax error).</p>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startmindmap
+* Debian
+** Ubuntu
+*** Linux Mint
+*** Kubuntu
+*** Lubuntu
+*** KDE Neon
+** LMDE
+** SolydXK
+** SteamOS
+** Raspbian with a very long name
+*** &lt;s&gt;Raspmbc&lt;/s&gt; =&gt; OSMC
+*** &lt;s&gt;Raspyfi&lt;/s&gt; =&gt; Volumio
+@endmindmap
+</pre></div>
+</div>
+<img alt="../../_images/mindmap2.png" src="../../_images/mindmap2.png" />
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startmindmap
+caption figure 1
+title My super title
+
+* &lt;&amp;flag&gt;Debian
+** &lt;&amp;globe&gt;Ubuntu
+*** Linux Mint
+*** Kubuntu
+*** Lubuntu
+*** KDE Neon
+** &lt;&amp;graph&gt;LMDE
+** &lt;&amp;pulse&gt;SolydXK
+** &lt;&amp;people&gt;SteamOS
+** &lt;&amp;star&gt;Raspbian with a very long name
+*** &lt;s&gt;Raspmbc&lt;/s&gt; =&gt; OSMC
+*** &lt;s&gt;Raspyfi&lt;/s&gt; =&gt; Volumio
+
+header
+My super header
+endheader
+
+center footer My super footer
+
+legend right
+Short
+legend
+endlegend
+@endmindmap
+</pre></div>
+</div>
+<img alt="../../_images/mindmap3.png" src="../../_images/mindmap3.png" />
+</div>
+<div class="section" id="skinparam">
+<h2>8 skinparam<a class="headerlink" href="#skinparam" title="永久链接至标题">¶</a></h2>
+<div class="section" id="gradients">
+<h3>8.1 Gradients<a class="headerlink" href="#gradients" title="永久链接至标题">¶</a></h3>
+<p>Minimally adapted from <a class="reference external" href="https://blog.jdriven.com/2017/10/plantuml-pleasantness-use-gradients-diagrams/">https://blog.jdriven.com/2017/10/plantuml-pleasantness-use-gradients-diagrams/</a></p>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
+
+title Gradient
+
+skinparam defaultTextAlignment center
+skinparam RectangleFontSize 20
+
+skinparam TitleFontStyle bold
+skinparam TitleFontColor #e723e7
+
+&#39; Define two colors for a gradient of the background
+&#39; and use &quot;-&quot; to define that the gradient goes from top to bottom.
+skinparam BackgroundColor  #000000-#afafaf
+
+&#39; Define two colors for a default background gradient of Rectangles
+&#39; and use / for top left to bottom right.
+skinparam RectangleBackgroundColor #ffd200/#8cfcff
+
+rectangle A [
+From top left
+to bottom right
+&lt;&amp;fullscreen-enter&gt;
+]
+
+&#39; Use &quot;\&quot; for bottom left to top right
+rectangle B #ffd200\8cfcff [
+From bottom left
+to top right
+&lt;&amp;resize-both&gt;
+]
+
+&#39; Use &quot;|&quot; for left to right
+rectangle C #ffd200|8cfcff [
+From left
+to right
+&lt;&amp;resize-width&gt;
+]
+
+&#39; Use &quot;-&quot; for top to bottom
+rectangle D #ffd200-8cfcff [
+From top
+to bottom
+&lt;&amp;resize-height&gt;
+]
+
+@enduml
+</pre></div>
+</div>
+<img alt="../../_images/gradients1.png" src="../../_images/gradients1.png" />
+</div>
+</div>
+<div class="section" id="scaling">
+<h2>9 Scaling<a class="headerlink" href="#scaling" title="永久链接至标题">¶</a></h2>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
+scale 2
+
+Alice -&gt; Bob: Authentication Request
+Bob --&gt; Alice: Authentication Response
+John --&gt; Alice: another Authentication Request
+Alice --&gt; John: another Authentication Response
+@enduml
+</pre></div>
+</div>
+<img alt="../../_images/scale-sequence1.png" src="../../_images/scale-sequence1.png" />
+</div>
+<div class="section" id="todo-using-svg-graphics">
+<h2>10 TODO using SVG graphics<a class="headerlink" href="#todo-using-svg-graphics" title="永久链接至标题">¶</a></h2>
+<p>The <em>svg</em> package uses inkscape to separate the text and graphical
+elements of the SVG into a Tex file (*.pdf<sub>tex</sub>) and a PDF file
+containig the graph elements.  E.g. svg-sequence1.svg into
+svg-sequence1.pdf<sub>tex</sub>and svg-sequence1.pdf.</p>
+<p>Currently, SVG pictures can only be rendered correctly, <strong>if the picture is in the same directory</strong> as the tex source file (and
+therefore also the org source file).</p>
+<p>Note: with the current org version 9.1.14 and Emacs 26.1 the SVG is
+not correctly displayed in the org buffer, but the SVG renders fine in
+the exported Latex PDF.</p>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
+&#39; this is a comment
+Alice -&gt; Bob: Authentication Request
+Bob --&gt; Alice: Authentication Response
+John --&gt; Alice: another Authentication Request
+Alice --&gt; John: another Authentication Response
+@enduml
+</pre></div>
+</div>
+<img alt="../../_images/svg-sequence1.svg" src="../../_images/svg-sequence1.svg" /></div>
+</div>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../Org-Roam/init-org-roam.html" title="previous page">Org Roam Tutorial EP 1</a>
+    <a class='right-next' id="next-link" href="../Macro/init-macro.html" title="next page">Elmacro Mode</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Revolt<br/>
+        
+            &copy; Copyright 2021, Revolt.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

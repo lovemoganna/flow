@@ -16,4 +16,6 @@ Emacs 文档
    Magit/init-magit.rst
    FAQ/init-faq.rst
    Org-Roam/init-org-roam.rst
-	     
+
+   Plantuml/init-plantuml.rst
+   Macro/init-macro.rst

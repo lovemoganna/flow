@@ -12,3 +12,4 @@ Windows 技巧
    autohotkey/init-autohot-key.rst
 
    youtube-dl/init-youtube-dl.rst
+   ffmpeg/init-ffmpeg.rst
