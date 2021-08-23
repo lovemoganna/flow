@@ -1,0 +1,970 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Org Capture Configure On Windows &#8212; Revolt&#39;s NoteBook</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/assets/css/website.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/assets/js/website.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Windows 技巧" href="../../Windows/index.html" />
+    <link rel="prev" title="Elmacro Mode" href="../Macro/init-macro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Revolt's NoteBook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Sphinx Books Archives
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  测试模板:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../usage.html">
+   reStructedText 文档风格指南
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sphinx集成:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../sphinx-doc/index.html">
+   Sphinx模板、插件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/useage.html">
+     Sphinx小节测试
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/ox-rst.html">
+     Org Mode导出 Rst 文档后端测试
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sphinx-doc/ox-rst-en.html">
+     reStructuredText后端导出原始文档
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Emacs major mode:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Emacs 文档
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode-two.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Batch-mode/init-batch-mode-three.html">
+     Batch Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Emacs/system-coding.html">
+     Emacs Coding System
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../font/init-emacs-font.html">
+     Emacs Daemon
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Makefile-mode/init-makefile-mode.html">
+     Makefile mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Magit/init-magit.html">
+     Magit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQ/init-faq.html">
+     Elisp Programming FAQ
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Org-Roam/init-org-roam.html">
+     Org Roam Tutorial EP 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Plantuml/init-plantuml.html">
+     Plantuml Mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Macro/init-macro.html">
+     Elmacro Mode
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Org Capture Configure On Windows
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Windows下的所有应用:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Windows/index.html">
+   Windows 技巧
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/bug.n/init-bugn.html">
+     1 Bug.n
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/captura/init-captura.html">
+     1 Captura-cli
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/autohotkey/init-autohot-key.html">
+     1 Autohotkey
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/youtube-dl/init-youtube-dl.html">
+     Youtube-dl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Windows/ffmpeg/init-ffmpeg.html">
+     ffmpeg
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Emacs/Org/Org-Capture.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/lovemoganna/revolt-theme"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/lovemoganna/revolt-theme/issues/new?title=Issue%20on%20page%20%2FEmacs/Org/Org-Capture.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/lovemoganna/revolt-theme/edit/master/Emacs/Org/Org-Capture.rst"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> 目录
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   猎杀者
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     矛盾
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#org-notes">
+     Org Notes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#org-file">
+       为主 Org file 设置快捷键
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#org-refile">
+       使用 Org refile 归档或者跳转到标题
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#org-capture">
+       使用org-capture快速写笔记
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b13fdc5f-5877-4e90-8887-654d496853b8">
+       定义更加便利的Org-capture模板
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#capture-templates">
+         Capture templates
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       额外的需求
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#org">
+     Org 协议背景知识
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       Org协议的组成
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Org 协议的配置
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#emacs-org-protocol">
+       开启Emacs Org Protocol
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#linux-org-protocol">
+       为Linux系统配置
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         org-protocol
+        </span>
+       </code>
+       处理程序 - 此版本是为点击书签而准备的
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#gtk">
+         对于基于GTK的桌面,运行下面的命令
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#kde5">
+         基于KDE5的桌面，运行下面的命令
+        </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#window">
+           Window下的配置
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       为Org Capture Extension Chrome 插件配置协议
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#org-protocl-emacsclient">
+         为
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           org-protocl
+          </span>
+         </code>
+         处理器注册emacsclient
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id12">
+         如果是GTK的桌面
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id13">
+         如果是KDE5的桌面
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#windows">
+         如果是 Windows
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       配置浏览器
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#firefox">
+         Firefox
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#org-capture-template">
+       配置模板（org-capture-template）
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#emacs-org-capture">
+         在Emacs中使用处理器 - 为Org Capture和前面的书签工具集配置模板(混合使用)
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#faq">
+       FAQ
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#getting-org-protocol-to-work-on-firefox-quantum-no-server-buffers-remain-to-edit-error">
+         getting org-protocol to work on Firefox Quantum — `No server buffers remain to edit` error
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="org-capture-configure-on-windows">
+<h1>Org Capture Configure On Windows<a class="headerlink" href="#org-capture-configure-on-windows" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Revolt</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>&lt;2021-08-23 Mon 15:35&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="section" id="id1">
+<h2>猎杀者<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h3>矛盾<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
+&#39; this is a comment
+OrgMode -&gt; MinGW: 你他妈给我指定Bash Shell的路径
+MinGW --&gt; OrgMode: 装什么大尾巴狼嗷,还不是你菜比不会用我
+Emacs --&gt; OrgMode: 我在等你配置捕获协议,干毛哪
+OrgMode --&gt; Emacs: 不给我Bash Shell接口,没法弄
+@enduml
+</pre></div>
+</div>
+<img alt="../../_images/sequence.png" src="../../_images/sequence.png" />
+<div class="admonition hint">
+<p class="admonition-title">提示</p>
+<p>冲破牢笼</p>
+<p>所以在此我们采用 MSYS2 这个软件,来引入Bash Shell.此为入口点突破.</p>
+</div>
+</div>
+<div class="section" id="org-notes">
+<h3>Org Notes<a class="headerlink" href="#org-notes" title="永久链接至标题">¶</a></h3>
+<div class="section" id="org-file">
+<span id="edb-af9d-41fc-bd50-6fdd21d5add5"></span><h4>为主 Org file 设置快捷键<a class="headerlink" href="#org-file" title="永久链接至标题">¶</a></h4>
+<p>所有键的设置都将会集成在 <code class="docutils literal notranslate"><span class="pre">general</span></code> 这个包的配置当中。</p>
+<ol class="arabic simple">
+<li><p>将快捷键设置为 <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">SPC</kbd> <kbd class="kbd docutils literal notranslate">f</kbd> <kbd class="kbd docutils literal notranslate">e</kbd> <kbd class="kbd docutils literal notranslate">o</kbd></kbd> 即可。</p></li>
+<li><p>或者使用寄存器，<kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">C</kbd>-<kbd class="kbd docutils literal notranslate">x</kbd> <kbd class="kbd docutils literal notranslate">r</kbd> <kbd class="kbd docutils literal notranslate">j</kbd></kbd>,指定寄存器的名字，来实现快速跳转，在这里，
+我们设置为 <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">j</span> <span class="pre">o</span></code></p></li>
+<li><p>使用 <span class="guilabel">helm-occure</span> 快速查找东西。</p></li>
+</ol>
+</div>
+<div class="section" id="org-refile">
+<h4>使用 Org refile 归档或者跳转到标题<a class="headerlink" href="#org-refile" title="永久链接至标题">¶</a></h4>
+<div class="admonition hint">
+<p class="admonition-title">提示</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">org-refile</span></code> 来移动当前的 subtree 到指定的 heading,或者跳转到不需要
+移动任何文本的 heading.这将让你快速进入 project,或者在 Org mode 中的任
+何地方.</p>
+<p>默认情况下, :guilabel:org-refile 会显示当前文件的顶级headings.但这远远不够，我们
+想要的效果是从Agenda file中显示所有的heading.一般设置7级就可以了。</p>
+<p>当然确保你的 Agenda file list 里面有东西。 使用 <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">C</kbd>-<kbd class="kbd docutils literal notranslate">c</kbd> <kbd class="kbd docutils literal notranslate">[</kbd></kbd>
+调用 <span class="guilabel">org-agenda-file-to-front</span> 函数将当前Org file添
+加到 Agenda file里。</p>
+</div>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">setq</span> <span class="nv">org-refile-targets</span> <span class="o">&#39;</span><span class="p">((</span><span class="nv">org-agenda-files</span> <span class="o">.</span> <span class="p">(</span><span class="ss">:maxlevel</span> <span class="o">.</span> <span class="mi">7</span><span class="p">))))</span>
+</pre></div>
+</div>
+<p>一旦设置好 <span class="guilabel">org-refile-targets</span>,你的 Agenda files,
+使用 <span class="guilabel">helm-occur</span>. 就可以练习使用 <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">C</kbd>-<kbd class="kbd docutils literal notranslate">c</kbd>
+<kbd class="kbd docutils literal notranslate">C</kbd>-<kbd class="kbd docutils literal notranslate">w</kbd></kbd> :guilabel:<a href="#id3"><span class="problematic" id="id4">`</span></a>~org-refile`了.</p>
+<p><span class="guilabel">org-refile</span> 可以做不同的使用，取决于你如何调用它.</p>
+<ul class="simple">
+<li><p>默认情况下，它移动当前的subtree到指定的位置.</p></li>
+<li><p>如果你带前缀 <code class="docutils literal notranslate"><span class="pre">C-u</span></code>,例如调用 <a href="#id5"><span class="problematic" id="id6">:keybind:`C-u C-c C-w`</span></a>,它将会跳转
+指定位置，而不是移动当前的subtree.</p></li>
+<li><p>如果你使用 <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">C</kbd>-<kbd class="kbd docutils literal notranslate">u</kbd> <kbd class="kbd docutils literal notranslate">C</kbd>-<kbd class="kbd docutils literal notranslate">u</kbd> <kbd class="kbd docutils literal notranslate">C</kbd>-<kbd class="kbd docutils literal notranslate">c</kbd> <kbd class="kbd docutils literal notranslate">C</kbd>-<kbd class="kbd docutils literal notranslate">w</kbd></kbd>,它将会跳转到归档之前的位置.</p></li>
+</ul>
+<p>首先练习跳转位置，跳转到未分类的manual,使用不带前缀参数的
+<span class="guilabel">org-refile</span> 将其移动到正确的位置,实现文档的分类.</p>
+<p><span class="guilabel">org-refile</span> 给你提供来一种快速跳转heading的方法.
+你要更加喜欢 <span class="guilabel">helm-occur</span> 也行.</p>
+<p>但在你想做笔记之前，还是要想办法回到你之前正在做的事情上.在你熟悉来如
+何将笔记重新归档到正确的位置之后，继续学习如何使用
+<span class="guilabel">org-capture</span> 从任何地方快速的记笔记.</p>
+</div>
+<div class="section" id="org-capture">
+<span id="d1-3d3b-4b3e-87bb-0d863ad8382b"></span><h4>使用org-capture快速写笔记<a class="headerlink" href="#org-capture" title="永久链接至标题">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">org-capture</span></code> 通过弹出窗口或者通过提示来引导你快速记下笔记。当你记下笔记
+后，它会让你回到开始之前正在专注的东西。不过，要想利用这个优点，你必须
+自定义设置 <code class="docutils literal notranslate"><span class="pre">org-capture</span></code>.</p>
+<p>Org Mode manual推荐你给定 <code class="docutils literal notranslate"><span class="pre">org-capture</span></code> 全局快捷键，比如 <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">c</span></code>.然后再设
+置下默认的笔记保存目录就可以，搞好了，利用 <code class="docutils literal notranslate"><span class="pre">org-refile</span></code> 重新分档即可。需
+要确保这个文件存在并再 Org mode 中自动打开。</p>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-c c&quot;</span><span class="p">)</span> <span class="ss">&#39;org-capture</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">org-default-notes-file</span> <span class="s">&quot;~/.emacs.d/.agenda/task_index.org&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>如果键入 <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">c</span></code> , <code class="docutils literal notranslate"><span class="pre">org-capture</span></code> 将会展示提示， 按下 <code class="docutils literal notranslate"><span class="pre">t</span></code> 会创建简单的任务模
+板，按下 <code class="docutils literal notranslate"><span class="pre">C</span></code> 会展示 <code class="docutils literal notranslate"><span class="pre">org-capture-template</span></code> 的自定义接口。</p>
+<p>可能你需要插入计划的开始时间 <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-s</span></code> 与预计结束时间 <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-d</span></code>,以此来作为
+计算效率的基准。</p>
+<p>接下来就是练习 <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">c</span></code> <code class="docutils literal notranslate"><span class="pre">org-capture</span></code> 快速记下一些任务或者笔记，接下来回到笔
+记文件并使用 <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-w</span></code> <code class="docutils literal notranslate"><span class="pre">org-refile</span></code> 来将笔记重新归档就可以了。</p>
+<p>一旦你掌握了使用 <code class="docutils literal notranslate"><span class="pre">org-capture</span></code> 来记下笔记，只需要每周一次将他们归档就可
+以了。</p>
+</div>
+<div class="section" id="b13fdc5f-5877-4e90-8887-654d496853b8">
+<span id="id7"></span><h4>定义更加便利的Org-capture模板<a class="headerlink" href="#b13fdc5f-5877-4e90-8887-654d496853b8" title="永久链接至标题">¶</a></h4>
+<p>如果你发现你自己经常捕获不同种类的笔记，或者你想以另外一种格式来捕获东
+西（可以是 table entry, 或者 list），同时又想自定义
+<code class="docutils literal notranslate"><span class="pre">org-capture-template</span></code> 来插入时间。在开始之前，你需要了解下
+<code class="docutils literal notranslate"><span class="pre">org-capture-templates</span></code> 的接口。不要直接上来就写代码，简单读些文档，自己
+去做试验测试。</p>
+<div class="section" id="capture-templates">
+<h5>Capture templates<a class="headerlink" href="#capture-templates" title="永久链接至标题">¶</a></h5>
+<p>对于不同类型，不同目标位置的捕获项目，你可以使用模板。最容易的方法就是
+通过自定义接口来创建一些模板。</p>
+<p>假设你想使用模板创建普通的 TODO 条目，并且你想将這些条目放置到文件
+<code class="docutils literal notranslate"><span class="pre">~/.emacs.d/.org/gtd.org</span></code> 中的 heading <code class="docutils literal notranslate"><span class="pre">Tasks</span></code> 下面。</p>
+<p>另外你得有个名为 <code class="docutils literal notranslate"><span class="pre">journal.org</span></code> 的日志文件，需要包含时间戳，所以看起来像
+下面这样：</p>
+<p>另外需要快速捕获网页的内容，进行归档，加速转换。</p>
+<p>If you then press t from the capture menu, Org will prepare the
+template for you like this:</p>
+<p>During expansion of the template, ‘%a’ has been replaced by a link to
+the location from where you called the capture command. This can be
+extremely useful for deriving tasks from emails, for example. You fill
+in the task definition, press C-c C-c and Org returns you to the same
+place where you started the capture process.</p>
+<p>To define special keys to capture to a particular template without
+going through the interactive template selection, you can create your
+key binding like this:</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h4>额外的需求<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
+<p>在手机端用 <code class="docutils literal notranslate"><span class="pre">Evernote</span></code> 代替，或者 <code class="docutils literal notranslate"><span class="pre">Simplenote</span></code>.直接在网页端同步到 Emacs 上
+即可。</p>
+</div>
+</div>
+<div class="section" id="org">
+<h3>Org 协议背景知识<a class="headerlink" href="#org" title="永久链接至标题">¶</a></h3>
+<p>Org-protocol 拦截来自 Emacsclient 的调用，从而在没有外部依赖的情况下触
+发自定义操作.外部应用程序或操作系统只需要配置一个协议，就可以触发任意
+数量的定制操作。只需用变量 <code class="docutils literal notranslate"><span class="pre">org-protocol-protocol-alist</span></code> 注册您的自定义
+子协议和处理程序.</p>
+<p>基本思路大致如下，首先需要在守护程序模式下运行 Emacs,因为需要使用
+<code class="docutils literal notranslate"><span class="pre">Emacsclient</span></code> 来处理Org protocol请求。接着，需要在桌面上设置 Org
+protocol 处理程序，最后需要配置一些 Org Capture 模板来处理从浏览器发送
+的数据。</p>
+<div class="section" id="id9">
+<h4>Org协议的组成<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h4>
+<p>Org-protocol 基于 <code class="docutils literal notranslate"><span class="pre">org-annotation-helper</span></code> 和 <code class="docutils literal notranslate"><span class="pre">org-browser-url</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;org-protocol:/sub-protocol:/&quot;</span></code> 通过自定义变量
+<code class="docutils literal notranslate"><span class="pre">org-protocol-protocol-alist</span></code> 触发和 <code class="docutils literal notranslate"><span class="pre">sub-protocl</span></code> 关联的行为。</p>
+<p>它主要提供四个预定义的处理程序。</p>
+<dl class="simple">
+<dt>org-protocol-store-link</dt><dd><p>通过 sub-protocol <code class="docutils literal notranslate"><span class="pre">&quot;store-link&quot;</span></code> 触发.存储 Org-link 和 给 kill-ring推
+送 URL.</p>
+</dd>
+<dt>org-protocol-capture</dt><dd><p>填充从其他地方收集信息捕获的buffer. 此处理器
+通过 <code class="docutils literal notranslate"><span class="pre">&quot;capture&quot;</span></code> sub-protocol 和 使用 函数 <code class="docutils literal notranslate"><span class="pre">org-capture</span></code> 来触发。</p>
+</dd>
+<dt>org-protocol-remember</dt><dd><p>填充从其他地方收集信息的记忆 buffer.此处理器通过 <code class="docutils literal notranslate"><span class="pre">&quot;remember&quot;</span></code>
+sub-protocol 触发，并仍可向后兼容。此处理器使用 <code class="docutils literal notranslate"><span class="pre">org-remember</span></code>.使用当
+前的 <code class="docutils literal notranslate"><span class="pre">org-protocol-capture</span></code>.</p>
+</dd>
+<dt>org-protocol-open-source</dt><dd><p>“open-source”. 映射 URLs 到本地文件名。 使用它用来打开 Emacs 中已经
+发布的内容的源代码，以便进行编辑。</p>
+</dd>
+</dl>
+<p>Org-protocol 帮助创建自定义处理程序，即所谓的 <code class="docutils literal notranslate"><span class="pre">org-protocol-projects</span></code>.</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>Org 协议的配置<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>Org Mode官网的有些东西有些很难进行试验.下面应用下真实世界的例子.</p>
+<p>现在有三种方式来使用Org协议:</p>
+<ul class="simple">
+<li><p>一种是基于工具 <code class="docutils literal notranslate"><span class="pre">org-protocol-capture-html</span></code> 定制的书签触发,优点是可高度配置,比较灵活.</p></li>
+<li><p>另一种是使用Org Capture插件,优点是抄别人的配置就行,比较省心.</p></li>
+</ul>
+<div class="section" id="emacs-org-protocol">
+<h4>开启Emacs Org Protocol<a class="headerlink" href="#emacs-org-protocol" title="永久链接至标题">¶</a></h4>
+<p>载入 <code class="docutils literal notranslate"><span class="pre">org-protocol.el</span></code>.</p>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">server-start</span><span class="p">)</span>
+<span class="c1">;; (add-to-list &#39;load-path &quot;~/.emacs.d/.org/protocol/&quot;)</span>
+<span class="c1">;; Emacs 内置，不需要外部引入</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;org-protocol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="linux-org-protocol">
+<h4>为Linux系统配置 <code class="docutils literal notranslate"><span class="pre">org-protocol</span></code> 处理程序 - 此版本是为点击书签而准备的<a class="headerlink" href="#linux-org-protocol" title="永久链接至标题">¶</a></h4>
+<p>大多数Linux桌面都使用freedesktop.org标准,包括KDE(我使用的桌面).我们首
+先需要创建一个桌面条目,它将org协议mime类型
+<code class="docutils literal notranslate"><span class="pre">(x-scheme-handler/org-protocol)</span></code> 映射到emacsclient。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>Desktop Entry<span class="o">]</span>
+<span class="nv">Version</span><span class="o">=</span><span class="m">1</span>.0
+<span class="nv">Type</span><span class="o">=</span>Application
+<span class="nv">Exec</span><span class="o">=</span>/usr/bin/emacsclient %u
+<span class="nv">Icon</span><span class="o">=</span>/usr/share/icons/hicolor/scalable/apps/emacs.svg
+<span class="nv">StartupNotify</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">Terminal</span><span class="o">=</span><span class="nb">false</span>
+<span class="nv">Categories</span><span class="o">=</span>Utility<span class="p">;</span>X-XFCE<span class="p">;</span>X-Xfce-Toplevel<span class="p">;</span>
+<span class="nv">MimeType</span><span class="o">=</span>x-scheme-handler/org-protocol
+<span class="nv">Name</span><span class="o">=</span>Org Protocol Handler
+<span class="nv">Comment</span><span class="o">=</span>Invoke emacsclient with org-protocol
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>x-scheme-handler/org-protocol<span class="o">=</span>exo-org-protocol-handler.desktop
+</pre></div>
+</div>
+<div class="section" id="gtk">
+<h5>对于基于GTK的桌面,运行下面的命令<a class="headerlink" href="#gtk" title="永久链接至标题">¶</a></h5>
+<p>然后更新桌面数据库：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>update-desktop-database  ~/.local/share/applications/
+</pre></div>
+</div>
+</div>
+<div class="section" id="kde5">
+<h5>基于KDE5的桌面，运行下面的命令<a class="headerlink" href="#kde5" title="永久链接至标题">¶</a></h5>
+<p>有时候上面的配置不生效,有可能是使用 KDE5,所以需要运行下面的命令:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>kbuildsycoca5
+xdg-mime default org-protocol-handler.desktop x-scheme-handler/org-protocol
+</pre></div>
+</div>
+<div class="section" id="window">
+<h6>Window下的配置<a class="headerlink" href="#window" title="永久链接至标题">¶</a></h6>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h4><a class="reference external" href="https://github.com/sprig/org-capture-extension">为Org Capture Extension Chrome 插件配置协议</a><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h4>
+<p>它的要点是使你的系统认识到emacsclient是 <code class="docutils literal notranslate"><span class="pre">org-protocol://</span></code> 链接的处理器.此
+外,还需要设置emacs来加载org-protocol并设置捕获模板。</p>
+<div class="section" id="org-protocl-emacsclient">
+<h5>为 <code class="docutils literal notranslate"><span class="pre">org-protocl</span></code> 处理器注册emacsclient<a class="headerlink" href="#org-protocl-emacsclient" title="永久链接至标题">¶</a></h5>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat &gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.local/share/applications/org-protocol.desktop&quot;</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">[Desktop Entry]</span>
+<span class="s">Name=org-protocol</span>
+<span class="s">Exec=emacsclient %u</span>
+<span class="s">Type=Application</span>
+<span class="s">Terminal=false</span>
+<span class="s">Categories=System;</span>
+<span class="s">MimeType=x-scheme-handler/org-protocol;</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h5>如果是GTK的桌面<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h5>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>update-desktop-database ~/.local/share/applications/
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h5>如果是KDE5的桌面<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h5>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>kbuildsycoca5
+xdg-mime default org-protocol.desktop x-scheme-handler/org-protocol
+</pre></div>
+</div>
+</div>
+<div class="section" id="windows">
+<h5>如果是 Windows<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h5>
+<p>你需要搞一个注册表激活 <span class="guilabel">Org Protocol</span></p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\org-protocol]
+<span class="s2">&quot;URL Protocol&quot;</span>=<span class="s2">&quot;&quot;</span>
+<span class="p">@</span>=<span class="s2">&quot;URL:Org Protocol&quot;</span>
+
+[HKEY_CLASSES_ROOT\org-protocol\shell]
+
+[HKEY_CLASSES_ROOT\org-protocol\shell\open]
+
+[HKEY_CLASSES_ROOT\org-protocol\shell\open\command]
+<span class="p">@</span>=<span class="s2">&quot;\&quot;</span>d:\\emacs\\bin\\emacsclientw.exe\<span class="s2">&quot;  \&quot;</span><span class="nv">%1</span>\<span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h4>配置浏览器<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h4>
+<div class="section" id="firefox">
+<h5>Firefox<a class="headerlink" href="#firefox" title="永久链接至标题">¶</a></h5>
+<p>在某些版本的Firefox中，可能需要添加此设置.如果Firefox不知道如何处理org
+协议链接,你可以跳过这一步,然后返回到它.</p>
+<p>搜索框输入 <code class="docutils literal notranslate"><span class="pre">about:config</span></code> 并创建新的boolean值,然后命名
+为 <code class="docutils literal notranslate"><span class="pre">network.protocol-handler.expose.org-protocol</span></code> 并将其设置为true.</p>
+</div>
+</div>
+<div class="section" id="org-capture-template">
+<h4>配置模板（org-capture-template）<a class="headerlink" href="#org-capture-template" title="永久链接至标题">¶</a></h4>
+<p>模版的参数及其复杂，需要大量的测试</p>
+<p>Ref link: <a class="reference external" href="https://github.com/alphapapa/org-protocol-capture-html">https://github.com/alphapapa/org-protocol-capture-html</a></p>
+<p>Ref link2: <a class="reference external" href="https://github.com/sprig/org-capture-extension">https://github.com/sprig/org-capture-extension</a></p>
+<p>Ref link3: <a class="reference external" href="https://www.zmonster.me/2018/02/28/org-mode-capture.html">https://www.zmonster.me/2018/02/28/org-mode-capture.html</a></p>
+<div class="section" id="emacs-org-capture">
+<h5>在Emacs中使用处理器 - 为Org Capture和前面的书签工具集配置模板(混合使用)<a class="headerlink" href="#emacs-org-capture" title="永久链接至标题">¶</a></h5>
+<p>如果在单击按钮之前选择了一些文本，Emacs:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>org-protocol://capture:/p/&lt;url&gt;/&lt;title&gt;/selection&gt;
+</pre></div>
+</div>
+<p>如果啥也没有选择,就会发送以下内容:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>org-protocol://capture:/L/&lt;url&gt;/&lt;title&gt;
+</pre></div>
+</div>
+<p>这意味着你需要为”L”和 “p”准备适当的捕捉模板.下面是模板的例子:</p>
+<p>同时我们开启 <code class="docutils literal notranslate"><span class="pre">org-protocol-capture-html</span></code> 插件:</p>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="s">&quot;~/.emacs.d/.utils/org-protocol-capture-html/&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;org-protocol-capture-html</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="c1">;; 如果为捕获创建了一个窗口，则杀死该窗口</span>
+<span class="p">(</span><span class="k">defvar</span> <span class="nv">kk/delete-frame-after-capture</span> <span class="mi">0</span> <span class="s">&quot;Whether to delete the last frame after the current capture&quot;</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">kk/delete-frame-if-neccessary</span> <span class="p">(</span><span class="kp">&amp;rest</span> <span class="nv">r</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">cond</span>
+   <span class="p">((</span><span class="nf">=</span> <span class="nv">kk/delete-frame-after-capture</span> <span class="mi">0</span><span class="p">)</span> <span class="no">nil</span><span class="p">)</span>
+   <span class="p">((</span><span class="nf">&gt;</span> <span class="nv">kk/delete-frame-after-capture</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">(</span><span class="k">setq</span> <span class="nv">kk/delete-frame-after-capture</span> <span class="p">(</span><span class="nf">-</span> <span class="nv">kk/delete-frame-after-capture</span> <span class="mi">1</span><span class="p">)))</span>
+   <span class="p">(</span><span class="no">t</span>
+    <span class="p">(</span><span class="k">setq</span> <span class="nv">kk/delete-frame-after-capture</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">delete-frame</span><span class="p">))))</span>
+
+<span class="p">(</span><span class="nv">advice-add</span> <span class="ss">&#39;org-capture-finalize</span> <span class="nb">:after</span> <span class="ss">&#39;kk/delete-frame-if-neccessary</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">advice-add</span> <span class="ss">&#39;org-capture-kill</span> <span class="nb">:after</span> <span class="ss">&#39;kk/delete-frame-if-neccessary</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">advice-add</span> <span class="ss">&#39;org-capture-refile</span> <span class="nb">:after</span> <span class="ss">&#39;kk/delete-frame-if-neccessary</span><span class="p">)</span>
+
+<span class="c1">;;; 追加内容函数</span>
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">org-capture-template-goto-link</span> <span class="p">()</span>
+  <span class="p">(</span><span class="nv">org-capture-put</span> <span class="nb">:target</span> <span class="p">(</span><span class="nf">list</span> <span class="ss">&#39;file+headline</span>
+                             <span class="p">(</span><span class="nf">nth</span> <span class="mi">1</span> <span class="p">(</span><span class="nv">org-capture-get</span> <span class="nb">:target</span><span class="p">))</span>
+                             <span class="p">(</span><span class="nv">org-capture-get</span> <span class="nb">:annotation</span><span class="p">)))</span>
+  <span class="p">(</span><span class="nv">org-capture-put-target-region-and-position</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">widen</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">hd</span> <span class="p">(</span><span class="nf">nth</span> <span class="mi">2</span> <span class="p">(</span><span class="nv">org-capture-get</span> <span class="nb">:target</span><span class="p">))))</span>
+    <span class="p">(</span><span class="nf">goto-char</span> <span class="p">(</span><span class="nf">point-min</span><span class="p">))</span>
+    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">re-search-forward</span>
+     <span class="p">(</span><span class="nf">format</span> <span class="nv">org-complex-heading-regexp-format</span> <span class="p">(</span><span class="nf">regexp-quote</span> <span class="nv">hd</span><span class="p">))</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">org-end-of-subtree</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">goto-char</span> <span class="p">(</span><span class="nf">point-max</span><span class="p">))</span>
+      <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nf">bolp</span><span class="p">)</span> <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;\n&quot;</span><span class="p">))</span>
+      <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;* &quot;</span> <span class="nv">hd</span> <span class="s">&quot;\n&quot;</span><span class="p">))))</span>
+
+<span class="p">(</span><span class="k">setq</span> <span class="nv">org-capture-templates</span>
+      <span class="o">`</span><span class="p">(</span>
+    <span class="c1">;;; 主要思路</span>
+    <span class="c1">;; 利用 org-protocol-capture-html 做主要捕获,利用 org-capture google/firefox 捕获做辅助捕获</span>
+    <span class="c1">;; 前者冲锋,后者补刀</span>
+    <span class="c1">;; 辅助理解参见此： https://www.zmonster.me/2018/02/28/org-mode-capture.html</span>
+
+    <span class="c1">;;; Mission One :::</span>
+    <span class="c1">;; 定义 org capture 谷歌、firefox插件所需要的模板</span>
+    <span class="c1">;; 这个插件主要映射了2个键,P和L.也可以手动更改下</span>
+    <span class="c1">;; 另外可以打开debug,观察下它是如何发送处理器</span>
+    <span class="c1">;; 定义p系列协议组,主要用于org-capture google/firefox的需求</span>
+
+    <span class="p">(</span><span class="s">&quot;p&quot;</span> <span class="s">&quot;捕获协议组&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="s">&quot;pb&quot;</span> <span class="s">&quot;书签收集器&quot;</span> <span class="nv">entry</span>
+     <span class="p">(</span><span class="nv">file+headline</span> <span class="s">&quot;&quot;</span> <span class="s">&quot;Bookmarks&quot;</span><span class="p">)</span>
+     <span class="s">&quot;* %U - %:annotation&quot;</span>
+     <span class="nb">:immediate-finish</span> <span class="no">t</span>
+     <span class="nb">:kill-buffer</span> <span class="no">t</span>
+     <span class="nb">:prepend</span> <span class="no">t</span><span class="p">)</span>
+    <span class="p">(</span><span class="s">&quot;pn&quot;</span> <span class="s">&quot;创建新笔记&quot;</span>
+     <span class="nv">entry</span> <span class="p">(</span><span class="nv">file+headline</span> <span class="s">&quot;~/.emacs.d/.org/web.org&quot;</span> <span class="s">&quot;New Notes&quot;</span><span class="p">)</span>
+     <span class="s">&quot;* %:description :RESEARCH:\n#+BEGIN_QUOTE\n%i\n\n -- %:link %u\n #+END_QUOTE\n\n%?&quot;</span>
+     <span class="nb">:prepend</span> <span class="no">t</span><span class="p">)</span>
+    <span class="p">(</span><span class="s">&quot;ph&quot;</span> <span class="s">&quot;书签&quot;</span> <span class="nv">entry</span>
+     <span class="p">(</span><span class="nv">file+headline</span> <span class="s">&quot;~/.emacs.d/.org/web.org&quot;</span> <span class="s">&quot;Notes&quot;</span><span class="p">)</span>
+     <span class="s">&quot;* %U - %:annotation %^g\n\n  %?&quot;</span>
+     <span class="nb">:empty-lines</span> <span class="mi">1</span>
+     <span class="nb">:kill-buffer</span> <span class="no">t</span>
+     <span class="nb">:prepend</span> <span class="no">t</span>
+     <span class="p">)</span>
+    <span class="c1">;; 追加内容，依托于 org-capture firefox/chrome 插件，函数参考：</span>
+    <span class="p">(</span><span class="s">&quot;pl&quot;</span> <span class="s">&quot;追加内容&quot;</span> <span class="nv">plain</span>
+     <span class="p">(</span><span class="nv">file+function</span> <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="nv">org-directory</span> <span class="s">&quot;capture/full_capture.org&quot;</span><span class="p">)</span> <span class="nv">org-capture-template-goto-link</span><span class="p">)</span>
+     <span class="s">&quot;%U%?\n\n%:initial&quot;</span>
+     <span class="nb">:empty-lines</span> <span class="mi">1</span>
+     <span class="nb">:kill-buffer</span> <span class="no">t</span>
+     <span class="nb">:prepend</span> <span class="no">t</span>
+     <span class="p">)</span>
+
+    <span class="c1">;;; Mission-Two: 捕获网页的任何内容</span>
+    <span class="c1">;; 对于大批量的捕获会崩溃,例如超过100行</span>
+    <span class="p">(</span><span class="s">&quot;w&quot;</span> <span class="s">&quot;信息收集器&quot;</span> <span class="nv">entry</span>
+     <span class="p">(</span><span class="nv">file+headline</span> <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="nv">org-directory</span> <span class="s">&quot;capture/full_capture.org&quot;</span><span class="p">)</span> <span class="s">&quot;吞天食地&quot;</span><span class="p">)</span>
+     <span class="s">&quot;** %a :网络资源:\n%U %?\n\n%:initial&quot;</span> <span class="nb">:clock-in</span> <span class="no">t</span> <span class="nb">:clock-resume</span> <span class="no">t</span><span class="p">)</span>
+
+    <span class="p">(</span><span class="s">&quot;L&quot;</span> <span class="s">&quot;捕获链接&quot;</span> <span class="nv">entry</span> <span class="p">(</span><span class="nv">file+headline</span> <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="nv">org-directory</span> <span class="s">&quot;bookmarks/潜在资源.org&quot;</span><span class="p">)</span> <span class="s">&quot;潜在资源&quot;</span><span class="p">)</span>
+     <span class="s">&quot;* %?[[%:link][%:description]] %(progn (setq kk/delete-frame-after-capture 2) \&quot;\&quot;)\nCaptured On: %U&quot;</span>
+     <span class="nb">:empty-lines</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1">;;; Mission-Three: 制定个人生活习惯</span>
+    <span class="c1">;; 定义任务集</span>
+    <span class="p">(</span><span class="s">&quot;t&quot;</span> <span class="s">&quot;意识流&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="s">&quot;tw&quot;</span> <span class="s">&quot;信息收集&quot;</span> <span class="nv">entry</span>
+     <span class="p">(</span><span class="nv">file+headline</span> <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="nv">org-directory</span> <span class="s">&quot;mission/work.org&quot;</span><span class="p">)</span> <span class="s">&quot;Work&quot;</span><span class="p">)</span>
+     <span class="s">&quot;* TODO %^{任务名}\n%u\n%a\n&quot;</span>
+     <span class="nb">:clock-in</span> <span class="no">t</span>
+     <span class="nb">:clock-resume</span> <span class="no">t</span><span class="p">)</span>
+
+    <span class="c1">;; 以时间为头部,记录你当天做了啥事</span>
+    <span class="p">(</span><span class="s">&quot;j&quot;</span> <span class="s">&quot;笔记&quot;</span> <span class="nv">entry</span> <span class="p">(</span><span class="nv">file+olp+datetree</span> <span class="s">&quot;~/.emacs.d/.org/notes/journal.org&quot;</span><span class="p">)</span>
+     <span class="s">&quot;* %?\nRecording Time: %U\n  %i\n  %a&quot;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="faq">
+<h4>FAQ<a class="headerlink" href="#faq" title="永久链接至标题">¶</a></h4>
+<div class="section" id="getting-org-protocol-to-work-on-firefox-quantum-no-server-buffers-remain-to-edit-error">
+<h5>getting org-protocol to work on Firefox Quantum — `No server buffers remain to edit` error<a class="headerlink" href="#getting-org-protocol-to-work-on-firefox-quantum-no-server-buffers-remain-to-edit-error" title="永久链接至标题">¶</a></h5>
+<p>很大可能就是没安装 <code class="docutils literal notranslate"><span class="pre">pandoc</span></code>, 具体参见 <a class="reference external" href="https://stackoverflow.com/questions/47647948/getting-org-protocol-to-work-on-firefox-quantum-no-server-buffers-remain-to">here</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../Macro/init-macro.html" title="previous page">Elmacro Mode</a>
+    <a class='right-next' id="next-link" href="../../Windows/index.html" title="next page">Windows 技巧</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Revolt<br/>
+        
+            &copy; Copyright 2021, Revolt.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

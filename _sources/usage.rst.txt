@@ -500,6 +500,22 @@ __ Targets_
 
  你也可以编造你自己的提醒。
 
+.. note::
+
+   嵌套示例
+
+   .. warning::
+
+      But you really should not.
+
+      .. danger::
+
+         It's distracting.
+
+      And can be confusing for the user to understand.
+
+   And, honestly, looks weird.
+
 Topics, Sidebars, and Rubrics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -519,6 +535,7 @@ Topics, Sidebars, and Rubrics
    This is a topic.
 
 .. rubric:: This is a rubric
+
 
 目标脚注
 ~~~~~~~~~~~~~~~~
@@ -614,6 +631,33 @@ CSV 表格
    crunchy, now would it?"
    "Gannet Ripple", 1.99, "On a stick!"
 
+
+内联元素测试
+----------
+
+:html:`<a href="#">`
+      
+`result = (1 + x) * 32`
+
+:aspect:`Description:`
+
+:issue:`12345`
+
+:js:`var f = function () {return 1;}`
+
+下载文件测试
+~~~~~~~~~~~
+
+下载 :download:`Python脚本 <sphinx-doc/code/demo.py>`.
+
+关键字 :keyword:`你好`
+
+button :guilabel:`Start`
+
+button :guilabel:`&Start`
+
+字面量 :literal:`find`
+
 参考文献
 -------
 
@@ -624,6 +668,9 @@ CSV 表格
 5. 自定义样式以及应用的方式之二:
    https://github.com/sphinx-doc/sphinx/issues/3942
 6. 其他阅读: https://techwritingmatters.com/documenting-with-sphinx-tutorial-part-3-writing
+7. RST详细参考: https://pradyunsg.me/furo/reference/text-formatting/
+8. 自定义RST Roles: https://docutils.sourceforge.io/docs/howto/rst-roles.html
+   https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html
 
 TODO List
 ---------
@@ -639,5 +686,12 @@ TODO List
    2. 学习 Org Roam
 
       让所有的血液循环起来
+
+   3. 如何使用 github gist?
+
+      - https://www.gistoapp.com/
+      - https://www.labnol.org/internet/github-gist-tutorial/28499/
+      - https://docs.github.com/en/github/writing-on-github/editing-and-sharing-content-with-gists/creating-gists
+      - https://gist.github.com/zhixingchou/edfade09eb64c0d2c2ee
 
 .. todolist::

@@ -19,3 +19,6 @@ Emacs 文档
 
    Plantuml/init-plantuml.rst
    Macro/init-macro.rst
+
+   Org/Org-Capture.rst
+	     

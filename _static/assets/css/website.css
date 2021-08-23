@@ -32,3 +32,14 @@ table.table {
 table.align-center {
     text-align: center;
 }
+
+span.keybind {
+    border: 1px solid #0661ee70;
+    background: #dbe1091f;
+    font-size: 80%;
+    border-radius: 4px;
+    padding: 2.4px 6px;
+    margin: auto 2px;
+    font-weight: bold;
+    color: #3905f4f0;
+}

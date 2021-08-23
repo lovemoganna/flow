@@ -194,6 +194,11 @@
      Elmacro Mode
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Emacs/Org/Org-Capture.html">
+     Org Capture Configure On Windows
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -355,8 +360,8 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       Heading
+      <a class="reference internal nav-link" href="#todo-heading">
+       TODO Heading
       </a>
      </li>
     </ul>
@@ -372,33 +377,38 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
+    <a class="reference internal nav-link" href="#id3">
      特殊字符
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
+    <a class="reference internal nav-link" href="#id4">
      段落
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id6">
+      <a class="reference internal nav-link" href="#id5">
        诗句块
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
+      <a class="reference internal nav-link" href="#id6">
        注释块
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
+      <a class="reference internal nav-link" href="#id7">
        特殊块
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id9">
+      <a class="reference internal nav-link" href="#id8">
        居中块
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       嵌套块
       </a>
      </li>
     </ul>
@@ -524,12 +534,17 @@
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id29">
+     内联元素
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#todo">
      TODO 异端测试
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id29">
+    <a class="reference internal nav-link" href="#id30">
      脚注
     </a>
    </li>
@@ -547,7 +562,7 @@
               <div>
                 
   <div class="section" id="org-mode-rst">
-<h1><a class="toc-backref" href="#id38">Org Mode导出 Rst 文档后端测试</a><a class="headerlink" href="#org-mode-rst" title="永久链接至标题">¶</a></h1>
+<h1><a class="toc-backref" href="#id39">Org Mode导出 Rst 文档后端测试</a><a class="headerlink" href="#org-mode-rst" title="永久链接至标题">¶</a></h1>
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">Author</dt>
@@ -561,68 +576,70 @@
 <div class="contents topic" id="id1">
 <p class="topic-title">目录</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#org-mode-rst" id="id38">Org Mode导出 Rst 文档后端测试</a></p>
+<li><p><a class="reference internal" href="#org-mode-rst" id="id39">Org Mode导出 Rst 文档后端测试</a></p>
 <ul>
-<li><p><a class="reference internal" href="#ox-rst-usage" id="id39">Ox-Rst Usage</a></p>
+<li><p><a class="reference internal" href="#ox-rst-usage" id="id40">Ox-Rst Usage</a></p>
 <ul>
-<li><p><a class="reference internal" href="#repo" id="id40">Repo</a></p></li>
-<li><p><a class="reference internal" href="#id2" id="id41">导出命令</a></p></li>
-<li><p><a class="reference internal" href="#emial" id="id42">标题,作者,Emial,和日期</a></p></li>
-<li><p><a class="reference internal" href="#heading" id="id43">Heading 测试</a></p>
+<li><p><a class="reference internal" href="#repo" id="id41">Repo</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id42">导出命令</a></p></li>
+<li><p><a class="reference internal" href="#emial" id="id43">标题,作者,Emial,和日期</a></p></li>
+<li><p><a class="reference internal" href="#heading" id="id44">Heading 测试</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id3" id="id44">Heading</a></p></li>
+<li><p><a class="reference internal" href="#todo-heading" id="id45">TODO Heading</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#toc" id="id45">Toc</a></p></li>
-<li><p><a class="reference internal" href="#lists" id="id46">Lists</a></p></li>
-<li><p><a class="reference internal" href="#id4" id="id47">特殊字符</a></p></li>
-<li><p><a class="reference internal" href="#id5" id="id48">段落</a></p>
+<li><p><a class="reference internal" href="#toc" id="id46">Toc</a></p></li>
+<li><p><a class="reference internal" href="#lists" id="id47">Lists</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id48">特殊字符</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id49">段落</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id6" id="id49">诗句块</a></p></li>
-<li><p><a class="reference internal" href="#id7" id="id50">注释块</a></p></li>
-<li><p><a class="reference internal" href="#id8" id="id51">特殊块</a></p></li>
-<li><p><a class="reference internal" href="#id9" id="id52">居中块</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id50">诗句块</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id51">注释块</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id52">特殊块</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id53">居中块</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id54">嵌套块</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id10" id="id53">字面示例</a></p>
+<li><p><a class="reference internal" href="#id10" id="id55">字面示例</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id11" id="id54">示例块</a></p></li>
-<li><p><a class="reference internal" href="#id12" id="id55">源码块</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id56">示例块</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id57">源码块</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id13" id="id56">强调和等宽</a></p></li>
-<li><p><a class="reference internal" href="#id14" id="id57">上标和下标</a></p></li>
-<li><p><a class="reference internal" href="#latex" id="id58">LaTeX片段</a></p></li>
-<li><p><a class="reference internal" href="#id15" id="id59">水平线</a></p></li>
-<li><p><a class="reference internal" href="#id16" id="id60">注释块</a></p></li>
-<li><p><a class="reference internal" href="#id17" id="id61">代码块</a></p></li>
-<li><p><a class="reference internal" href="#id18" id="id62">图片和表格</a></p>
+<li><p><a class="reference internal" href="#id13" id="id58">强调和等宽</a></p></li>
+<li><p><a class="reference internal" href="#id14" id="id59">上标和下标</a></p></li>
+<li><p><a class="reference internal" href="#latex" id="id60">LaTeX片段</a></p></li>
+<li><p><a class="reference internal" href="#id15" id="id61">水平线</a></p></li>
+<li><p><a class="reference internal" href="#id16" id="id62">注释块</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id63">代码块</a></p></li>
+<li><p><a class="reference internal" href="#id18" id="id64">图片和表格</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id19" id="id63">图片</a></p></li>
-<li><p><a class="reference internal" href="#id20" id="id64">表格</a></p></li>
+<li><p><a class="reference internal" href="#id19" id="id65">图片</a></p></li>
+<li><p><a class="reference internal" href="#id20" id="id66">表格</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id21" id="id65">链接</a></p>
+<li><p><a class="reference internal" href="#id21" id="id67">链接</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id22" id="id66">外部链接</a></p></li>
-<li><p><a class="reference internal" href="#dbd46c2c-e823-4313-9ed8-50120c07611c" id="id67">内部链接</a></p>
+<li><p><a class="reference internal" href="#id22" id="id68">外部链接</a></p></li>
+<li><p><a class="reference internal" href="#dbd46c2c-e823-4313-9ed8-50120c07611c" id="id69">内部链接</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id24" id="id68">内部链接 1</a></p></li>
-<li><p><a class="reference internal" href="#id25" id="id69">内部链接 2</a></p></li>
-<li><p><a class="reference internal" href="#id26" id="id70">内部链接 3</a></p></li>
-<li><p><a class="reference internal" href="#table" id="id71">内部引用Table</a></p></li>
-<li><p><a class="reference internal" href="#id27" id="id72">图片引用</a></p></li>
+<li><p><a class="reference internal" href="#id24" id="id70">内部链接 1</a></p></li>
+<li><p><a class="reference internal" href="#id25" id="id71">内部链接 2</a></p></li>
+<li><p><a class="reference internal" href="#id26" id="id72">内部链接 3</a></p></li>
+<li><p><a class="reference internal" href="#table" id="id73">内部引用Table</a></p></li>
+<li><p><a class="reference internal" href="#id27" id="id74">图片引用</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#rst" id="id73">导出Rst片段</a></p>
+<li><p><a class="reference internal" href="#rst" id="id75">导出Rst片段</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id28" id="id74">示例</a></p></li>
+<li><p><a class="reference internal" href="#id28" id="id76">示例</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#todo" id="id75">TODO 异端测试</a></p></li>
-<li><p><a class="reference internal" href="#id29" id="id76">脚注</a></p></li>
+<li><p><a class="reference internal" href="#id29" id="id77">内联元素</a></p></li>
+<li><p><a class="reference internal" href="#todo" id="id78">TODO 异端测试</a></p></li>
+<li><p><a class="reference internal" href="#id30" id="id79">脚注</a></p></li>
 </ul>
 </li>
 </ul>
@@ -630,20 +647,20 @@
 </ul>
 </div>
 <div class="section" id="ox-rst-usage">
-<h2><a class="toc-backref" href="#id39">Ox-Rst Usage</a><a class="headerlink" href="#ox-rst-usage" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id40">Ox-Rst Usage</a><a class="headerlink" href="#ox-rst-usage" title="永久链接至标题">¶</a></h2>
 <p>本文档为 Org 文档导出reStructedText文档的后端测试.</p>
 <div class="section" id="repo">
-<h3><a class="toc-backref" href="#id40">Repo</a><a class="headerlink" href="#repo" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id41">Repo</a><a class="headerlink" href="#repo" title="永久链接至标题">¶</a></h3>
 <p>具体参见: <a class="reference external" href="https://github.com/msnoigrs/ox-rst">here</a>.</p>
 </div>
 <div class="section" id="id2">
-<h3><a class="toc-backref" href="#id41">导出命令</a><a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id42">导出命令</a><a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-e</span> <span class="pre">r</span> <span class="pre">r</span></code> 直接导出为 rst 文件.</p></li>
 </ul>
 </div>
 <div class="section" id="emial">
-<h3><a class="toc-backref" href="#id42">标题,作者,Emial,和日期</a><a class="headerlink" href="#emial" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id43">标题,作者,Emial,和日期</a><a class="headerlink" href="#emial" title="永久链接至标题">¶</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#+TITLE: This is the title of the document
 #+AUTHOR: Author
 #+EMAIL: mailaddress@example.com
@@ -653,21 +670,21 @@
 </div>
 </div>
 <div class="section" id="heading">
-<h3><a class="toc-backref" href="#id43">Heading 测试</a><a class="headerlink" href="#heading" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id44">Heading 测试</a><a class="headerlink" href="#heading" title="永久链接至标题">¶</a></h3>
 <p>这里是 1-4</p>
-<div class="section" id="id3">
-<h4><a class="toc-backref" href="#id44">Heading</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h4>
+<div class="section" id="todo-heading">
+<h4><a class="toc-backref" href="#id45">TODO Heading</a><a class="headerlink" href="#todo-heading" title="永久链接至标题">¶</a></h4>
 <p>这里是 1-4-1</p>
 </div>
 </div>
 <div class="section" id="toc">
-<h3><a class="toc-backref" href="#id45">Toc</a><a class="headerlink" href="#toc" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id46">Toc</a><a class="headerlink" href="#toc" title="永久链接至标题">¶</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#+OPTIONS: toc:t
 </pre></div>
 </div>
 </div>
 <div class="section" id="lists">
-<h3><a class="toc-backref" href="#id46">Lists</a><a class="headerlink" href="#lists" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id47">Lists</a><a class="headerlink" href="#lists" title="永久链接至标题">¶</a></h3>
 <ol class="arabic">
 <li><p>The attack of the Rohirrim</p></li>
 <li><p>Eowyn’s fight with the witch king</p>
@@ -693,16 +710,16 @@ very well from his role as Mikey Walsh in The Goonies.</p>
 </dd>
 </dl>
 </div>
-<div class="section" id="id4">
-<h3><a class="toc-backref" href="#id47">特殊字符</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id48">特殊字符</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>特殊字符 * 星号 \ 回退键
 .. reStructuredText注释行</p>
 </div>
-<div class="section" id="id5">
-<h3><a class="toc-backref" href="#id48">段落</a><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id49">段落</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p><strong>note</strong> Org line breaks <code class="docutils literal notranslate"><span class="pre">\\</span></code> will be ignored.</p>
-<div class="section" id="id6">
-<h4><a class="toc-backref" href="#id49">诗句块</a><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h4>
+<div class="section" id="id5">
+<h4><a class="toc-backref" href="#id50">诗句块</a><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h4>
 <div class="line-block">
 <div class="line">Great clouds overhead</div>
 <div class="line">Tiny black birds rise and fall</div>
@@ -710,8 +727,8 @@ very well from his role as Mikey Walsh in The Goonies.</p>
 <div class="line">– AlexSchroeder</div>
 </div>
 </div>
-<div class="section" id="id7">
-<h4><a class="toc-backref" href="#id50">注释块</a><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
+<div class="section" id="id6">
+<h4><a class="toc-backref" href="#id51">注释块</a><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Everything</span> <span class="n">should</span> <span class="n">be</span> <span class="n">made</span> <span class="k">as</span> <span class="n">simple</span> <span class="k">as</span> <span class="n">possible</span><span class="p">,</span> <span class="n">but</span> <span class="ow">not</span> <span class="nb">any</span> <span class="n">simpler</span>
 
 <span class="o">--</span> <span class="n">Albert</span> <span class="n">Einstein</span>
@@ -726,8 +743,8 @@ very well from his role as Mikey Walsh in The Goonies.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id8">
-<h4><a class="toc-backref" href="#id51">特殊块</a><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
+<div class="section" id="id7">
+<h4><a class="toc-backref" href="#id52">特殊块</a><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
 <div class="admonition caution">
 <p class="admonition-title">警告</p>
 <p>This is the second line of the first paragraph.</p>
@@ -738,15 +755,35 @@ very well from his role as Mikey Walsh in The Goonies.</p>
 <p>This is the second line of the first paragraph.</p>
 </div>
 </div>
-<div class="section" id="id9">
-<h4><a class="toc-backref" href="#id52">居中块</a><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h4>
+<div class="section" id="id8">
+<h4><a class="toc-backref" href="#id53">居中块</a><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
 <p>center block</p>
+</div>
+<div class="section" id="id9">
+<h4><a class="toc-backref" href="#id54">嵌套块</a><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h4>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">note</span><span class="p">::</span>
+
+   You can nest admonitions.
+
+<span class="p">   ..</span> <span class="ow">warning</span><span class="p">::</span>
+
+      But you really should not.
+
+<span class="p">      ..</span> <span class="ow">danger</span><span class="p">::</span>
+
+     It&#39;s distracting.
+
+      And can be confusing for the user to understand.
+
+   And, honestly, looks weird.
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="id10">
-<h3><a class="toc-backref" href="#id53">字面示例</a><a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id55">字面示例</a><a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <div class="section" id="id11">
-<h4><a class="toc-backref" href="#id54">示例块</a><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id56">示例块</a><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h4>
 <dl>
 <dt>::</dt><dd><dl class="field-list simple">
 <dt class="field-odd">name</dt>
@@ -758,23 +795,23 @@ very well from his role as Mikey Walsh in The Goonies.</p>
 </dl>
 </div>
 <div class="section" id="id12">
-<h4><a class="toc-backref" href="#id55">源码块</a><a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id57">源码块</a><a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
 <div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;ox-rst</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="id13">
-<h3><a class="toc-backref" href="#id56">强调和等宽</a><a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id58">强调和等宽</a><a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <p><strong>bold</strong> <em>italic</em> underlined <code class="docutils literal notranslate"><span class="pre">verbatim</span></code> <code class="docutils literal notranslate"><span class="pre">code</span></code> strike-through</p>
 </div>
 <div class="section" id="id14">
-<h3><a class="toc-backref" href="#id57">上标和下标</a><a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id59">上标和下标</a><a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <p>H_{2}O
 E = mc^2</p>
 </div>
 <div class="section" id="latex">
-<h3><a class="toc-backref" href="#id58">LaTeX片段</a><a class="headerlink" href="#latex" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id60">LaTeX片段</a><a class="headerlink" href="#latex" title="永久链接至标题">¶</a></h3>
 <p>If <span class="math notranslate nohighlight">\(a^2=b\)</span> and <span class="math notranslate nohighlight">\(b=2\)</span>, then the solution must be either</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}   a=+\sqrt{2}\\or\end{aligned}\end{align} \]</div>
@@ -783,16 +820,16 @@ E = mc^2</p>
 <p>.</p>
 </div>
 <div class="section" id="id15">
-<h3><a class="toc-backref" href="#id59">水平线</a><a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id61">水平线</a><a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>-----
 </pre></div>
 </div>
 </div>
 <div class="section" id="id16">
-<h3><a class="toc-backref" href="#id60">注释块</a><a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id62">注释块</a><a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
 </div>
 <div class="section" id="id17">
-<h3><a class="toc-backref" href="#id61">代码块</a><a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id63">代码块</a><a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
 <div class="highlight-common-lisp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">save-excursion</span>                  <span class="p">(</span><span class="nv">ref:sc</span><span class="p">)</span>
                              <span class="p">(</span><span class="nv">goto-char</span> <span class="p">(</span><span class="nv">point-min</span><span class="p">)))</span>      <span class="p">(</span><span class="nv">ref:jump</span><span class="p">)</span>
@@ -802,16 +839,16 @@ E = mc^2</p>
 Line 2 jumps to point-min.</p>
 </div>
 <div class="section" id="id18">
-<h3><a class="toc-backref" href="#id62">图片和表格</a><a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id64">图片和表格</a><a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
 <div class="section" id="id19">
-<h4><a class="toc-backref" href="#id63">图片</a><a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h4>
-<div class="figure align-left" id="id35">
+<h4><a class="toc-backref" href="#id65">图片</a><a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h4>
+<div class="figure align-left" id="id36">
 <a class="reference internal image-reference" href="../_images/pexels.jpg"><img alt="alternate text" src="../_images/pexels.jpg" style="width: 150.0px; height: 75.0px;" /></a>
-<p class="caption"><span class="caption-text">测试样本</span><a class="headerlink" href="#id35" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text">测试样本</span><a class="headerlink" href="#id36" title="永久链接至图片">¶</a></p>
 </div>
 </div>
 <div class="section" id="id20">
-<h4><a class="toc-backref" href="#id64">表格</a><a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id66">表格</a><a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h4>
 <table class="table" id="table-1">
 <caption><span class="caption-text">表1</span><a class="headerlink" href="#table-1" title="永久链接至表格">¶</a></caption>
 <colgroup>
@@ -894,8 +931,8 @@ Line 2 jumps to point-min.</p>
 </tr>
 </tbody>
 </table>
-<table class="align-center table" id="id36">
-<caption><span class="caption-text">表4 - 添加了自定义的CSS,相当有趣</span><a class="headerlink" href="#id36" title="永久链接至表格">¶</a></caption>
+<table class="align-center table" id="id37">
+<caption><span class="caption-text">表4 - 添加了自定义的CSS,相当有趣</span><a class="headerlink" href="#id37" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -925,31 +962,31 @@ Line 2 jumps to point-min.</p>
 </div>
 </div>
 <div class="section" id="id21">
-<h3><a class="toc-backref" href="#id65">链接</a><a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id67">链接</a><a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
 <div class="section" id="id22">
-<h4><a class="toc-backref" href="#id66">外部链接</a><a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id68">外部链接</a><a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="http://orgmode.org">Org Mode</a></p></li>
 <li><p><a class="reference external" href="http://orgmode.org">http://orgmode.org</a></p></li>
 </ul>
 </div>
 <div class="section" id="dbd46c2c-e823-4313-9ed8-50120c07611c">
-<span id="id23"></span><h4><a class="toc-backref" href="#id67">内部链接</a><a class="headerlink" href="#dbd46c2c-e823-4313-9ed8-50120c07611c" title="永久链接至标题">¶</a></h4>
+<span id="id23"></span><h4><a class="toc-backref" href="#id69">内部链接</a><a class="headerlink" href="#dbd46c2c-e823-4313-9ed8-50120c07611c" title="永久链接至标题">¶</a></h4>
 <div class="section" id="id24">
-<h5><a class="toc-backref" href="#id68">内部链接 1</a><a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id70">内部链接 1</a><a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h5>
 <p>这是  <span class="target" id="example">example</span>  交叉引用目标.</p>
 <p>内部交叉引用1, 例如: <a class="reference internal" href="#example">example</a></p>
 </div>
 <div class="section" id="id25">
-<h5><a class="toc-backref" href="#id69">内部链接 2</a><a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id71">内部链接 2</a><a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h5>
 <p>内部交叉引用2, 例如: <a class="reference internal" href="#id23">内部链接</a>.</p>
 </div>
 <div class="section" id="id26">
-<h5><a class="toc-backref" href="#id70">内部链接 3</a><a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id72">内部链接 3</a><a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h5>
 <p>内部链接的ID引用, <a class="reference internal" href="#dbd46c2c-e823-4313-9ed8-50120c07611c">dbd46c2c-e823-4313-9ed8-50120c07611c</a></p>
 </div>
 <div class="section" id="table">
-<h5><a class="toc-backref" href="#id71">内部引用Table</a><a class="headerlink" href="#table" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id73">内部引用Table</a><a class="headerlink" href="#table" title="永久链接至标题">¶</a></h5>
 <table class="table" id="sampletable">
 <colgroup>
 <col style="width: 33%" />
@@ -970,18 +1007,17 @@ Line 2 jumps to point-min.</p>
 <p>Internal cross references, label <a class="reference internal" href="#sampletable">sampletable</a></p>
 </div>
 <div class="section" id="id27">
-<h5><a class="toc-backref" href="#id72">图片引用</a><a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h5>
-<div class="figure align-left" id="id37">
+<h5><a class="toc-backref" href="#id74">图片引用</a><a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h5>
+<div class="figure align-center" id="id38">
 <span id="samplefigure"></span><a class="reference internal image-reference" href="../_images/girls.jpg"><img alt="alternate text" src="../_images/girls.jpg" style="width: 375.0px; height: 225.0px;" /></a>
-<p class="caption"><span class="caption-text">图片示例样本</span><a class="headerlink" href="#id37" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text">图片示例样本</span><a class="headerlink" href="#id38" title="永久链接至图片">¶</a></p>
 </div>
 <p>内部交叉链接,标签 <a class="reference internal" href="#samplefigure">samplefigure</a>.</p>
-<p>—</p>
 </div>
 </div>
 </div>
 <div class="section" id="rst">
-<h3><a class="toc-backref" href="#id73">导出Rst片段</a><a class="headerlink" href="#rst" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id75">导出Rst片段</a><a class="headerlink" href="#rst" title="永久链接至标题">¶</a></h3>
 <p>See also <code class="xref py py-meth docutils literal notranslate"><span class="pre">mypackage.mymodule.MyClass.mymethod()</span></code>.</p>
 <p>使用这个:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#+RST: .. class:: alert
@@ -994,26 +1030,31 @@ Line 2 jumps to point-min.</p>
 </pre></div>
 </div>
 <div class="section" id="id28">
-<h4><a class="toc-backref" href="#id74">示例</a><a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id76">示例</a><a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h4>
 <video width="320" height="240" controls>
 <source src="/_static/assets/video/JS.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video></div>
 </div>
+<div class="section" id="id29">
+<h3><a class="toc-backref" href="#id77">内联元素</a><a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h3>
+<p>界面标签: <span class="guilabel">inline text</span></p>
+<p>下载按钮: <a class="reference download internal" download="" href="../_downloads/71c5c48e883616267f9937a083ef3e1e/demo.py"><code class="xref download docutils literal notranslate"><span class="pre">本文内容</span></code></a></p>
+</div>
 <div class="section" id="todo">
-<h3><a class="toc-backref" href="#id75">TODO 异端测试</a><a class="headerlink" href="#todo" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id78">TODO 异端测试</a><a class="headerlink" href="#todo" title="永久链接至标题">¶</a></h3>
 <p>model^rgb_led = modelrgbled</p>
 <p>L^A T_E X = LATEX</p>
 </div>
-<div class="section" id="id29">
-<h3><a class="toc-backref" href="#id76">脚注</a><a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h3>
-<p>组织模式 <a class="footnote-reference brackets" href="#id32" id="id30">1</a>  用于记录笔记、维护待办事项列表、规划项目和使用快速有效的纯文本系统创作文档。</p>
-<p>reStructuredText <a class="footnote-reference brackets" href="#id34" id="id31">2</a>  是纯文本，它使用简单直观的结构来指示文档的结构。</p>
+<div class="section" id="id30">
+<h3><a class="toc-backref" href="#id79">脚注</a><a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h3>
+<p>组织模式 <a class="footnote-reference brackets" href="#id33" id="id31">1</a>  用于记录笔记、维护待办事项列表、规划项目和使用快速有效的纯文本系统创作文档。</p>
+<p>reStructuredText <a class="footnote-reference brackets" href="#id35" id="id32">2</a>  是纯文本，它使用简单直观的结构来指示文档的结构。</p>
 <dl class="footnote brackets">
-<dt class="label" id="id32"><span class="brackets"><a class="fn-backref" href="#id30">1</a></span></dt>
+<dt class="label" id="id33"><span class="brackets"><a class="fn-backref" href="#id31">1</a></span></dt>
 <dd><p>组织模式 <a class="reference external" href="http://orgmode.org">http://orgmode.org</a></p>
 </dd>
-<dt class="label" id="id34"><span class="brackets"><a class="fn-backref" href="#id31">2</a></span></dt>
+<dt class="label" id="id35"><span class="brackets"><a class="fn-backref" href="#id32">2</a></span></dt>
 <dd><p>reStructuredText <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html">http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html</a></p>
 </dd>
 </dl>

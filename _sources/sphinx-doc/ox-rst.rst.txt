@@ -40,8 +40,8 @@ Heading 测试
 
 这里是 1-4
 
-Heading
-^^^^^^^
+TODO Heading
+^^^^^^^^^^^^
 
 这里是 1-4-1
 
@@ -130,6 +130,27 @@ Sean Austin
 ^^^^^^
 
 center block
+
+嵌套块
+^^^^^^
+
+.. code:: rst
+
+    .. note::
+
+       You can nest admonitions.
+
+       .. warning::
+
+          But you really should not.
+
+          .. danger::
+
+    	 It's distracting.
+
+          And can be confusing for the user to understand.
+
+       And, honestly, looks weird.
 
 字面示例
 ~~~~~~~~
@@ -324,7 +345,7 @@ Internal cross references, label `sampletable`_
 
 .. figure:: ../_static/assets/photos/girls.jpg
     :alt: alternate text
-    :align: left
+    :align: center
     :height: 300px
     :width: 500px
     :scale: 75%
@@ -333,8 +354,6 @@ Internal cross references, label `sampletable`_
     图片示例样本
 
 内部交叉链接,标签 `samplefigure`_.
-
----
 
 导出Rst片段
 ~~~~~~~~~~~
@@ -364,6 +383,13 @@ See also :meth:`mypackage.mymodule.MyClass.mymethod()`.
    <source src="/_static/assets/video/JS.mp4" type="video/mp4">
    Your browser does not support the video tag.
    </video>
+
+内联元素
+~~~~~~~~
+
+界面标签: :guilabel:`inline text`
+
+下载按钮: :download:`本文内容 <./code/demo.py>`
 
 TODO 异端测试
 ~~~~~~~~~~~~~

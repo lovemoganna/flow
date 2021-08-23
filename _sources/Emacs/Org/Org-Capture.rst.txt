@@ -1,0 +1,486 @@
+================================
+Org Capture Configure On Windows
+================================
+
+    :Author: Revolt
+    :Date: <2021-08-23 Mon 15:35>
+
+
+
+猎杀者
+------
+
+矛盾
+~~~~
+
+.. code:: plantuml
+
+    @startuml
+    ' this is a comment
+    OrgMode -> MinGW: 你他妈给我指定Bash Shell的路径
+    MinGW --> OrgMode: 装什么大尾巴狼嗷,还不是你菜比不会用我
+    Emacs --> OrgMode: 我在等你配置捕获协议,干毛哪
+    OrgMode --> Emacs: 不给我Bash Shell接口,没法弄
+    @enduml
+
+.. image:: fig/sequence.png
+
+.. hint:: 冲破牢笼
+
+    所以在此我们采用 MSYS2 这个软件,来引入Bash Shell.此为入口点突破.
+
+Org Notes
+~~~~~~~~~
+
+.. _13509edb-af9d-41fc-bd50-6fdd21d5add5:
+
+为主 Org file 设置快捷键
+::::::::::::::::::::::::
+
+所有键的设置都将会集成在 ``general`` 这个包的配置当中。
+
+1. 将快捷键设置为 :kbd:`SPC f e o` 即可。
+
+2. 或者使用寄存器，:kbd:`C-x r j`,指定寄存器的名字，来实现快速跳转，在这里，
+   我们设置为 ``C-x r j o``
+
+3. 使用 :guilabel:`helm-occure` 快速查找东西。
+
+使用 Org refile 归档或者跳转到标题
+::::::::::::::::::::::::::::::::::
+
+.. hint::
+
+    使用 ``org-refile`` 来移动当前的 subtree 到指定的 heading,或者跳转到不需要
+    移动任何文本的 heading.这将让你快速进入 project,或者在 Org mode 中的任
+    何地方.
+
+    默认情况下, :guilabel:org-refile 会显示当前文件的顶级headings.但这远远不够，我们
+    想要的效果是从Agenda file中显示所有的heading.一般设置7级就可以了。
+
+    当然确保你的 Agenda file list 里面有东西。 使用 :kbd:`C-c [`
+    调用 :guilabel:`org-agenda-file-to-front` 函数将当前Org file添
+    加到 Agenda file里。
+
+
+.. code:: common-lisp
+
+    (setq org-refile-targets '((org-agenda-files . (:maxlevel . 7))))
+
+一旦设置好 :guilabel:`org-refile-targets`,你的 Agenda files,
+使用 :guilabel:`helm-occur`. 就可以练习使用 :kbd:`C-c
+C-w` :guilabel:`~org-refile`了.
+
+:guilabel:`org-refile` 可以做不同的使用，取决于你如何调用它.
+
+- 默认情况下，它移动当前的subtree到指定的位置.
+
+- 如果你带前缀 ``C-u``,例如调用 :keybind:`C-u C-c C-w`,它将会跳转
+  指定位置，而不是移动当前的subtree.
+
+- 如果你使用 :kbd:`C-u C-u C-c C-w`,它将会跳转到归档之前的位置.
+
+首先练习跳转位置，跳转到未分类的manual,使用不带前缀参数的
+:guilabel:`org-refile` 将其移动到正确的位置,实现文档的分类.
+
+:guilabel:`org-refile` 给你提供来一种快速跳转heading的方法.
+你要更加喜欢 :guilabel:`helm-occur` 也行.
+
+但在你想做笔记之前，还是要想办法回到你之前正在做的事情上.在你熟悉来如
+何将笔记重新归档到正确的位置之后，继续学习如何使用
+:guilabel:`org-capture` 从任何地方快速的记笔记.
+
+.. _397363d1-3d3b-4b3e-87bb-0d863ad8382b:
+
+使用org-capture快速写笔记
+:::::::::::::::::::::::::
+
+``org-capture`` 通过弹出窗口或者通过提示来引导你快速记下笔记。当你记下笔记
+后，它会让你回到开始之前正在专注的东西。不过，要想利用这个优点，你必须
+自定义设置 ``org-capture``.
+
+Org Mode manual推荐你给定 ``org-capture`` 全局快捷键，比如 ``C-c c``.然后再设
+置下默认的笔记保存目录就可以，搞好了，利用 ``org-refile`` 重新分档即可。需
+要确保这个文件存在并再 Org mode 中自动打开。
+
+.. code:: common-lisp
+
+    (global-set-key (kbd "C-c c") 'org-capture)
+    (setq org-default-notes-file "~/.emacs.d/.agenda/task_index.org")
+
+如果键入 ``C-c c`` , ``org-capture`` 将会展示提示， 按下 ``t`` 会创建简单的任务模
+板，按下 ``C`` 会展示 ``org-capture-template`` 的自定义接口。
+
+可能你需要插入计划的开始时间 ``C-c C-s`` 与预计结束时间 ``C-c C-d``,以此来作为
+计算效率的基准。
+
+接下来就是练习 ``C-c c`` ``org-capture`` 快速记下一些任务或者笔记，接下来回到笔
+记文件并使用 ``C-c C-w`` ``org-refile`` 来将笔记重新归档就可以了。
+
+一旦你掌握了使用 ``org-capture`` 来记下笔记，只需要每周一次将他们归档就可
+以了。
+
+.. _b13fdc5f-5877-4e90-8887-654d496853b8:
+
+定义更加便利的Org-capture模板
+:::::::::::::::::::::::::::::
+
+如果你发现你自己经常捕获不同种类的笔记，或者你想以另外一种格式来捕获东
+西（可以是 table entry, 或者 list），同时又想自定义
+``org-capture-template`` 来插入时间。在开始之前，你需要了解下
+``org-capture-templates`` 的接口。不要直接上来就写代码，简单读些文档，自己
+去做试验测试。
+
+Capture templates
+'''''''''''''''''
+
+对于不同类型，不同目标位置的捕获项目，你可以使用模板。最容易的方法就是
+通过自定义接口来创建一些模板。
+
+假设你想使用模板创建普通的 TODO 条目，并且你想将這些条目放置到文件
+``~/.emacs.d/.org/gtd.org`` 中的 heading ``Tasks`` 下面。
+
+另外你得有个名为 ``journal.org`` 的日志文件，需要包含时间戳，所以看起来像
+下面这样：
+
+另外需要快速捕获网页的内容，进行归档，加速转换。
+
+
+If you then press t from the capture menu, Org will prepare the
+template for you like this:
+
+During expansion of the template, ‘%a’ has been replaced by a link to
+the location from where you called the capture command. This can be
+extremely useful for deriving tasks from emails, for example. You fill
+in the task definition, press C-c C-c and Org returns you to the same
+place where you started the capture process.
+
+To define special keys to capture to a particular template without
+going through the interactive template selection, you can create your
+key binding like this:
+
+额外的需求
+::::::::::
+
+在手机端用 ``Evernote`` 代替，或者 ``Simplenote``.直接在网页端同步到 Emacs 上
+即可。
+
+Org 协议背景知识
+~~~~~~~~~~~~~~~~
+
+Org-protocol 拦截来自 Emacsclient 的调用，从而在没有外部依赖的情况下触
+发自定义操作.外部应用程序或操作系统只需要配置一个协议，就可以触发任意
+数量的定制操作。只需用变量 ``org-protocol-protocol-alist`` 注册您的自定义
+子协议和处理程序.
+
+基本思路大致如下，首先需要在守护程序模式下运行 Emacs,因为需要使用
+``Emacsclient`` 来处理Org protocol请求。接着，需要在桌面上设置 Org
+protocol 处理程序，最后需要配置一些 Org Capture 模板来处理从浏览器发送
+的数据。
+
+Org协议的组成
+:::::::::::::
+
+Org-protocol 基于 ``org-annotation-helper`` 和 ``org-browser-url``.
+
+``"org-protocol:/sub-protocol:/"`` 通过自定义变量
+``org-protocol-protocol-alist`` 触发和 ``sub-protocl`` 关联的行为。
+
+它主要提供四个预定义的处理程序。
+
+org-protocol-store-link
+    通过 sub-protocol ``"store-link"`` 触发.存储 Org-link 和 给 kill-ring推
+    送 URL.
+
+org-protocol-capture
+    填充从其他地方收集信息捕获的buffer. 此处理器
+    通过 ``"capture"`` sub-protocol 和 使用 函数 ``org-capture`` 来触发。
+
+org-protocol-remember
+    填充从其他地方收集信息的记忆 buffer.此处理器通过 ``"remember"``
+    sub-protocol 触发，并仍可向后兼容。此处理器使用 ``org-remember``.使用当
+    前的 ``org-protocol-capture``.
+
+org-protocol-open-source
+    "open-source". 映射 URLs 到本地文件名。 使用它用来打开 Emacs 中已经
+    发布的内容的源代码，以便进行编辑。
+
+Org-protocol 帮助创建自定义处理程序，即所谓的 ``org-protocol-projects``.
+
+Org 协议的配置
+~~~~~~~~~~~~~~
+
+Org Mode官网的有些东西有些很难进行试验.下面应用下真实世界的例子.
+
+现在有三种方式来使用Org协议:
+
+- 一种是基于工具 ``org-protocol-capture-html`` 定制的书签触发,优点是可高度配置,比较灵活.
+
+- 另一种是使用Org Capture插件,优点是抄别人的配置就行,比较省心.
+
+开启Emacs Org Protocol
+::::::::::::::::::::::
+
+载入 ``org-protocol.el``.
+
+.. code:: common-lisp
+
+    (server-start)
+    ;; (add-to-list 'load-path "~/.emacs.d/.org/protocol/")
+    ;; Emacs 内置，不需要外部引入
+    (require 'org-protocol)
+
+为Linux系统配置 ``org-protocol`` 处理程序 - 此版本是为点击书签而准备的
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+大多数Linux桌面都使用freedesktop.org标准,包括KDE(我使用的桌面).我们首
+先需要创建一个桌面条目,它将org协议mime类型
+``(x-scheme-handler/org-protocol)`` 映射到emacsclient。
+
+.. code:: shell
+
+    [Desktop Entry]
+    Version=1.0
+    Type=Application
+    Exec=/usr/bin/emacsclient %u
+    Icon=/usr/share/icons/hicolor/scalable/apps/emacs.svg
+    StartupNotify=true
+    Terminal=false
+    Categories=Utility;X-XFCE;X-Xfce-Toplevel;
+    MimeType=x-scheme-handler/org-protocol
+    Name=Org Protocol Handler
+    Comment=Invoke emacsclient with org-protocol
+
+.. code:: shell
+
+    x-scheme-handler/org-protocol=exo-org-protocol-handler.desktop
+
+对于基于GTK的桌面,运行下面的命令
+''''''''''''''''''''''''''''''''
+
+然后更新桌面数据库：
+
+.. code:: sh
+
+    update-desktop-database  ~/.local/share/applications/
+
+基于KDE5的桌面，运行下面的命令
+''''''''''''''''''''''''''''''
+
+有时候上面的配置不生效,有可能是使用 KDE5,所以需要运行下面的命令:
+
+.. code:: sh
+
+    kbuildsycoca5
+    xdg-mime default org-protocol-handler.desktop x-scheme-handler/org-protocol
+
+Window下的配置
+^^^^^^^^^^^^^^
+
+`为Org Capture Extension Chrome 插件配置协议 <https://github.com/sprig/org-capture-extension>`_
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+它的要点是使你的系统认识到emacsclient是 ``org-protocol://`` 链接的处理器.此
+外,还需要设置emacs来加载org-protocol并设置捕获模板。
+
+为 ``org-protocl`` 处理器注册emacsclient
+''''''''''''''''''''''''''''''''''''''''
+
+.. code:: sh
+
+    cat > "${HOME}/.local/share/applications/org-protocol.desktop" << EOF
+    [Desktop Entry]
+    Name=org-protocol
+    Exec=emacsclient %u
+    Type=Application
+    Terminal=false
+    Categories=System;
+    MimeType=x-scheme-handler/org-protocol;
+    EOF
+
+如果是GTK的桌面
+'''''''''''''''
+
+.. code:: sh
+
+    update-desktop-database ~/.local/share/applications/
+
+如果是KDE5的桌面
+''''''''''''''''
+
+.. code:: sh
+
+    kbuildsycoca5
+    xdg-mime default org-protocol.desktop x-scheme-handler/org-protocol
+
+如果是 Windows
+''''''''''''''
+
+你需要搞一个注册表激活 :guilabel:`Org Protocol`
+
+.. code:: bat
+
+    Windows Registry Editor Version 5.00
+
+    [HKEY_CLASSES_ROOT\org-protocol]
+    "URL Protocol"=""
+    @="URL:Org Protocol"
+
+    [HKEY_CLASSES_ROOT\org-protocol\shell]
+
+    [HKEY_CLASSES_ROOT\org-protocol\shell\open]
+
+    [HKEY_CLASSES_ROOT\org-protocol\shell\open\command]
+    @="\"d:\\emacs\\bin\\emacsclientw.exe\"  \"%1\""
+
+配置浏览器
+::::::::::
+
+Firefox
+'''''''
+
+在某些版本的Firefox中，可能需要添加此设置.如果Firefox不知道如何处理org
+协议链接,你可以跳过这一步,然后返回到它.
+
+搜索框输入 ``about:config`` 并创建新的boolean值,然后命名
+为 ``network.protocol-handler.expose.org-protocol`` 并将其设置为true.
+
+配置模板（org-capture-template）
+::::::::::::::::::::::::::::::::
+
+模版的参数及其复杂，需要大量的测试
+
+Ref link: `https://github.com/alphapapa/org-protocol-capture-html <https://github.com/alphapapa/org-protocol-capture-html>`_
+
+Ref link2: `https://github.com/sprig/org-capture-extension <https://github.com/sprig/org-capture-extension>`_
+
+Ref link3: `https://www.zmonster.me/2018/02/28/org-mode-capture.html <https://www.zmonster.me/2018/02/28/org-mode-capture.html>`_
+
+在Emacs中使用处理器 - 为Org Capture和前面的书签工具集配置模板(混合使用)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+如果在单击按钮之前选择了一些文本，Emacs:
+
+.. code:: text
+
+    org-protocol://capture:/p/<url>/<title>/selection>
+
+如果啥也没有选择,就会发送以下内容:
+
+.. code:: text
+
+    org-protocol://capture:/L/<url>/<title>
+
+这意味着你需要为"L"和 "p"准备适当的捕捉模板.下面是模板的例子:
+
+同时我们开启 ``org-protocol-capture-html`` 插件:
+
+.. code:: elisp
+
+    (add-to-list 'load-path "~/.emacs.d/.utils/org-protocol-capture-html/")
+    (require 'org-protocol-capture-html)
+
+.. code:: elisp
+
+    ;; 如果为捕获创建了一个窗口，则杀死该窗口
+    (defvar kk/delete-frame-after-capture 0 "Whether to delete the last frame after the current capture")
+
+    (defun kk/delete-frame-if-neccessary (&rest r)
+      (cond
+       ((= kk/delete-frame-after-capture 0) nil)
+       ((> kk/delete-frame-after-capture 1)
+        (setq kk/delete-frame-after-capture (- kk/delete-frame-after-capture 1)))
+       (t
+        (setq kk/delete-frame-after-capture 0)
+        (delete-frame))))
+
+    (advice-add 'org-capture-finalize :after 'kk/delete-frame-if-neccessary)
+    (advice-add 'org-capture-kill :after 'kk/delete-frame-if-neccessary)
+    (advice-add 'org-capture-refile :after 'kk/delete-frame-if-neccessary)
+
+    ;;; 追加内容函数
+    (defun org-capture-template-goto-link ()
+      (org-capture-put :target (list 'file+headline
+    				 (nth 1 (org-capture-get :target))
+    				 (org-capture-get :annotation)))
+      (org-capture-put-target-region-and-position)
+      (widen)
+      (let ((hd (nth 2 (org-capture-get :target))))
+        (goto-char (point-min))
+        (if (re-search-forward
+    	 (format org-complex-heading-regexp-format (regexp-quote hd)) nil t)
+    	(org-end-of-subtree)
+          (goto-char (point-max))
+          (or (bolp) (insert "\n"))
+          (insert "* " hd "\n"))))
+
+    (setq org-capture-templates
+          `(
+    	;;; 主要思路
+    	;; 利用 org-protocol-capture-html 做主要捕获,利用 org-capture google/firefox 捕获做辅助捕获
+    	;; 前者冲锋,后者补刀
+    	;; 辅助理解参见此： https://www.zmonster.me/2018/02/28/org-mode-capture.html
+
+    	;;; Mission One :::
+    	;; 定义 org capture 谷歌、firefox插件所需要的模板
+    	;; 这个插件主要映射了2个键,P和L.也可以手动更改下
+    	;; 另外可以打开debug,观察下它是如何发送处理器
+    	;; 定义p系列协议组,主要用于org-capture google/firefox的需求
+
+    	("p" "捕获协议组")
+    	("pb" "书签收集器" entry
+    	 (file+headline "" "Bookmarks")
+    	 "* %U - %:annotation"
+    	 :immediate-finish t
+    	 :kill-buffer t
+    	 :prepend t)
+    	("pn" "创建新笔记"
+    	 entry (file+headline "~/.emacs.d/.org/web.org" "New Notes")
+    	 "* %:description :RESEARCH:\n#+BEGIN_QUOTE\n%i\n\n -- %:link %u\n #+END_QUOTE\n\n%?"
+    	 :prepend t)
+    	("ph" "书签" entry
+    	 (file+headline "~/.emacs.d/.org/web.org" "Notes")
+    	 "* %U - %:annotation %^g\n\n  %?"
+    	 :empty-lines 1
+    	 :kill-buffer t
+    	 :prepend t
+    	 )
+    	;; 追加内容，依托于 org-capture firefox/chrome 插件，函数参考：
+    	("pl" "追加内容" plain
+    	 (file+function ,(concat org-directory "capture/full_capture.org") org-capture-template-goto-link)
+    	 "%U%?\n\n%:initial"
+    	 :empty-lines 1
+    	 :kill-buffer t
+    	 :prepend t
+    	 )
+
+    	;;; Mission-Two: 捕获网页的任何内容
+    	;; 对于大批量的捕获会崩溃,例如超过100行
+    	("w" "信息收集器" entry
+    	 (file+headline ,(concat org-directory "capture/full_capture.org") "吞天食地")
+    	 "** %a :网络资源:\n%U %?\n\n%:initial" :clock-in t :clock-resume t)
+
+    	("L" "捕获链接" entry (file+headline ,(concat org-directory "bookmarks/潜在资源.org") "潜在资源")
+    	 "* %?[[%:link][%:description]] %(progn (setq kk/delete-frame-after-capture 2) \"\")\nCaptured On: %U"
+    	 :empty-lines 1)
+
+    	;;; Mission-Three: 制定个人生活习惯
+    	;; 定义任务集
+    	("t" "意识流")
+    	("tw" "信息收集" entry
+    	 (file+headline ,(concat org-directory "mission/work.org") "Work")
+    	 "* TODO %^{任务名}\n%u\n%a\n"
+    	 :clock-in t
+    	 :clock-resume t)
+
+    	;; 以时间为头部,记录你当天做了啥事
+    	("j" "笔记" entry (file+olp+datetree "~/.emacs.d/.org/notes/journal.org")
+    	 "* %?\nRecording Time: %U\n  %i\n  %a")))
+
+FAQ
+:::
+
+getting org-protocol to work on Firefox Quantum — \`No server buffers remain to edit\` error
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+很大可能就是没安装 ``pandoc``, 具体参见 `here <https://stackoverflow.com/questions/47647948/getting-org-protocol-to-work-on-firefox-quantum-no-server-buffers-remain-to>`_.
