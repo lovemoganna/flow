@@ -55,7 +55,7 @@ Org Mode 笔记最小闭环：从记录到验证
     (setq org-capture-templates
           `(("t" "任务" entry
              (file ,org-default-notes-file)
-             "* TODO %?\n  %U\n  %a\n")))
+             "* TODO %?\n  %U\n  %a\n** 已确认事实\n** 待验证判断\n** 下一步动作\n** 验收标准\n")))
     (global-set-key (kbd "C-c c") #'org-capture)
 
 按 C-c c，选择 t 输入任务，按 C-c C-c 保存。任务写入 ~/org/inbox.org。路径可以按需修改。
