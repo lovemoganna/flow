@@ -199,7 +199,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" class="current reference internal" href="#">
+    <a class="current reference internal" href="#">
      Org Mode 笔记最小闭环：从记录到验证
     </a>
    </li>
@@ -380,7 +380,7 @@
 (setq org-capture-templates
       `(("t" "任务" entry
          (file ,org-default-notes-file)
-         "* TODO %?\n  %U\n  %a\n")))
+         "* TODO %?\n  %U\n  %a\n** 已确认事实\n** 待验证判断\n** 下一步动作\n** 验收标准\n")))
 (global-set-key (kbd "C-c c") #'org-capture)</pre></div></div>
 <p>按 <code>C-c c</code>，选择 <code>t</code> 输入任务，按 <code>C-c C-c</code> 保存。任务写入 <code>~/org/inbox.org</code>。路径可以按需修改。</p></div>
 <div class="section" id="acceptance"><h2>验收方法<a class="headerlink" href="#acceptance" title="永久链接至标题">¶</a></h2>
