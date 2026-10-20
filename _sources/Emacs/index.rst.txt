@@ -22,3 +22,5 @@ Emacs 文档
 
    Org/Org-Capture.rst
 	     
+
+   org-mode-notes-loop
